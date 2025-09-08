@@ -29,7 +29,7 @@ This project **completely eliminates those dependencies**, providing:
 │   Rails App     │◄───┤  S3 Storage  │◄───┤  Transcoder     │
 │   (Port 3000)   │    │ (Replaces    │    │ (Replaces       │
 └─────────────────┘    │  AWS S3)     │    │  Zencoder)      │
-         │              └──────────────┘    └─────────────────┘
+         │             └──────────────┘    └─────────────────┘
          ▼                       │                      │
 ┌─────────────────┐    ┌──────────────┐    ┌─────────────────┐
 │     MySQL       │    │    Redis     │    │   Background    │
@@ -55,11 +55,6 @@ This project **completely eliminates those dependencies**, providing:
 - **Custom Transcoder**: Node.js service with GPU acceleration using FFmpeg
 - **Zencoder Compatibility**: Drop-in replacement maintaining full API compatibility
 - **Error Handling**: `pageflow/config/initializers/video_file_post_processing_fix.rb` - Graceful thumbnail handling
-
-### **Network Configuration**
-- **Production Settings**: Updated `trusted_proxies` for container networking
-- **Endpoint Management**: Separate internal/external endpoints for Docker and browser access
-- **Health Checks**: All services include proper health monitoring
 
 ## **Quick Start**
 
