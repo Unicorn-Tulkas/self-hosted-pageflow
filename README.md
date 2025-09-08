@@ -22,21 +22,13 @@ This project **completely eliminates those dependencies**, providing:
 - **Full control** - Everything runs on your infrastructure
 
 ## **Architecture Overview**
-
-```
-┌─────────────────┐    ┌──────────────┐    ┌─────────────────┐
-│   Pageflow      │    │    MinIO     │    │   Custom        │
-│   Rails App     │◄───┤  S3 Storage  │◄───┤  Transcoder     │
-│   (Port 3000)   │    │ (Replaces    │    │ (Replaces       │
-└─────────────────┘    │  AWS S3)     │    │  Zencoder)      │
-         │             └──────────────┘    └─────────────────┘
-         ▼                       │                      │
-┌─────────────────┐    ┌──────────────┐    ┌─────────────────┐
-│     MySQL       │    │    Redis     │    │   Background    │
-│   Database      │    │   Cache      │    │    Workers      │
-│   (Internal)    │    │  (Internal)  │    │   (Resque)      │
-└─────────────────┘    └──────────────┘    └─────────────────┘
-```
+- **pageflow**: Main Rails application with custom initializers
+- **pageflow_minio**: S3-compatible storage (replaces AWS S3)
+- **pageflow_transcoder**: Custom video processing (replaces Zencoder)
+- **pageflow_mysql**: Database with Pageflow-optimized configuration
+- **pageflow_redis**: Cache and job queue
+- **pageflow_worker**: Background job processing
+- **pageflow_scheduler**: Periodic task management
 
 ## **Key AWS Decoupling Modifications**
 
@@ -192,15 +184,6 @@ curl http://localhost:8080/health
 # 4. Clean restart if needed
 docker compose down && docker compose up -d
 ```
-
-### **Container Architecture**
-- **pageflow**: Main Rails application with custom initializers
-- **pageflow_minio**: S3-compatible storage (replaces AWS S3)
-- **pageflow_transcoder**: Custom video processing (replaces Zencoder)
-- **pageflow_mysql**: Database with Pageflow-optimized configuration
-- **pageflow_redis**: Cache and job queue
-- **pageflow_worker**: Background job processing
-- **pageflow_scheduler**: Periodic task management
 
 ## **License**
 
