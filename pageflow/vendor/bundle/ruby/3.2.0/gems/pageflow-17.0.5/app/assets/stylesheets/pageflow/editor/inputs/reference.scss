@@ -1,0 +1,47 @@
+.reference_input {
+  position: relative;
+  white-space: nowrap;
+
+  .model_thumbnail {
+    width: 60px;
+    height: 60px;
+    vertical-align: bottom;
+    margin-right: 5px;
+    border-radius: rounded();
+    border: solid 1px var(--ui-primary-color-light);
+  }
+
+  .file_thumbnail {
+    height: 100%;
+  }
+
+  div.title {
+    position: absolute;
+    top: space(7);
+    left: 70px;
+    right: 20px;
+    overflow: hidden;
+  }
+
+  .choose {
+    @include icon-only-button;
+    @include pencil-icon;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .unset {
+    @include icon-only-button("destructive");
+    @include cancel-circled-icon;
+
+    position: absolute;
+    bottom: 0;
+    right: 35px;
+  }
+
+  .inline_help {
+    white-space: normal;
+  }
+}

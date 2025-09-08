@@ -1,0 +1,48 @@
+/// Color of the caret icon displayed in front of links. Same as text
+/// color by default.
+$anchor-icon-color: null !default;
+
+$anchor-external-links-icon: false !default;
+
+%anchor {
+  @include fa-caret-right-icon;
+
+  [dir=rtl] & {
+    @include fa-caret-left-icon;
+  }
+
+  text-decoration: none;
+  pointer-events: auto;
+  position: relative;
+  margin-left: 6px;
+  margin-right: 6px;
+
+  @include phone {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:before {
+    display: inline-block;
+    top: 7px;
+    width: 10px;
+    height: 12px;
+    color: $anchor-icon-color;
+  }
+
+  @if $anchor-external-links-icon {
+    &[target="_blank"] {
+      @include fa-external-link-icon;
+
+      &:before {
+        width: 18px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+  }
+}

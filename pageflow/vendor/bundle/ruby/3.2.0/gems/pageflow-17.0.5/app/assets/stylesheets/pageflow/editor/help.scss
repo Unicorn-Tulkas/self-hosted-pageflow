@@ -1,0 +1,173 @@
+.help {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  z-index: 5;
+
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size);
+  color: var(--ui-on-surface-color);
+
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ui-backdrop-color);
+  }
+
+  .box {
+    position: relative;
+    max-width: 1000px;
+    max-height: 500px;
+    min-height: 200px;
+    height: 50%;
+    top: 10%;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--ui-surface-color);
+    border-radius: rounded();
+    padding-bottom: 100px;
+  }
+
+  a.close {
+    @include cancel-icon;
+    @include icon-button;
+  }
+
+  h2 {
+    margin: 0 0 10px 0;
+  }
+
+  nav {
+    position: absolute;
+    width: 200px;
+    left: 10px;
+    top: 60px;
+    bottom: 50px;
+    overflow: auto;
+    padding: 0 5px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      margin: 3px 0;
+      list-style: none;
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: var(--ui-on-surface-color);
+      padding: 5px;
+    }
+
+    a:hover {
+      background-color: var(--ui-selection-color-lighter);
+    }
+
+    .expandable > a {
+      @include background-icon-right($top: 6px);
+      @include down-open-mini-icon;
+      padding-right: 30px;
+    }
+
+    .expanded > a {
+      @include up-open-mini-icon;
+      background-color: var(--ui-primary-color-lightest);
+    }
+
+    .active > a {
+      background-color: var(--ui-selection-color-light);
+    }
+
+    li ul {
+      display: none;
+      border-bottom: solid 1px var(--ui-on-surface-color-lightest);
+    }
+
+    .expanded ul {
+      display: block;
+    }
+
+    li li a {
+      padding-left: 25px;
+    }
+  }
+
+  section {
+    position: absolute;
+    left: 220px;
+    bottom: 50px;
+    top: 60px;
+    right: 10px;
+
+    overflow: auto;
+
+    margin-left: 5px;
+    padding-left: 20px;
+    padding-right: 5px;
+    border-left: solid 1px var(--ui-on-surface-color-lighter);
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 27px;
+    }
+
+    h2 {
+      margin: 25px 0 15px 0;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    h3 {
+      margin: 5px 0 0 0;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    a {
+      color: var(--ui-primary-color);
+    }
+  }
+
+  .footer {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  p {
+    line-height: 23px;
+    margin: 0 0 10px 0;
+  }
+
+  img {
+    float: right;
+    margin: 5px;
+    padding: 1px;
+  }
+}
+
+.editor .help_button {
+  @include background-icon-left($color: var(--ui-primary-color),
+                                $font-size: 16px, $left: 5px, $top: 50%);
+  @include help-circled-icon;
+
+  padding: 7px 5px 0 28px;
+  float: right;
+  height: 20px;
+  cursor: pointer;
+}

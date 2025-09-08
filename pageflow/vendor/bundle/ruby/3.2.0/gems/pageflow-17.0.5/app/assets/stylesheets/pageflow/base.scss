@@ -1,0 +1,77 @@
+// scss-lint:disable IdSelector
+
+html, body, #outer_wrapper {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent; /* we need this for some Android browsers */
+}
+
+html {
+  background-color: black;
+}
+
+body {
+  -ms-touch-action: none;
+}
+
+body.js, .js #outer_wrapper {
+  overflow: hidden;
+}
+
+// Safari sets background color of fullscreen elements to white.
+#outer_wrapper:-webkit-full-screen {
+  background-color: transparent;
+}
+
+// Apps like Twitter and Facebook displays a toolbar at the bottom of
+// the screen on iOS phone which hides parts of the browser
+// viewport. Normally this is hidden once the user scrolls, but since
+// there is no native scrolling in Pageflow, the bar stays and hides
+// page elements like the player controls. Setting the wrapper to
+// fixed makes it work and does not seem to affect other browsers.
+.has_ios_platform #outer_wrapper {
+  height: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+.hidden {
+  position: absolute;
+  top: -1000em;
+  left: -1000em;
+  line-height: 0;
+  height: 0;
+  font-size: 0;
+  color: transparent;
+  border: 0 none;
+}
+
+@import "bourbon";
+@import "./mixins";
+@import "./animations";
+
+@import "./fonts";
+@import "./loading_spinner";
+@import "./entries";
+@import "./page";
+@import "./page_types";
+@import "./page_transitions";
+@import "./slideshow";
+@import "./navigation_bar";
+@import "./navigation_mobile";
+@import "./overview";
+@import "./header";
+@import "./focus_outline";
+@import "./skip_links";
+@import "./hide_text";
+@import "./subshare";
+@import "./delayed_text_fade_in";

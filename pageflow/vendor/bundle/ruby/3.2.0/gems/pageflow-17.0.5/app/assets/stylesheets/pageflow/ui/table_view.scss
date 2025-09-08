@@ -1,0 +1,29 @@
+.table_view {
+  border-spacing: 0 1px;
+  margin-top: -1px;
+
+  th {
+    padding: space(1) space(2);
+    border-bottom: solid 1px var(--ui-on-surface-color-lighter);
+    text-align: left;
+    font-weight: 500;
+  }
+
+  td {
+    padding: space(2);
+  }
+
+  tr:hover td {
+    background-color: var(--ui-selection-color-lighter);
+  }
+
+  tr.is_selected > td {
+    background-color: var(--ui-selection-color-light);
+  }
+
+  tr.blank_slate > td {
+    text-align: center;
+    background-color: transparent;
+    color: var(--ui-on-surface-color-light);
+  }
+}

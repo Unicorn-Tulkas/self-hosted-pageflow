@@ -1,0 +1,41 @@
+.info_box {
+  p {
+    margin-bottom: 1em;
+  }
+
+  &.error {
+    color: var(--ui-on-error-surface-color);
+    background-color: var(--ui-error-surface-color);
+    border-radius: rounded();
+    padding: space(3);
+  }
+
+  .shortcuts {
+    dt {
+      display: block;
+      margin: space(3) 0 space(2.5);
+      position: relative;
+    }
+
+    dd {
+      margin: 0.5em 0 0.5em 6px;
+    }
+
+    kbd {
+      border: solid 1px currentColor;
+      border-radius: 4px;
+      padding: 3px 5px;
+      font-size: 11px;
+    }
+  }
+
+  .inline_help {
+    padding-top: 36px;
+  }
+
+  // Make sure the label is on top when an inline help text is displayed
+  dt:hover .shortcut {
+    z-index: 4;
+    position: relative;
+  }
+}

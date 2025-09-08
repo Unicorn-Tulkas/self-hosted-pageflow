@@ -1,0 +1,24 @@
+.slideshow section.page {
+  &.animate-out-forwards,
+  &.animate-out-backwards {
+    opacity: 0 !important;
+  }
+}
+
+/* IE 9 does not trigger mouse events on div without a background - duh */
+
+.widget_slim_player_controls_present .vjs-control-bar,
+.page .scroller {
+  background-image: url('.');
+}
+
+/* Make sure controls are centered, since translateX(-50%) does not work. */
+
+.widget_classic_player_controls_present .vjs-control-bar {
+  -ms-transform: translate(-50%, 0);
+}
+
+.js .add_info_box {
+  -ms-transform: translate(-50%, 0);
+  max-width: 434px;
+}

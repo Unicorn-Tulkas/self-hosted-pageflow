@@ -1,0 +1,23 @@
+.uncropped_media_wrapper {
+  @extend %pageflow_widget_margin_right !optional;
+
+  position: relative;
+  height: 100%;
+  width: auto;
+  overflow: hidden;
+
+  video::-webkit-media-controls-start-playback-button {
+    // scss-lint:disable ImportantRule
+    // Hide native video play button
+    display: none !important;
+    // scss-lint:enable ImportantRule
+  }
+
+  .vjs-control-bar {
+    display: none !important;
+  }
+
+  .vjs-loading-spinner {
+    display: none !important;
+  }
+}

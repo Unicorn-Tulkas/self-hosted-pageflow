@@ -1,0 +1,33 @@
+.video-js.player {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.js .audio_page {
+  .non_js_audio {
+    display: none;
+  }
+}
+
+.non_js .text_position_right .audio_page {
+  .page_header {
+    margin-left: 0;
+    max-width: initial;
+
+    > * {
+      max-width: 500px;
+      width: 60%;
+      margin-left: auto;
+    }
+  }
+  audio {
+    max-width: 500px;
+    width: 60%;
+    margin-left: auto;
+    display: block;
+  }
+}

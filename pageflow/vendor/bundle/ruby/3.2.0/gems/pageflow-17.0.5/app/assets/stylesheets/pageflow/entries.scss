@@ -1,0 +1,122 @@
+.entry {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+
+  .chapter_title {
+    display: none;
+  }
+
+  .indicator {
+    position: absolute;
+    bottom: 0;
+    width: 400px;
+    max-width: 80%;
+    height: 40px;
+    z-index: 5;
+    pointer-events: none;
+
+    background-color: transparent;
+    opacity: 0;
+    @include transition(opacity 1s ease);
+
+    &.visible.attract,
+    &.animate {
+      @include animation(bounce 0.5s ease);
+
+      .widget_phone_horizontal_slideshow_mode_present & {
+        @include phone {
+          @include animation-name(bounce_x)
+        }
+      }
+    }
+
+    &.visible {
+      opacity: 1;
+      @include transition(opacity 0.5s ease 0.5s);
+
+      &.attract {
+        @include animation-iteration-count(3);
+      }
+    }
+
+    &.hidden {
+      opacity: 0;
+      @include transition(opacity 0.5s ease);
+      top: auto; /* collision with .hidden class from application.css.scss */
+    }
+  }
+
+  .scroll_indicator {
+    cursor: pointer;
+    visibility: hidden;
+    white-space: nowrap;
+
+    @include dir-ltr {
+      @include desktop {
+        left: 8%;
+      }
+    }
+
+    @include dir-rtl {
+      @include desktop {
+        right: 8%;
+      }
+    }
+
+    @include phone {
+      right: 15px;
+    }
+
+    .emulation_mode_phone & {
+      display: none;
+    }
+
+    &.visible {
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    &.faded {
+      opacity: 0;
+      visibility: hidden;
+      @include transition(opacity 2s ease, visibility 2s);
+    }
+
+    &.hidden_for_page {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &.hidden_by_scoll_indicator_mode {
+      display: none;
+    }
+
+    .bigScreen & {
+      opacity: 0;
+      visibility: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    &-swipe,
+    .has_mobile_platform &-scroll {
+      display: none;
+    }
+
+    .has_mobile_platform &-swipe {
+      display: inline;
+    }
+  }
+
+  .hidden_text_indicator {
+    display: none;
+    @include position-start(8%);
+  }
+}
+
+.has_mobile_platform .entry {
+  .hidden_text_indicator {
+    display: block;
+  }
+}

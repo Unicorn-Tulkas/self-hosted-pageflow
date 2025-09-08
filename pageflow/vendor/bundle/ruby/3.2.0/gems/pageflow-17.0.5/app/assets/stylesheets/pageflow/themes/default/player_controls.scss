@@ -1,0 +1,36 @@
+$player-controls-typography: () !default;
+
+// Prevent unstyled player controls from being displayed inside editor
+// while widget presence css classes have not yet been set:
+
+.player_controls-menu_bar,
+%player_controls-container {
+  display: none;
+}
+
+.widget_slim_player_controls_present,
+.widget_classic_player_controls_present {
+  .player_controls-menu_bar,
+  %player_controls-container {
+    display: block;
+  }
+}
+
+@import "./player_controls/shared/menu_bar";
+
+// Define placeholders scoped by widget presence css class:
+
+.widget_classic_player_controls_present {
+  @import "./player_controls/classic";
+}
+
+.widget_slim_player_controls_present {
+  @import "./player_controls/slim";
+}
+
+@import "./player_controls/waveform";
+
+// Extend vjs specific css classes with placeholders:
+
+@import "./player_controls/vjs_mapping";
+@import "./player_controls/widget_margins";

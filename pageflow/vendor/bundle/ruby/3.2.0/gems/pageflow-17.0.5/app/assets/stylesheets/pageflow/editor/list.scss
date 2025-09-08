@@ -1,0 +1,111 @@
+.list {
+  .list_items {
+    margin-bottom: 10px;
+  }
+
+  .list_blank_slate {
+    background-color: var(--ui-primary-color-lightest);
+    border-radius: rounded();
+    color: var(--ui-on-surface-color-light);
+    padding: 10px;
+  }
+
+  .list_item {
+    background-color: var(--ui-primary-color-lightest);
+    border-radius: rounded();
+    overflow: hidden;
+    cursor: default;
+    padding: 10px 10px 10px 45px;
+    position: relative;
+    margin-bottom: 2px;
+  }
+
+  &.with_type_pictogram .list_item {
+    padding-left: 70px;
+  }
+
+  .list_item_thumbnail,
+  .list_item_missing_thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 100%;
+    background-size: cover;
+  }
+
+  .list_item_thumbnail .thumbnail {
+    height: 100%;
+  }
+
+  .list_item_thumbnail .pictogram:before {
+    font-size: 20px;
+  }
+
+  .list_item_missing_thumbnail {
+    @include attention-icon;
+    @include background-icon-center($color: var(--ui-error-color));
+    background-color: var(--ui-error-surface-color);
+    display: none;
+    position: absolute;
+  }
+
+  .list_item.is_invalid .list_item_missing_thumbnail {
+    display: block;
+  }
+
+  .list_item_type_pictogram {
+    display: none;
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 37px;
+    height: 100%;
+    width: 35px;
+    background-repeat: no-repeat;
+    background-position: 3px 45%;
+    opacity: 0.2;
+  }
+
+  &.with_type_pictogram .list_item_type_pictogram {
+    display: block;
+  }
+
+  .list_item_title {
+    padding-right: 30px;
+  }
+
+  .list_item_description {
+    margin-top: 10px;
+    color: var(--ui-on-surface-color-light);
+  }
+
+  .list_item_buttons {
+    position: absolute;
+    right: 4px;
+    top: 3px;
+    white-space: nowrap;
+  }
+
+  .list_item_buttons > a {
+    display: none;
+
+    &.is_available {
+      display: inline-block;
+    }
+  }
+
+  .list_item_edit_button {
+    @include icon-only-button;
+    @include pencil-icon;
+  }
+
+  .list_item_remove_button {
+    @include icon-only-button("destructive");
+    @include trash-icon;
+  }
+
+  .sortable-placeholder {
+    height: 35px;
+  }
+}

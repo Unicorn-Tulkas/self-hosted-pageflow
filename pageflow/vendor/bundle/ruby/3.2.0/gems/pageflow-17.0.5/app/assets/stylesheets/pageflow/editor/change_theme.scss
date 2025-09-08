@@ -1,0 +1,71 @@
+&.change_theme {
+  .box {
+    max-width: 1100px;
+    max-height: 670px;
+    min-width: 600px;
+    min-height: 300px;
+  }
+
+  .themes_panel {
+    width: 330px;
+    overflow: auto;
+  }
+
+  .preview_panel {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.25rem;
+    border-left: solid 1px var(--ui-on-surface-color-lightest);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .use_theme {
+    @include simple-button;
+  }
+
+  .button_or_checkmark {
+    margin-right: 10px;
+    position: absolute;
+    right: 10px;
+  }
+
+  .theme_in_use {
+    font-size: 35px;
+    line-height: space(4);
+  }
+
+  li {
+    position: relative;
+    margin: 0 space(1) space(1) 0;
+    padding: space(4);
+
+    &.active {
+      background-color: var(--ui-selection-color-lighter);
+    }
+  }
+
+  .preview_image_region {
+    position: relative;
+    min-height: 0;
+    flex: 1;
+    margin-top: 1rem;
+  }
+
+  .preview_image {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

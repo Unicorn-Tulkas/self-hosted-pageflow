@@ -1,0 +1,277 @@
+'no':
+  pageflow:
+    public:
+      _language: Norsk
+      audio: Lyd
+      back: Tilbake
+      back_to_chapter: Tilbake til kapittel
+      before_after:
+        drag_hint: Klikk på venstre museknapp og beveg musa mot venstre eller høyre
+        hint: Før/etter
+        leave_view: Gå ut av før/etter
+        start: Start før/etter bildet
+        start_title: Start før/etter bildet
+      chapter: Kapittel
+      chart:
+        consent_vendor_name: 
+        opt_in_prompt: 
+        toggle: Rør
+      close: Lukk
+      close_hint: Lukk hint
+      close_navigation: Lukk navigering
+      close_overview: Lukk oversikten
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      cookie_notice_html: Denne nettsiden bruker cookies. Ved å bruke siden, godtar du vår bruk av cookies. <a href="%{privacyLinkUrl}" target="_blank">Les mer</a>
+      deprecated_browser: "<p>Din nettleser er utdatert og innholdet på siden virker kanskje ikke som det skal. Vi anbefaler at du oppgraderer nettleseren til nyeste versjon</p>"
+      dismiss_cookie_notice: Skjul
+      embedded_video:
+        consent:
+          vimeo:
+            vendor_name: 
+          youtube:
+            vendor_name: 
+        leave_video: Gå ut av video
+        opt_in_prompt: 
+      enlarge_view: Utvid
+      enter_fullscreen: Fullskjerm
+      first_page: Første side
+      forward: Fram
+      fullscreen: Fullskjerm
+      goto_first_page: Gå til første side
+      goto_top: Gå til første side
+      hide_text: Skjul tekst
+      home: Start
+      imprint: Merke
+      javascript_hint: Denne siden bruker Javascript for å bedre opplevelsen for brukeren. Sjekk om din nettleser støtter JavaScript eller om funksjonen er skrudd av.
+      languages:
+        ar: Arabisk
+        cs: Tjekkisk
+        de: Tysk
+        dk: Dansk
+        el: Gresk
+        en: Engelsk
+        es: Spansk
+        fi: Finsk
+        fr: Fransk
+        fy: Frisisk
+        hi: Hindu
+        it: Italiensk
+        ja: Japansk
+        lb: Luxembourgsk
+        nb: Norsk Bokmål
+        nl: Nederlandsk
+        nn: Norsk Nynorsk
+        'no': Norsk
+        pl: Polsk
+        pt: Portugisisk
+        rm: Romani
+        ru: Russisk
+        se: Samisk
+        sr: Serbisk
+        sv: Svensk
+        tr: Tyrkisk
+        unknown: "(Ukjent)"
+        zh: Kinesisk
+      leave_fullscreen: Avslutt fullskjerm
+      lets_go: Gå
+      logo: Logo
+      media_quality: Kvalitet
+      mute_off: Slå på lyd
+      mute_on: Slå av lyd
+      navigate_top: Gå til første side
+      navigation: Navigasjon
+      new_pages_box:
+        additional_pages_html: "..og<span></span> mer"
+        description: Siden sist besøk, har flere sider blitt lagt til denne fortellingen
+        title: Nye sider
+      notice: Merk
+      open_audio: Åpne lyd
+      open_navigation: Åpne navigering
+      open_overview: Åpne oversikt
+      open_video: Åpne video
+      overview: Oversikt
+      panorama:
+        close: Lukk 360° visning og vis tekst
+        start: Start 360° panorama
+      play_video: Spill video
+      privacy_notice: Personvern
+      read_more: 
+      scroll_back_indicator: Klikk for å legge inn tekst
+      scroll_down: Scroll nedover
+      scroll_hint: Bruk hjulet på musen eller pilene på tastaturet for å navigere mellom sidene.
+      scroll_indicator: Scroll nedover for å fortsette
+      scroll_left: Scroll til venstre
+      scroll_right: Scroll til høyre
+      scroll_up: Scroll oppover
+      share: Del
+      share_in_telegram: Del i Telegram
+      share_in_whats_app: Del i WhatsApp
+      share_on_facebook: Del på Facebook
+      share_on_google: Del på Google
+      share_on_linked_in: Del på LinkedIn
+      share_on_twitter: Del på X
+      share_this_entry: Denne artikkelen
+      share_this_page: Denne siden
+      share_via_email: Del på epost
+      show_home: Start
+      show_text: Vis tekst
+      skip_links_content: Gå til innhold
+      skip_links_navigation: Gå til menyen
+      skip_links_top_navigation: Gå til hovedmenyen
+      sound_hint: Denne artikkelen inneholder video og lyd. Sjekk at høytalerne er skrudd på.
+      start_audio: Start lyd nå
+      start_video: Start video nå
+      swipe_hint: Sveip mellom sider
+      swipe_indicator: Sveip for å fortsette
+      swipe_to_continue: Sveip for å fortsette
+      text_track_modes:
+        auto: Automatisk (%{label})
+        auto_off: Automatisk (Av)
+        none: Ingen
+      text_tracks: Undertekster
+      third_party_embed_consent:
+        opt_in:
+          confirm: 
+          more_information: 
+        opt_out_info:
+          prompt_html: 
+          prompt_link: 
+      toggle_info_box: Faktaboks
+      video: Video
+      video_qualities:
+        annotations:
+          4k: 4K
+          fullhd: HD
+          medium: HD
+        labels:
+          4k: 2160p
+          auto: Auto
+          fullhd: 1080p
+          medium: 720p
+      volume: Volum
+      vr:
+        no_vr:
+          link: Se video i Youtube-appen
+          text: 360° videoer kan ikke vises i din nettleser.
+        select_quality: Velg videokvalitet
+        start: Se 360° video
+        start_cardboard: Se oversikt over kortene
+        video_qualities:
+          4k: 2160s
+          fullhd: 1080s
+          high: 720s
+        video_quality_annotations:
+          4k: 4k
+          fullhd: HD
+          high: HD
+  pageflow_scrolled:
+    public:
+      chart:
+        default_title: 
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      enter_fullscreen: 
+      exit_fullscreen: 
+      image_rights: 
+      inline_file_rights_labels:
+        after: 
+        atmo: 
+        audio: 
+        before: 
+        image: 
+        poster: 
+        video: 
+      js_required: 
+      languages:
+        ar: 
+        cs: 
+        de: 
+        dk: 
+        el: 
+        en: 
+        es: 
+        fi: 
+        fr: 
+        fy: 
+        hi: 
+        it: 
+        ja: 
+        lb: 
+        nb: 
+        nl: 
+        nn: 
+        'no': 
+        pl: 
+        pt: 
+        rm: 
+        ru: 
+        se: 
+        sr: 
+        sv: 
+        tr: 
+        unknown: 
+        zh: 
+      media: 
+      more: 
+      navigation:
+        chapter: 
+        close_mobile_menu: 
+        language: 
+        legal_info: 
+        mute: 
+        open_mobile_menu: 
+        share: 
+        unmute: 
+      navigation_skip_links:
+        content: 
+      next: 
+      player_controls:
+        pause: 
+        play: 
+        progress: 
+        quality: 
+        text_tracks: 
+      previous: 
+      sound_disclaimer:
+        help_muted: 
+        help_unmuted: 
+      text_track_modes:
+        auto: 
+        auto_off: 
+        none: 
+      third_party_consent:
+        confirm: 
+        opt_in_prompt:
+          datawrapper: 
+          facebook: 
+          tiktok: 
+          twitter: 
+          vimeo: 
+          youtube: 
+        opt_out:
+          prompt: 
+          prompt_link: 
+      unsupported_browser: 
+      video_qualities:
+        annotations:
+          4k: 
+          fullhd: 
+          medium: 
+        labels:
+          4k: 
+          auto: 
+          fullhd: 
+          medium: 

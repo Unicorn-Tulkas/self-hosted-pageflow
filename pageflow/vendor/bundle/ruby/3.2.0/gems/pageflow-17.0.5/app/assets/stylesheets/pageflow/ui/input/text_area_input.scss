@@ -1,0 +1,189 @@
+.text_area_input .toolbar {
+  margin-left: -2px;
+  margin-top: 3px;
+  position: relative;
+
+  > a {
+    @include background-icon-center($color: var(--ui-on-surface-color-light), $font-size: 12px);
+    @include hidden-text;
+    margin: 0;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: top;
+    background-color: var(--ui-primary-color-lightest);
+    border-radius: rounded(sm);
+
+    &:hover {
+      background-color: var(--ui-primary-color-lighter);
+    }
+  }
+
+  > a.wysihtml5-command-active {
+    background-color: var(--ui-primary-color-light);
+    @include background-icon-color(var(--ui-on-primary-color));
+  }
+
+  [data-wysihtml5-command="bold"] {
+    @include font-bold-icon;
+  }
+
+  [data-wysihtml5-command="italic"] {
+    @include font-italic-icon;
+  }
+
+  [data-wysihtml5-command="underline"] {
+    @include font-underline-icon;
+  }
+
+  [data-wysihtml5-command="insertOrderedList"] {
+    @include font-list-ol-icon;
+  }
+
+  [data-wysihtml5-command="insertUnorderedList"] {
+    @include font-list-ul-icon;
+  }
+
+  [data-wysihtml5-command="createLink"] {
+    @include link-icon;
+  }
+
+  .link_dialog.for_existing_link {
+    [data-wysihtml5-dialog-action="cancel"] {
+      display: none;
+    }
+
+    [data-wysihtml5-command="removeLink"] {
+      display: block;
+    }
+  }
+
+  [data-wysihtml5-command="removeLink"] {
+    display: none;
+    float: right;
+    margin-top: 8px;
+  }
+
+  .wysihtml5-command-dialog-opened {
+    margin-bottom: 133px;
+  }
+
+  &.fragment_link_panel_active {
+    .wysihtml5-command-dialog-opened {
+      margin-bottom: 143px;
+    }
+
+    .fragment_link_panel {
+      display: block;
+    }
+
+    .url_link_panel {
+      display: none;
+    }
+  }
+
+  .fragment_link_panel {
+    display: none;
+    margin-bottom: space(2);
+  }
+
+  .url_link_panel {
+    label span {
+      display: inline-block;
+      width: 84%;
+      vertical-align: middle;
+      line-height: 15px;
+    }
+  }
+
+  .link_type_select {
+    margin-bottom: space(2);
+
+    label {
+      display: inline;
+      margin-right: space(2);
+    }
+  }
+
+  .open_in_new_tab_section {
+    position: relative;
+    margin-top: space(2);
+    padding-right: 20px;
+
+    label {
+      z-index: 4;
+    }
+  }
+
+  .internal {
+    display: none;
+  }
+
+  label input {
+    margin-right: space(1);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .dialog {
+    box-shadow: var(--ui-box-shadow);
+    position: absolute;
+    top: 30px;
+    left: -2px;
+    right: -6px;
+    padding: space(4);
+    border: solid 1px var(--ui-on-surface-color-lighter);
+    background-color: var(--ui-surface-color);
+    z-index: 10;
+
+    .button {
+      @include simple-button;
+      padding: 5px 10px;
+      margin-top: 0.5rem;
+    }
+
+    [data-wysihtml5-dialog-action="save"] {
+      @include simple-button("primary");
+      padding: 5px 10px;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .dialog:before {
+    content: " ";
+    position: absolute;
+    top: -20px;
+    left: 97px;
+    pointer-events: none;
+    border-top: solid 10px transparent;
+    border-right: solid 10px transparent;
+    border-bottom: solid 10px var(--ui-on-surface-color-lighter);
+    border-left: solid 10px transparent;
+  }
+
+  .dialog:after {
+    content: " ";
+    position: absolute;
+    top: -18px;
+    left: 98px;
+    pointer-events: none;
+    border-top: solid 9px transparent;
+    border-right: solid 9px transparent;
+    border-bottom: solid 9px var(--ui-surface-color);
+    border-left: solid 9px transparent;
+  }
+
+  // Hide inline help text that only makes sense when editing a
+  // Pageflow entry outside the editor
+  .open_in_new_tab_section .inline_help {
+    display: none;
+  }
+}
+
+.editor .text_area_input {
+  .open_in_new_tab_section .inline_help {
+    display: block;
+  }
+}

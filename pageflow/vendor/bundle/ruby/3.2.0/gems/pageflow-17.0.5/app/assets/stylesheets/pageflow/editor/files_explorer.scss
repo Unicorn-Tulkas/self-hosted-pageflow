@@ -1,0 +1,55 @@
+.files_explorer {
+  .box {
+    min-width: 500px;
+    min-height: 400px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .entries_panel,
+  .files_panel {
+    overflow: auto;
+  }
+
+  .entries_panel {
+    width: 20%;
+    padding: 0 space(1) 0 space(1);
+    margin: 0 space(1) 0 space(-1);
+
+    li.blank_slate {
+      text-align: center;
+      padding: 10px 5px 20px 5px;
+      color: var(--ui-on-surface-color-light);
+    }
+  }
+
+  .files_panel {
+    flex: 1;
+    border-left: solid 1px var(--ui-on-surface-color-lighter);
+    padding-left: space(4);
+
+    .tabs_view {
+      height: 100%;
+      position: relative;
+
+      .tabs_view-container {
+        @include position(absolute, 37px  0 0 0);
+        height: auto;
+      }
+    }
+  }
+
+  .close {
+    @include cancel-icon;
+    @include icon-button;
+  }
+
+  .ok {
+    @include check-icon;
+    @include icon-button("primary");
+  }
+}

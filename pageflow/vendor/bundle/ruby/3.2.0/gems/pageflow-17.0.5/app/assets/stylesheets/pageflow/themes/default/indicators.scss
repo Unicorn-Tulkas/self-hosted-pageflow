@@ -1,0 +1,40 @@
+////
+/// @group indicators
+////
+
+/// Type of icons to use:
+///
+/// - `"default"`: Use images from default theme.
+///
+/// - `"sprite"`: Custom icons from `icon_sprite.png` in theme
+///   directory.
+///
+/// - `"icon_font"`: Use font icons for icon.
+$indicator-icons: "icon_font" !default;
+
+/// Display the scroll indicator at the bottom of the page.
+$display-scroll-indicator: true !default;
+
+@import "./indicators/icons/default";
+@import "./indicators/icons/icon_font";
+@import "./indicators/icons/sprite";
+@import "./indicators/typography";
+@import "./indicators/colors";
+@import "./indicators/widget_margins";
+
+@if $indicator-icons == "sprite" {
+  @include indicators-icons-sprite;
+} @else if $indicator-icons == "icon_font" {
+  @include indicators-icons-icon-font;
+} @else {
+  @include indicators-icons-default;
+}
+
+@if not $display-scroll-indicator {
+  .scroll_indicator {
+    // Override inline style used to display scroll indicator
+    // scss-lint:disable ImportantRule
+    display: none !important;
+    // scss-lint:enable ImportantRule
+  }
+}

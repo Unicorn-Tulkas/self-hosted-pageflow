@@ -1,0 +1,23 @@
+@if not $pageflow-custom-admin-theme {
+  #wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .action_items {
+    form,
+    div {
+      display: inline;
+    }
+
+    [type="submit"] {
+      @include light-button;
+      padding: 12px 17px 10px;
+      margin: 0;
+    }
+  }
+
+  .blank_slate_container {
+    margin: 10px 0;
+  }
+}

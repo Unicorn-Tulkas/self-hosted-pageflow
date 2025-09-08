@@ -1,0 +1,287 @@
+de:
+  pageflow:
+    public:
+      _language: Deutsch
+      audio: Audio
+      back: Zurück
+      back_to_chapter: Zurück zu Kapitel
+      before_after:
+        drag_hint: Linke Maustaste drücken und nach links oder rechts ziehen
+        hint: Vorher/Nacher Ansicht
+        leave_view: Vorher/Nachher-Ansicht verlassen
+        start: Vorher/Nachher-Ansicht starten
+        start_title: Vorher/Nachher-Ansicht starten
+      chapter: Kapitel
+      chart:
+        consent_vendor_name: Datawrapper
+        opt_in_prompt: Ich bin damit einverstanden, dass mir Diagramme von Datawrapper angezeigt werden.
+        toggle: Ansicht vergrößern bzw. verkleinern
+      close: Schließen
+      close_hint: Hinweis schließen
+      close_navigation: Navigation schließen
+      close_overview: Übersicht schließen
+      consent_accept_all: Alle akzeptieren und schließen
+      consent_configure: Mehr Informationen
+      consent_deny_all: Ablehnen
+      consent_expand_vendor: Mehr Informationen
+      consent_no_vendors: Es werden im Moment keine Drittanbieter verwendet.
+      consent_prompt_html: |-
+        Diese Website nutzt Technologien von Drittanbietern.
+        Wir bitten Sie hiermit um Erlaubnis, diese Technologien zu verwenden.
+        Sie können Ihre Einwilligung später jederzeit auf unserer Seite zur
+        <a href="%{privacyLinkUrl}" target="_blank">Datenschutzerklärung</a>
+        ändern oder widerrufen.
+      consent_save: Auswahl speichern
+      consent_settings: Privatsphäre-Einstellungen
+      cookie_notice_html: Diese Webseite verwendet Cookies. Durch die Nutzung der Website wird der Verwendung von Cookies zugestimmt. <a href="%{privacyLinkUrl}" target="_blank">Mehr erfahren</a>
+      deprecated_browser: "<p>Liebe Nutzer,</p><p>leider nutzen Sie eine veraltete Version Ihres Browsers. Deshalb können die an dieser Stelle vorgesehenen Inhalte nicht korrekt dargestellt werden. Bitte aktualisieren Sie auf eine aktuelle Version.</p>"
+      dismiss_cookie_notice: Ausblenden
+      embedded_video:
+        consent:
+          vimeo:
+            vendor_name: Vimeo Videos
+          youtube:
+            vendor_name: YouTube Videos
+        leave_video: Eingebettetes Video verlassen
+        opt_in_prompt: Ich bin damit einverstanden, dass mir %{vendor} gezeigt werden.
+      enlarge_view: Ansicht vergrößern
+      enter_fullscreen: Vollbilddarstellung
+      first_page: Erste Seite
+      forward: Vorwärts
+      fullscreen: Vollbild
+      goto_first_page: Zur ersten Seite
+      goto_top: Zum Anfang
+      hide_text: Text ausblenden
+      home: Startseite
+      imprint: Impressum
+      javascript_hint: Zur korrekten Anzeige der Seite benötigen Sie JavaScript.
+      languages:
+        ar: Arabisch
+        cs: Tschechisch
+        de: Deutsch
+        dk: Dänisch
+        el: Griechisch
+        en: Englisch
+        es: Spanisch
+        fi: Finnisch
+        fr: Französisch
+        fy: Friesisch
+        hi: Hindi
+        it: Italienisch
+        ja: Japanisch
+        lb: Luxemburgisch
+        nb: Bokmål
+        nl: Holländisch
+        nn: Nynorsk
+        'no': Norwegisch
+        pl: Polnisch
+        pt: Portugiesisch
+        rm: Rätoromanisch
+        ru: Russisch
+        se: Nordsamisch
+        sr: Serbisch
+        sv: Schwedisch
+        tr: Türkisch
+        unknown: "(Unbekannt)"
+        zh: Chinesisch
+      leave_fullscreen: Vollbilddarstellung beenden
+      lets_go: Los geht's
+      logo: Logo
+      media_quality: Qualität
+      mute_off: Ton ein
+      mute_on: Ton aus
+      navigate_top: Zum Anfang
+      navigation: Navigation
+      new_pages_box:
+        additional_pages_html: "...und <span></span> weitere"
+        description: 'Seit dem letzten Besuch wurden diesem Pageflow neue Seiten hinzugefügt:'
+        title: Neue Seiten
+      notice: Hinweis
+      open_audio: Audio öffnen
+      open_navigation: Navigation öffnen
+      open_overview: Übersicht öffnen
+      open_video: Video öffnen
+      overview: Übersicht
+      panorama:
+        close: 360°-Ansicht verlassen und Text einblenden
+        start: 360°-Ansicht starten
+      play_video: Video ansehen
+      privacy_notice: Datenschutz
+      read_more: Weiterlesen
+      scroll_back_indicator: " "
+      scroll_down: Runter scrollen
+      scroll_hint: Mit dem Mausrad oder den Pfeiltasten auf der Tastatur wird die jeweils nächste Kapitelseite aufgerufen.
+      scroll_indicator: Scrollen, um weiterzulesen
+      scroll_left: Nach links scrollen
+      scroll_right: Nach rechts scrollen
+      scroll_up: Hoch scrollen
+      share: Teilen
+      share_in_telegram: In Telegram teilen
+      share_in_whats_app: In WhatsApp teilen
+      share_on_facebook: Auf Facebook teilen
+      share_on_google: Auf Google teilen
+      share_on_linked_in: Auf LinkedIn teilen
+      share_on_twitter: Auf X teilen
+      share_this_entry: Diesen Beitrag
+      share_this_page: Diese Seite
+      share_via_email: Per Email teilen
+      show_home: Zur Startseite
+      show_text: Text einblenden
+      skip_links_content: Zum Inhalt
+      skip_links_navigation: Zur Seitennavigation
+      skip_links_top_navigation: Zur Dachnavigation
+      sound_hint: Für dieses multimediale Reportage-Format nutzen wir neben Texten und Fotos auch Audios und Videos. Daher sollten die Lautsprecher des Systems eingeschaltet sein.
+      start_audio: Audio jetzt starten
+      start_video: Video jetzt starten
+      swipe_hint: Durch Wischen wird die jeweils nächste Kapitelseite aufgerufen.
+      swipe_indicator: Wischen, um Text einzublenden
+      swipe_to_continue: Wischen, um weiterzulesen
+      text_track_modes:
+        auto: Auto (%{label})
+        auto_off: Auto (Aus)
+        none: Aus
+      text_tracks: Untertitel
+      third_party_embed_consent:
+        opt_in:
+          confirm: Einverstanden
+          more_information: Mehr Informationen
+        opt_out_info:
+          prompt_html: Um externe Dienste auszuschalten, %{link} Einstellungen ändern.
+          prompt_link: hier
+      toggle_info_box: Info Box ein-/ausblenden
+      video: Video
+      video_qualities:
+        annotations:
+          4k: 4K
+          fullhd: HD
+          medium: HD
+        labels:
+          4k: 2160p
+          auto: Automatisch
+          fullhd: 1080p
+          medium: 720p
+      volume: Lautstärke
+      vr:
+        no_vr:
+          link: Video in der YouTube-App ansehen
+          text: 360°-Videos können in ihrem Browser nicht angezeigt werden.
+        select_quality: Video-Qualität auswählen
+        start: 360° Video ansehen
+        start_cardboard: Cardboard-Modus starten
+        video_qualities:
+          4k: 2160s
+          fullhd: 1080s
+          high: 720s
+        video_quality_annotations:
+          4k: 4K
+          fullhd: HD
+          high: HD
+  pageflow_scrolled:
+    public:
+      chart:
+        default_title: Interaktives Diagramm
+      consent_accept_all: Alle akzeptieren und schließen
+      consent_configure: Mehr Informationen
+      consent_deny_all: Ablehnen
+      consent_expand_vendor: Mehr Informationen
+      consent_no_vendors: Es werden im Moment keine Drittanbieter verwendet.
+      consent_prompt_html: |-
+        Diese Website nutzt Technologien von Drittanbietern.
+        Wir bitten Sie hiermit um Erlaubnis, diese Technologien zu verwenden.
+        Sie können Ihre Einwilligung später jederzeit auf unserer Seite zur
+        <a href="%{privacyLinkUrl}" target="_blank">Datenschutzerklärung</a>
+        ändern oder widerrufen.
+      consent_save: Auswahl speichern
+      consent_settings: Privatsphäre-Einstellungen
+      enter_fullscreen: Vollbild
+      exit_fullscreen: Vollbild verlassen
+      image_rights: Bildrechte
+      inline_file_rights_labels:
+        after: Nachher-Bild
+        atmo: Atmo
+        audio: Audio
+        before: Vorher-Bild
+        image: Bild
+        poster: Poster
+        video: Video
+      js_required: Bitte aktivieren Sie JavaScript, um diese Website korrekt anzuzeigen.
+      languages:
+        ar: Arabisch
+        cs: Tschechisch
+        de: Deutsch
+        dk: Dänisch
+        el: Griechisch
+        en: Englisch
+        es: Spanisch
+        fi: Finnisch
+        fr: Französisch
+        fy: Friesisch
+        hi: Hindi
+        it: Italienisch
+        ja: Japanisch
+        lb: Luxemburgisch
+        nb: Bokmål
+        nl: Holländisch
+        nn: Nynorsk
+        'no': Norwegisch
+        pl: Polnisch
+        pt: Portugiesisch
+        rm: Rätoromanisch
+        ru: Russisch
+        se: Nordsamisch
+        sr: Serbisch
+        sv: Schwedisch
+        tr: Türkisch
+        unknown: "(Unbekannt)"
+        zh: Chinesisch
+      media: Medien
+      more: Mehr
+      navigation:
+        chapter: Kapitel %{number}
+        close_mobile_menu: Kapitelübersicht schließen
+        language: Sprache
+        legal_info: Impressum
+        mute: Ton stummschalten
+        open_mobile_menu: Kapitelübersicht öffnen
+        share: Teilen
+        unmute: Ton aktivieren
+      navigation_skip_links:
+        content: Zum Inhalt
+      next: Nächster
+      player_controls:
+        pause: Pausieren
+        play: Wiedergeben
+        progress: 'Zeitachse. Verstrichene Zeit: %{currentTime}. Gesamtzeit: %{duration}'
+        quality: Qualität
+        text_tracks: Untertitel
+      previous: Vorheriger
+      sound_disclaimer:
+        help_muted: Diese Seite wirkt am besten mit eingeschaltetem Ton. Klicke hier, um den Ton zu aktivieren.
+        help_unmuted: Der Ton kann über das Lautsprecher-Symbol in der Navigationsleiste wieder deaktiviert werden.
+      text_track_modes:
+        auto: Auto (%{label})
+        auto_off: Auto (Aus)
+        none: Aus
+      third_party_consent:
+        confirm: Einverstanden
+        opt_in_prompt:
+          datawrapper: Ich bin damit einverstanden, dass mir Diagramme von Datawrapper angezeigt werden.
+          facebook: Ich bin damit einverstanden, dass mir Facebook Videos gezeigt werden.
+          tiktok: Ich bin damit einverstanden, dass Inhalte von TikTok angezeigt werden.
+          twitter: Ich bin damit einverstanden, dass Inhalte von X angezeigt werden.
+          vimeo: Ich bin damit einverstanden, dass mir Vimeo Videos gezeigt werden.
+          youtube: Ich bin damit einverstanden, dass mir YouTube Videos gezeigt werden.
+        opt_out:
+          prompt: Um externe Dienste auszuschalten, %{link} klicken.
+          prompt_link: hier
+      unsupported_browser: Diese Website verwendet Funktionen, die Ihr Browser nicht unterstützt. Bitte aktualisieren Sie Ihren Browser auf eine aktuelle Version.
+      video_qualities:
+        annotations:
+          4k: 4K
+          fullhd: HD
+          medium: HD
+        labels:
+          4k: 2160p
+          auto: Automatisch
+          fullhd: 1080p
+          medium: 720p

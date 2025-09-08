@@ -1,0 +1,277 @@
+pl-PL:
+  pageflow:
+    public:
+      _language: Polski
+      audio: Audio
+      back: Powrót
+      back_to_chapter: Powrót do rozdziału
+      before_after:
+        drag_hint: 
+        hint: Przed/po widoku
+        leave_view: Po podgląd i pokaż  tekst
+        start: Start widok przed/po
+        start_title: Start widok przed/po
+      chapter: Rozdział
+      chart:
+        consent_vendor_name: 
+        opt_in_prompt: 
+        toggle: Powiększ lub pomniejsz podgląd
+      close: Zamknij
+      close_hint: Zamknij wskazówkę
+      close_navigation: Zamknij nawigację
+      close_overview: Zamknij przegląd
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      cookie_notice_html: 
+      deprecated_browser: "<p> Szanowny uzytkowniku, </p><p>niestety używasz starej wersji przeglądarki, dlatego przygotowane treści nie  mogą być pokazane prawidłowo.  Prosimy zaktualizować do nowej wersji.</p>"
+      dismiss_cookie_notice: 
+      embedded_video:
+        consent:
+          vimeo:
+            vendor_name: 
+          youtube:
+            vendor_name: 
+        leave_video: Opuść wbudowane video
+        opt_in_prompt: 
+      enlarge_view: Powiększ podgląd
+      enter_fullscreen: Pełny ekran
+      first_page: Pierwsza strona
+      forward: Do przodu
+      fullscreen: Pełny ekran
+      goto_first_page: Do pierwszej strony
+      goto_top: Do początku
+      hide_text: Ukryj tekst
+      home: Strona główna
+      imprint: Nota
+      javascript_hint: Dla poprawnego działania strony potrzebujesz JavaScript.
+      languages:
+        ar: 
+        cs: 
+        de: 
+        dk: 
+        el: 
+        en: 
+        es: 
+        fi: 
+        fr: 
+        fy: 
+        hi: 
+        it: 
+        ja: 
+        lb: 
+        nb: 
+        nl: 
+        nn: 
+        'no': 
+        pl: 
+        pt: 
+        rm: 
+        ru: 
+        se: 
+        sr: 
+        sv: 
+        tr: 
+        unknown: 
+        zh: 
+      leave_fullscreen: Zakończ odtwarzanie w pełnym ekranie
+      lets_go: Rozpocznij
+      logo: Logo
+      media_quality: 
+      mute_off: Włącz dźwięk
+      mute_on: Wyłącz dźwięk
+      navigate_top: Do początku
+      navigation: Nawigacja
+      new_pages_box:
+        additional_pages_html: "...oraz <span></span>kolejne"
+        description: 'Od ostatniej wizyty to Pageflow zostały dodane nowe strony:'
+        title: Nowe strony
+      notice: Wskazówka
+      open_audio: 
+      open_navigation: Otwórz nawigację
+      open_overview: Otwórz przegląd
+      open_video: 
+      overview: Przegląd
+      panorama:
+        close: Opuść widok 360° i pokaż tekst
+        start: Otwórz widok 360°
+      play_video: Odtwórz video
+      privacy_notice: 
+      read_more: 
+      scroll_back_indicator: Przewijanie wstecz
+      scroll_down: Przewiń niżej
+      scroll_hint: Poprzez mysz lub strzałki na klawiaturze  zostanie przywołany kolejny rodział strony.
+      scroll_indicator: Przewiń, aby czytać dalej
+      scroll_left: Przewiń w lewo
+      scroll_right: Przewiń w prawo
+      scroll_up: Przewiń do góry
+      share: Udostępnij
+      share_in_telegram: 
+      share_in_whats_app: 
+      share_on_facebook: Udostępnij w facebook
+      share_on_google: Udostępnij w Google+
+      share_on_linked_in: 
+      share_on_twitter: Udostępnij w X
+      share_this_entry: Udsotępnij
+      share_this_page: Udostępnij stronę
+      share_via_email: 
+      show_home: Do strony głównej
+      show_text: Pokaż tekst
+      skip_links_content: Do treści
+      skip_links_navigation: Do nawigacji strony
+      skip_links_top_navigation: Do nawigacji górnej
+      sound_hint: W tym formacie reportażu udostępniamy obok zdjęć i treści również dźwięk , dlatego prosimy o odpowiednie ustawienie głośników w systemie.
+      start_audio: Włącz dźwięk
+      start_video: Rozpocznij video
+      swipe_hint: Przesunięcie spowoduje przejście do kolejnego rozdziału
+      swipe_indicator: Przesuń aby zobaczyć tekst
+      swipe_to_continue: 
+      text_track_modes:
+        auto: 
+        auto_off: 
+        none: 
+      text_tracks: 
+      third_party_embed_consent:
+        opt_in:
+          confirm: 
+          more_information: 
+        opt_out_info:
+          prompt_html: 
+          prompt_link: 
+      toggle_info_box: 
+      video: Video
+      video_qualities:
+        annotations:
+          4k: 
+          fullhd: 
+          medium: 
+        labels:
+          4k: 
+          auto: 
+          fullhd: 
+          medium: 
+      volume: głośność
+      vr:
+        no_vr:
+          link: 
+          text: 
+        select_quality: 
+        start: 
+        start_cardboard: 
+        video_qualities:
+          4k: 
+          fullhd: 
+          high: 
+        video_quality_annotations:
+          4k: 
+          fullhd: 
+          high: 
+  pageflow_scrolled:
+    public:
+      chart:
+        default_title: 
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      enter_fullscreen: 
+      exit_fullscreen: 
+      image_rights: 
+      inline_file_rights_labels:
+        after: 
+        atmo: 
+        audio: 
+        before: 
+        image: 
+        poster: 
+        video: 
+      js_required: 
+      languages:
+        ar: 
+        cs: 
+        de: 
+        dk: 
+        el: 
+        en: 
+        es: 
+        fi: 
+        fr: 
+        fy: 
+        hi: 
+        it: 
+        ja: 
+        lb: 
+        nb: 
+        nl: 
+        nn: 
+        'no': 
+        pl: 
+        pt: 
+        rm: 
+        ru: 
+        se: 
+        sr: 
+        sv: 
+        tr: 
+        unknown: 
+        zh: 
+      media: 
+      more: 
+      navigation:
+        chapter: 
+        close_mobile_menu: 
+        language: 
+        legal_info: 
+        mute: 
+        open_mobile_menu: 
+        share: 
+        unmute: 
+      navigation_skip_links:
+        content: 
+      next: 
+      player_controls:
+        pause: 
+        play: 
+        progress: 
+        quality: 
+        text_tracks: 
+      previous: 
+      sound_disclaimer:
+        help_muted: 
+        help_unmuted: 
+      text_track_modes:
+        auto: 
+        auto_off: 
+        none: 
+      third_party_consent:
+        confirm: 
+        opt_in_prompt:
+          datawrapper: 
+          facebook: 
+          tiktok: 
+          twitter: 
+          vimeo: 
+          youtube: 
+        opt_out:
+          prompt: 
+          prompt_link: 
+      unsupported_browser: 
+      video_qualities:
+        annotations:
+          4k: 
+          fullhd: 
+          medium: 
+        labels:
+          4k: 
+          auto: 
+          fullhd: 
+          medium: 

@@ -1,0 +1,108 @@
+////
+/// @group default-navigation-bar
+////
+
+/// Type of icons to use:
+///
+/// - `"icon-font"`: Circular buttons with font awesome icons.
+///
+/// - `"sprite"`: Custom icons from `icon_sprite.png` in theme
+///   directory.
+$navigation-icons: $widget-icons !default;
+
+/// @see $default-widget-icon-font-options
+$navigation-icon-font-options: () !default;
+
+/// Possible options:
+///
+/// - `use-fullscreen-exit-icon`: Use fullscreen exit icon for active
+///   fullscreen button. By default the active state of the fullscreen
+///   icon is used.
+$navigation-sprite-options: () !default;
+
+/// Display button to toggle header
+$navigation-display-header-button: false !default;
+
+/// Display social share menu.
+$navigation-display-share-button: true !default;
+
+/// Display button to hide the content text.
+$navigation-display-hide-text-button: true !default;
+
+/// Default background color for widget.
+$navigation-background-color: $widget-background-color !default;
+
+/// Background tile image to display on bar and menu boxes.
+$navigation-background-image: null !default;
+
+/// Default text color for widget.
+$navigation-text-color: $widget-text-color !default;
+
+/// Background color of the navigation bar.
+$navigation-bar-background-color: $navigation-background-color !default;
+
+/// Transparency of navigation bar.
+$navigation-opacity: 0.9 !default;
+
+/// Color used to highlight the current page.
+$navigation-current-page-marker-color: $main-color !default;
+
+@import "./navigation/widget_margin";
+
+.navigation {
+  @import "./navigation/dimensions";
+  @import "./navigation/icons/icon_font";
+  @import "./navigation/icons/sprite";
+  @import "./navigation/menu_boxes";
+  @import "./navigation/credits";
+  @import "./navigation/separator_lines";
+  @import "./navigation/volume_control";
+  @import "./navigation/typography";
+
+  @if $navigation-icons == "sprite" {
+    @include navigation-icons-sprite(
+      $navigation-sprite-options...
+    );
+  } @else {
+    @include navigation-icons-icon-font(
+      widget-icon-font-options($navigation-icon-font-options)...
+    );
+  }
+
+  a {
+    color: $navigation-text-color;
+  }
+
+  .navigation_top.deactivated {
+    pointer-events: none;
+  }
+}
+
+.navigation.js .scroller ul a.active img, .navigation_mobile .wrapper a.active {
+  border-left: 5px solid $navigation-current-page-marker-color;
+}
+
+.navigation .scroller a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.navigation .navigation_bar_top,
+.navigation.js .scroller:after,
+.navigation .navigation_bar_bottom,
+.navigation .scroller a:after {
+  background-color: $navigation-bar-background-color;
+  background-image: $navigation-background-image;
+}
+
+body.has_no_phone_platform {
+  a.share.whats_app,
+  a.share.telegram {
+    display: none !important;
+  }
+}

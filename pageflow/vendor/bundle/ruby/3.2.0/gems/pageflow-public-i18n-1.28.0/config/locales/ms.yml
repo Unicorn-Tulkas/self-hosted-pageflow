@@ -1,0 +1,277 @@
+ms:
+  pageflow:
+    public:
+      _language: Bahasa Melayu
+      audio: Audio
+      back: Kembali
+      back_to_chapter: Kebali ke bab
+      before_after:
+        drag_hint: 
+        hint: Paparan sebelum/selepas
+        leave_view: Tinggalkan paparan sebelum/selepas
+        start: Mulakan paparan sebelum/selepas
+        start_title: Mulakan paparan sebelum/selepas
+      chapter: Bab
+      chart:
+        consent_vendor_name: 
+        opt_in_prompt: 
+        toggle: Togol
+      close: 'Tutup '
+      close_hint: Tutup petua
+      close_navigation: Tutup navigasi
+      close_overview: Tutup gambaran keseluruhan
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      cookie_notice_html: 
+      deprecated_browser: "<p>Pelayar anda tidak dikemaskini dan halaman ini mungkin tidak berfungsi seperti yang sepatutnya. Kami mengesyorkan supaya anda menaiktaraf pelayar anda kepada versi yang terkini.</p>"
+      dismiss_cookie_notice: 
+      embedded_video:
+        consent:
+          vimeo:
+            vendor_name: 
+          youtube:
+            vendor_name: 
+        leave_video: Tinggalkan pautan video
+        opt_in_prompt: 
+      enlarge_view: Besarkan paparan
+      enter_fullscreen: Masuki mod paparan penuh
+      first_page: Halaman pertama
+      forward: 'Ke hadapan '
+      fullscreen: Paparan penuh
+      goto_first_page: Pergi ke halaman pertama
+      goto_top: Pergi ke halaman pertama
+      hide_text: Sembunyikan teks
+      home: Mula
+      imprint: Tanda
+      javascript_hint: Aplikasi ini menggunakan JavaScript untuk mempertingkatkan fungsi dan pengalaman pengguna. Pelayar anda mungkin tidak menyokong JavaScript atau ia telah dimatikan.
+      languages:
+        ar: 
+        cs: 
+        de: 
+        dk: 
+        el: 
+        en: 
+        es: 
+        fi: 
+        fr: 
+        fy: 
+        hi: 
+        it: 
+        ja: 
+        lb: 
+        nb: 
+        nl: 
+        nn: 
+        'no': 
+        pl: 
+        pt: 
+        rm: 
+        ru: 
+        se: 
+        sr: 
+        sv: 
+        tr: 
+        unknown: 
+        zh: 
+      leave_fullscreen: Tinggalkan mod paparan penuh
+      lets_go: Jom
+      logo: Logo
+      media_quality: 
+      mute_off: Nyahbisukan
+      mute_on: Bisukan
+      navigate_top: Pergi ke halaman pertama
+      navigation: Navigasi
+      new_pages_box:
+        additional_pages_html: "...dan <span></span> selebihnya"
+        description: 'Sejak kunjungan terakhir anda, halaman baru telah ditambah ke Pageflow ini: '
+        title: Halaman Baru
+      notice: Notis
+      open_audio: 
+      open_navigation: Buka navigasi
+      open_overview: Buka gambaran umum
+      open_video: 
+      overview: Gambaran umum
+      panorama:
+        close: Tutup panorama 360° dan paparan teks
+        start: Mulakan panorama 360°
+      play_video: Mainkan video
+      privacy_notice: 
+      read_more: 
+      scroll_back_indicator: Skrol kembali
+      scroll_down: Skrol ke bawah
+      scroll_hint: Gunakan roda tetikus atau kekunci anak panah pada papan kekunci anda untuk menelusuri antara halaman.
+      scroll_indicator: Skrol ke bawah untuk teruskan
+      scroll_left: Skrol ke kiri
+      scroll_right: Skrol ke kanan
+      scroll_up: Skrol ke atas
+      share: Kongsi
+      share_in_telegram: 
+      share_in_whats_app: 
+      share_on_facebook: Kongsi di Facebook
+      share_on_google: Kongsi di Google+
+      share_on_linked_in: 
+      share_on_twitter: Kongsi di X
+      share_this_entry: Cerita ini
+      share_this_page: Cerita ini
+      share_via_email: 
+      show_home: Mula
+      show_text: Paparkan teks
+      skip_links_content: Pergi ke isi kandungan
+      skip_links_navigation: Pergi ke navigasi
+      skip_links_top_navigation: Pergi ke navigasi utama
+      sound_hint: Format cerita multimedia ini menggunakan rakaman video dan audio. Pastikan pembuka suara anda dihidupkan.
+      start_audio: Mulakan audio sekarang
+      start_video: Mulakan video sekarang
+      swipe_hint: Leret untuk menelusuri antara halaman.
+      swipe_indicator: Leret untuk teruskan
+      swipe_to_continue: 
+      text_track_modes:
+        auto: 
+        auto_off: 
+        none: 
+      text_tracks: 
+      third_party_embed_consent:
+        opt_in:
+          confirm: 
+          more_information: 
+        opt_out_info:
+          prompt_html: 
+          prompt_link: 
+      toggle_info_box: 
+      video: Video
+      video_qualities:
+        annotations:
+          4k: 
+          fullhd: 
+          medium: 
+        labels:
+          4k: 
+          auto: 
+          fullhd: 
+          medium: 
+      volume: Kelantangan
+      vr:
+        no_vr:
+          link: 
+          text: 
+        select_quality: 
+        start: 
+        start_cardboard: 
+        video_qualities:
+          4k: 
+          fullhd: 
+          high: 
+        video_quality_annotations:
+          4k: 
+          fullhd: 
+          high: 
+  pageflow_scrolled:
+    public:
+      chart:
+        default_title: 
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      enter_fullscreen: 
+      exit_fullscreen: 
+      image_rights: 
+      inline_file_rights_labels:
+        after: 
+        atmo: 
+        audio: 
+        before: 
+        image: 
+        poster: 
+        video: 
+      js_required: 
+      languages:
+        ar: 
+        cs: 
+        de: 
+        dk: 
+        el: 
+        en: 
+        es: 
+        fi: 
+        fr: 
+        fy: 
+        hi: 
+        it: 
+        ja: 
+        lb: 
+        nb: 
+        nl: 
+        nn: 
+        'no': 
+        pl: 
+        pt: 
+        rm: 
+        ru: 
+        se: 
+        sr: 
+        sv: 
+        tr: 
+        unknown: 
+        zh: 
+      media: 
+      more: 
+      navigation:
+        chapter: 
+        close_mobile_menu: 
+        language: 
+        legal_info: 
+        mute: 
+        open_mobile_menu: 
+        share: 
+        unmute: 
+      navigation_skip_links:
+        content: 
+      next: 
+      player_controls:
+        pause: 
+        play: 
+        progress: 
+        quality: 
+        text_tracks: 
+      previous: 
+      sound_disclaimer:
+        help_muted: 
+        help_unmuted: 
+      text_track_modes:
+        auto: 
+        auto_off: 
+        none: 
+      third_party_consent:
+        confirm: 
+        opt_in_prompt:
+          datawrapper: 
+          facebook: 
+          tiktok: 
+          twitter: 
+          vimeo: 
+          youtube: 
+        opt_out:
+          prompt: 
+          prompt_link: 
+      unsupported_browser: 
+      video_qualities:
+        annotations:
+          4k: 
+          fullhd: 
+          medium: 
+        labels:
+          4k: 
+          auto: 
+          fullhd: 
+          medium: 

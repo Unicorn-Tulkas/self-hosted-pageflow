@@ -1,0 +1,56 @@
+$pageflow-revision-color: #888 !default;
+$pageflow-published-revision-background-color: #beebb8 !default;
+
+.admin_entries {
+  table.revisions {
+    td {
+      color: $pageflow-revision-color;
+    }
+
+    a.show {
+      padding-right: 7px;
+    }
+
+    .published td {
+      // scss-lint:disable ImportantRule
+      // Win against overly specific Active Admin rule
+      background-color: $pageflow-published-revision-background-color !important;
+      // scss-lint:enable ImportantRule
+      color: inherit;
+    }
+
+    .publication_state_indicator {
+      height: 17px;
+    }
+
+    .tooltip_clue {
+      display: inline-block;
+    }
+  }
+
+  .legend {
+    display: flex;
+    align-items: center;
+    color: $pageflow-hint-color;
+
+    &:before {
+      content: " ";
+      display: block;
+      width: 14px;
+      height: 14px;
+      border: solid 1px #999;
+      margin-right: 10px;
+    }
+
+    &.published:before {
+      background-color: $pageflow-published-revision-background-color;
+    }
+  }
+
+  form {
+    clear: both;
+  }
+
+  @import "./entries/index_table";
+  @import "./entries/folders";
+}

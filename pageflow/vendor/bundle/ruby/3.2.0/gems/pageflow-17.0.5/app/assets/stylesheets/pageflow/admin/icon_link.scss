@@ -1,0 +1,47 @@
+$pageflow-icon-link-icon-directory: "pageflow/admin/icons" !default;
+
+$pageflow-icon-link-size: 25px !default;
+
+$pageflow-icon-link-opacity: 0.7 !default;
+
+$pageflow-active-icon-link-opacity: 1 !default;
+
+.icon_link_to {
+  a {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+
+    &::before {
+      content: "";
+      display: block;
+      width: $pageflow-icon-link-size;
+      height: $pageflow-icon-link-size;
+      background-size: $pageflow-icon-size;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: $pageflow-icon-link-opacity;
+    }
+
+    $dir: $pageflow-icon-link-icon-directory;
+
+    &.editor::before {
+      background-image: image-url("#{$dir}/editor.svg");
+    }
+
+    &.preview::before {
+      background-image: image-url("#{$dir}/preview.svg");
+    }
+
+    &.show_public::before {
+      background-image: image-url("#{$dir}/show_public.svg");
+    }
+
+    &:focus,
+    &:hover {
+      &::before {
+        opacity: $pageflow-active-icon-link-opacity;
+      }
+    }
+  }
+}

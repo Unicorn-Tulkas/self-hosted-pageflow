@@ -1,0 +1,16 @@
+.other_entry_item {
+  width: 100%;
+
+  &:hover {
+    background-color: var(--ui-selection-color-lighter);
+  }
+
+  &.active {
+    background-color: var(--ui-selection-color-light);
+  }
+
+  a {
+    display: block;
+    padding: space(2);
+  }
+}

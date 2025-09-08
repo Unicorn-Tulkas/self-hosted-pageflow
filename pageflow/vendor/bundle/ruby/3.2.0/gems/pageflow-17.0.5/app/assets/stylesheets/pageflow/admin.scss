@@ -1,0 +1,39 @@
+/// Do not includes styles that patch the Active Admin default theme.
+$pageflow-custom-admin-theme: false !default;
+
+/// Do not include styles for admin tabs.
+$pageflow-custom-admin-tabs: false !default;
+
+/// Used for indicator icons, icon links and buttons
+$pageflow-icon-size: 16px !default;
+
+/// Used for inline hint texts
+$pageflow-hint-color: #666 !default;
+
+@import "active_admin/searchable_select";
+
+// Needs to be imported before bourbon which redefines functions used
+// by active admin mixins (i.e. `linear-gradient` used by
+// `light-button`)
+@import "pageflow/admin/active_admin_patches";
+
+@import "bourbon";
+@import "pageflow/mixins";
+
+@import "pageflow/admin/badge_list";
+@import "pageflow/admin/columns";
+@import "pageflow/admin/embed_code";
+@import "pageflow/admin/embedded_index_table";
+@import "pageflow/admin/entries";
+@import "pageflow/admin/features";
+@import "pageflow/admin/filters";
+@import "pageflow/admin/forms";
+@import "pageflow/admin/hint";
+@import "pageflow/admin/icon_button";
+@import "pageflow/admin/icon_link";
+@import "pageflow/admin/permalink_input";
+@import "pageflow/admin/publication_state_indicator";
+@import "pageflow/admin/quotas";
+@import "pageflow/admin/status_tags";
+@import "pageflow/admin/tabs_view";
+@import "pageflow/admin/tooltip_bubble";

@@ -1,0 +1,50 @@
+////
+/// @group classic-player-controls
+////
+
+/// Base typography settings for player controls.
+$classic-player-controls-typography: $player-controls-typography !default;
+
+%player_controls {
+  &-container {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    @include transition(opacity 0.1s, visibility 0.1s);
+    @include standard-typography($classic-player-controls-typography);
+
+    @include desktop {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 10%;
+    }
+
+    @include phone {
+      bottom: 10%;
+      left: 5%;
+      max-width: 90%;
+
+      .hint {
+        display: block;
+      }
+    }
+
+    @include phone_portrait {
+      bottom: 50px;
+    }
+
+    &-idle {
+      @include transition-duration(1.5s);
+      @include transition-delay(1s);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &-paused,
+    &-unplayed {
+      // Unused, but have to be defined for @extend to work
+      display: block;
+    }
+  }
+}

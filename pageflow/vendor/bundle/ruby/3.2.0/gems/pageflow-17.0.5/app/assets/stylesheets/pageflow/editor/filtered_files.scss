@@ -1,0 +1,24 @@
+.filtered_files {
+  position: relative;
+
+  &-banner {
+    display: block;
+    padding: space(2);
+    border-radius: rounded();
+    background-color: var(--ui-selection-color-lighter);
+    margin-top: space(2);
+  }
+
+  &-filter_name {
+    font-weight: bold;
+  }
+
+  &-reset_filter {
+    @include background-icon-center;
+    @include cancel-icon;
+
+    position: absolute;
+    right: space(4);
+    top: space(4);
+  }
+}

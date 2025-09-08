@@ -1,0 +1,33 @@
+@mixin indicators-icons-icon-font {
+  .slideshow {
+    > .indicator {
+      @include phone {
+        text-align: right;
+      }
+
+      &:after {
+        content: "";
+        display: inline-block;
+        font-size: 30px;
+        font-weight: bold;
+        vertical-align: middle;
+        padding-left: 15px;
+        height: 33px;
+
+        @include phone {
+          padding-left: 10px;
+        }
+      }
+    }
+
+    > .scroll_next_indicator {
+      @include fa-angle-down-icon($position: "after");
+    }
+
+    .widget_phone_horizontal_slideshow_mode_present & > .scroll_next_indicator {
+      @include phone {
+        @include fa-angle-right-icon($position: "after");
+      }
+    }
+  }
+}

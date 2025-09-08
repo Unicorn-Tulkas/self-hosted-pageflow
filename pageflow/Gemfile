@@ -1,0 +1,38 @@
+source 'https://rubygems.org'
+ruby '3.2.9'
+
+# Core Rails
+gem 'rails', '~> 7.1'
+gem 'pageflow', '~> 17.0'
+
+# Database
+gem 'mysql2', '~> 0.5'
+
+# Web server
+gem 'puma', '~> 5.0'
+
+# Background job processing
+gem 'resque', '~> 1.25'
+gem 'resque-scheduler', '~> 4.10'
+gem 'redis', '~> 4.8.0'
+
+# Legacy compatibility (if needed by old initializers)
+gem 'ar_after_transaction', '~> 0.4'
+
+# Asset pipeline
+gem 'sprockets-rails', '~> 3.5'
+gem 'sassc-rails', '>= 2.1'
+
+# Admin interface (required by Pageflow)
+gem 'activeadmin'
+gem 'devise'
+gem 'cancancan'
+
+# Other Pageflow dependencies
+gem 'bootsnap', require: false
+gem 'jbuilder'
+
+group :development do
+  gem 'listen'
+  gem 'spring'
+end

@@ -1,0 +1,9 @@
+.bundle
+.ruby-version
+.ruby-gemset
+Gemfile.lock
+/gemfiles/*.lock
+/pkg/*
+/spec/internal/tmp
+/spec/internal/db/*.sqlite
+/spec/examples.txt

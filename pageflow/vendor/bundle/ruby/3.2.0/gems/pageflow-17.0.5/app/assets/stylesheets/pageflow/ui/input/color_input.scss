@@ -1,0 +1,25 @@
+.color_input {
+  .minicolors {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  input {
+    padding-left: 30px;
+    width: 100%;
+    height: auto;
+  }
+
+  .minicolors-input-swatch {
+    top: 5px;
+    left: 5px;
+  }
+
+  &.is_default input {
+    color: var(--ui-on-surface-color-light);
+  }
+
+  .minicolors-focus input {
+    color: var(--ui-on-surface-color);
+  }
+}

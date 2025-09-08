@@ -1,0 +1,19 @@
+# config/storage.yml
+# Self-hosted storage configuration
+
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+production:
+  service: S3
+  endpoint: <%= ENV.fetch("S3_ENDPOINT", "http://pageflow_minio:9000") %>
+  access_key_id: <%= ENV.fetch("AWS_ACCESS_KEY_ID", "minioadmin") %>
+  secret_access_key: <%= ENV.fetch("AWS_SECRET_ACCESS_KEY", "minioadmin123") %>
+  region: <%= ENV.fetch("AWS_REGION", "us-east-1") %>
+  bucket: <%= ENV.fetch("S3_BUCKET", "pageflow-main") %>
+  force_path_style: true

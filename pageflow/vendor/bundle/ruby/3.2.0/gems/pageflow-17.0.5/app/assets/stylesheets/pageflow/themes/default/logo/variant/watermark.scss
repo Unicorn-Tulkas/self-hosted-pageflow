@@ -1,0 +1,146 @@
+@import "../alignment";
+
+/// Fade in logo when scroller is near top
+///
+/// - `"first-page"`: only on first page
+///
+/// - `"all-pages"`: on all pages
+$logo-watermark-variant-fade-in-near-top: "first-page" !default;
+
+/// Fade in logo when header is active. If the header logo is
+/// inverted on the current page, the non-inverted logo variant
+/// is displayed while the header is active.
+$logo-watermark-variant-fade-in-with-header: false !default;
+
+/// Set opacity value of watermark logos
+$logo-watermark-variant-opacity: 0.3 !default;
+
+/// Height of the logo in phone layout.
+$logo-watermark-mobile-height: null !default;
+
+@mixin logo-variant-watermark(
+  $top,
+  $width,
+  $height,
+  $phone-height
+) {
+  %logo {
+    position: absolute;
+    width: $width;
+    height: $height;
+    top: $top;
+
+    @include phone {
+      width: $phone-height * $width / $height;
+      height: $phone-height;
+      top: 21px;
+    }
+    @if $logo-watermark-mobile-height {
+      @include mobile {
+        width: $logo-watermark-mobile-height * $width / $height;
+        height: $logo-watermark-mobile-height;
+        top: 21px;
+      }
+    }
+    @include logo-alignment;
+  }
+
+  %background_logo {
+    @extend %logo;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-image: image-url("pageflow/themes/#{$theme-name}/logo_header.#{$logo-image-file-extension}");
+  }
+
+  .header {
+    @extend %pageflow_widget_margin_right !optional;
+    position: relative;
+  }
+
+  .header_logo {
+    @extend %pageflow_widget_margin_top !optional;
+    @extend %logo;
+    @include hide-text;
+
+    display: none;
+    z-index: 1;
+    pointer-events: none;
+    opacity: $logo-watermark-variant-opacity;
+    @include transition(opacity 500ms);
+
+    .js & {
+      display: block;
+    }
+
+    &:after,
+    &:before {
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      pointer-events: none;
+      @include transition(opacity 500ms);
+    }
+
+    &:before {
+      opacity: 1;
+      background-image: image-url("pageflow/themes/#{$theme-name}/logo_header.#{$logo-image-file-extension}");
+    }
+
+    &:after {
+      opacity: 0;
+      background-image: image-url("pageflow/themes/#{$theme-name}/logo_header_invert.#{$logo-image-file-extension}");
+    }
+  }
+
+  .header.invert .header_logo:before {
+    opacity: 0;
+  }
+
+  .header.invert .header_logo:after {
+    opacity: 1;
+  }
+
+  .header.hide_logo .header_logo:before,
+  .header.hide_logo .header_logo:after {
+    opacity: 0;
+  }
+
+  .header.near_top .header_logo {
+    pointer-events: auto;
+  }
+
+  @if $logo-watermark-variant-fade-in-near-top == "first-page" {
+    .header.near_top.first_page .header_logo {
+      opacity: 1;
+    }
+  } @else {
+    .header.near_top .header_logo {
+      opacity: 1;
+    }
+  }
+
+  @if $logo-watermark-variant-fade-in-with-header {
+    .header {
+      &.active .header_logo {
+        opacity: 1;
+      }
+
+      &.invert.active .header_logo:before {
+        opacity: 1;
+      }
+
+      &.invert.active .header_logo:after {
+        opacity: 0;
+      }
+    }
+  }
+
+  .header.near_top .header_logo:hover {
+    opacity: 1;
+  }
+}

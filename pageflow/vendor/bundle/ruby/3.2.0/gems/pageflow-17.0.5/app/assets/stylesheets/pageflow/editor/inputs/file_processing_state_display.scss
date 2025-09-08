@@ -1,0 +1,16 @@
+.file_processing_state_display {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 62px;
+    height: 100%;
+  }
+
+  &-empty {
+    display: none;
+  }
+}

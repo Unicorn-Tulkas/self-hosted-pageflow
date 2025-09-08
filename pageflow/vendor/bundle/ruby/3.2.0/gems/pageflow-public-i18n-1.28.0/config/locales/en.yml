@@ -1,0 +1,285 @@
+en:
+  pageflow:
+    public:
+      _language: English
+      audio: Audio
+      back: Back
+      back_to_chapter: Back to chapter
+      before_after:
+        drag_hint: Press the left mouse button and move left or right
+        hint: Before/after view
+        leave_view: Leave before/after view
+        start: Start before/after view
+        start_title: Start before/after view
+      chapter: Chapter
+      chart:
+        consent_vendor_name: Datawrapper
+        opt_in_prompt: I agree with being shown Datawrapper charts.
+        toggle: Toggle
+      close: Close
+      close_hint: Close hint
+      close_navigation: Close navigation
+      close_overview: Close overview
+      consent_accept_all: Accept all and close
+      consent_configure: More Information
+      consent_deny_all: Deny
+      consent_expand_vendor: More information
+      consent_no_vendors: Currently not using any third party integrations.
+      consent_prompt_html: |-
+        This website uses third party technologies.
+        We are asking your permission to use these technologies.
+        You can always change or withdraw your consent later via our
+        <a href="%{privacyLinkUrl}" target="_blank">privacy policy</a> page.
+      consent_save: Save selection
+      consent_settings: Privacy Settings
+      cookie_notice_html: This website uses cookies. By using our services, you agree to our use of cookies. <a href="%{privacyLinkUrl}" target="_blank">Learn more</a>
+      deprecated_browser: "<p>Your browser is outdated and this page might not work as intended. We recommend upgrading your browser to the most recent version.</p>"
+      dismiss_cookie_notice: Hide
+      embedded_video:
+        consent:
+          vimeo:
+            vendor_name: Vimeo videos
+          youtube:
+            vendor_name: YouTube videos
+        leave_video: Leave embedded video
+        opt_in_prompt: I agree with being shown %{vendor}.
+      enlarge_view: Enlarge view
+      enter_fullscreen: Enter Fullscreen mode
+      first_page: First page
+      forward: Forward
+      fullscreen: Fullscreen
+      goto_first_page: Go to first page
+      goto_top: Goto first page
+      hide_text: Hide text
+      home: Start
+      imprint: Imprint
+      javascript_hint: This application utilizes JavaScript for enhanced functionality and user experience. Your browser may not support JavaScript or it may be disabled.
+      languages:
+        ar: Arabic
+        cs: Czech
+        de: German
+        dk: Danish
+        el: Greek
+        en: English
+        es: Spanish
+        fi: Finnish
+        fr: French
+        fy: Frisian
+        hi: Hindi
+        it: Italian
+        ja: Japanese
+        lb: Letzeburgesch
+        nb: Norsk Bokmål
+        nl: Dutch
+        nn: Norsk Nynorsk
+        'no': Norsk
+        pl: Polish
+        pt: Portuguese
+        rm: Romansh
+        ru: Russian
+        se: Northern Sami
+        sr: Serbian
+        sv: Swedish
+        tr: Turkish
+        unknown: "(Unknown)"
+        zh: Chinese
+      leave_fullscreen: Exit fullscreen mode
+      lets_go: Let's go
+      logo: Logo
+      media_quality: Quality
+      mute_off: Unmute
+      mute_on: Mute
+      navigate_top: Goto first page
+      navigation: Navigation
+      new_pages_box:
+        additional_pages_html: "...and <span></span> more"
+        description: 'Since your last visit, pages have been added to this pageflow:'
+        title: New Pages
+      notice: Notice
+      open_audio: Open audio
+      open_navigation: Open navigation
+      open_overview: Open overview
+      open_video: Open video
+      overview: Overview
+      panorama:
+        close: Close 360° panorama and display text
+        start: Start 360° panorama
+      play_video: Play video
+      privacy_notice: Privacy notice
+      read_more: Read more
+      scroll_back_indicator: " "
+      scroll_down: Scroll down
+      scroll_hint: Use the mouse wheel or the arrow keys on your keyboard to navigate between pages.
+      scroll_indicator: Scroll down to continue
+      scroll_left: Scroll left
+      scroll_right: Scroll right
+      scroll_up: Scroll up
+      share: Share
+      share_in_telegram: Share in Telegram
+      share_in_whats_app: Share in WhatsApp
+      share_on_facebook: Share on Facebook
+      share_on_google: Share on Google
+      share_on_linked_in: Share on LinkedIn
+      share_on_twitter: Share on X
+      share_this_entry: This story
+      share_this_page: This page
+      share_via_email: Share via Email
+      show_home: Start
+      show_text: Show text
+      skip_links_content: Goto content
+      skip_links_navigation: Goto navigation
+      skip_links_top_navigation: Goto main navigation
+      sound_hint: This multimedia story format uses video and audio footage. Please make sure your speakers are turned on.
+      start_audio: Start audio now
+      start_video: Start video now
+      swipe_hint: Swipe to navigate between pages.
+      swipe_indicator: Swipe to continue
+      swipe_to_continue: Swipe to continue
+      text_track_modes:
+        auto: Auto (%{label})
+        auto_off: Auto (Off)
+        none: "(None)"
+      text_tracks: Subtitles
+      third_party_embed_consent:
+        opt_in:
+          confirm: Confirm
+          more_information: More information
+        opt_out_info:
+          prompt_html: To opt out of displaying external embeds, manage settings %{link}.
+          prompt_link: here
+      toggle_info_box: Toggle info box
+      video: Video
+      video_qualities:
+        annotations:
+          4k: 4K
+          fullhd: HD
+          medium: HD
+        labels:
+          4k: 2160p
+          auto: Auto
+          fullhd: 1080p
+          medium: 720p
+      volume: Volume
+      vr:
+        no_vr:
+          link: Show video in Youtube app.
+          text: 360° videos can't be displayed in your browser.
+        select_quality: Choose video quality
+        start: Watch 360° video
+        start_cardboard: Start cardboard mode
+        video_qualities:
+          4k: 2160s
+          fullhd: 1080s
+          high: 720s
+        video_quality_annotations:
+          4k: 4K
+          fullhd: HD
+          high: HD
+  pageflow_scrolled:
+    public:
+      chart:
+        default_title: Interactive chart
+      consent_accept_all: Accept all and close
+      consent_configure: More Information
+      consent_deny_all: Deny
+      consent_expand_vendor: More information
+      consent_no_vendors: Currently not using any third party integrations.
+      consent_prompt_html: |-
+        This website uses third party technologies.
+        We are asking your permission to use these technologies.
+        You can always change or withdraw your consent later via our
+        <a href="%{privacyLinkUrl}" target="_blank">privacy policy</a> page.
+      consent_save: Save selection
+      consent_settings: Privacy Settings
+      enter_fullscreen: Fullscreen
+      exit_fullscreen: Exit fullscreen
+      image_rights: Image rights
+      inline_file_rights_labels:
+        after: After image
+        atmo: Atmo
+        audio: Audio
+        before: Before image
+        image: Image
+        poster: Poster
+        video: Video
+      js_required: Please activate JavaScript to make this website display correctly.
+      languages:
+        ar: Arabic
+        cs: Czech
+        de: German
+        dk: Danish
+        el: Greek
+        en: English
+        es: Spanish
+        fi: Finnish
+        fr: French
+        fy: Frisian
+        hi: Hindi
+        it: Italian
+        ja: Japanese
+        lb: Letzeburgesch
+        nb: Norsk Bokmål
+        nl: Dutch
+        nn: Norsk Nynorsk
+        'no': Norsk
+        pl: Polish
+        pt: Portuguese
+        rm: Romansh
+        ru: Russian
+        se: Northern Sami
+        sr: Serbian
+        sv: Swedish
+        tr: Turkish
+        unknown: "(Unknown)"
+        zh: Chinese
+      media: Media
+      more: More
+      navigation:
+        chapter: Chapter %{number}
+        close_mobile_menu: close chapter overview
+        language: Language
+        legal_info: Imprint
+        mute: Mute sound
+        open_mobile_menu: Open chapter overview
+        share: Share
+        unmute: Unmute sound
+      navigation_skip_links:
+        content: To the content
+      next: Next
+      player_controls:
+        pause: Pause
+        play: Play
+        progress: 'Timeline. Current time: %{currentTime}. Duration: %{duration}'
+        quality: Quality
+        text_tracks: Subtitles
+      previous: Previous
+      sound_disclaimer:
+        help_muted: This site works best with sound turned on. Click here to activate sound.
+        help_unmuted: Sound can be muted again using the speaker icon in the navigation.
+      text_track_modes:
+        auto: Auto (%{label})
+        auto_off: Auto (Off)
+        none: 'Off'
+      third_party_consent:
+        confirm: Okay
+        opt_in_prompt:
+          datawrapper: I agree with being shown Datawrapper graphs.
+          facebook: I agree with being shown Facebook videos.
+          tiktok: I agree with being shown content from TikTok.
+          twitter: I agree with being shown content from X.
+          vimeo: I agree with being shown Vimeo videos.
+          youtube: I agree with being shown YouTube videos.
+        opt_out:
+          prompt: To opt out of displaying external embeds, change your settings %{link}.
+          prompt_link: here
+      unsupported_browser: This website uses features that your browser doesn't support. Please upgrade to a recent version of your browser.
+      video_qualities:
+        annotations:
+          4k: 4K
+          fullhd: HD
+          medium: HD
+        labels:
+          4k: 2160p
+          auto: Auto
+          fullhd: 1080p
+          medium: 720p

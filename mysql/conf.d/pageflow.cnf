@@ -1,0 +1,31 @@
+[mysqld]
+# Basic settings
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+default-storage-engine = InnoDB
+
+# Memory settings
+innodb_buffer_pool_size = 512M
+innodb_buffer_pool_instances = 2
+
+# Connection settings
+max_connections = 200
+max_allowed_packet = 64M
+
+# Performance settings
+innodb_log_file_size = 128M
+innodb_log_buffer_size = 8M
+innodb_flush_method = O_DIRECT
+innodb_file_per_table = 1
+
+# Binary logging
+log-bin = mysql-bin
+binlog_format = ROW
+expire_logs_days = 7
+
+# Slow query log
+slow_query_log = 1
+long_query_time = 2
+
+[client]
+default-character-set = utf8mb4

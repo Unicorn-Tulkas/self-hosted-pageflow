@@ -1,0 +1,21 @@
+# config/database.yml
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch("DB_USERNAME", "pageflow") %>
+  password: <%= ENV.fetch("DB_PASSWORD") %>
+  host: <%= ENV.fetch("DB_HOST", "pageflow_mysql") %>
+  port: <%= ENV.fetch("DB_PORT", "3306") %>
+
+development:
+  <<: *default
+  database: pageflow_development
+
+test:
+  <<: *default
+  database: pageflow_test
+
+production:
+  <<: *default
+  database: <%= ENV.fetch("DB_NAME", "pageflow_production") %>

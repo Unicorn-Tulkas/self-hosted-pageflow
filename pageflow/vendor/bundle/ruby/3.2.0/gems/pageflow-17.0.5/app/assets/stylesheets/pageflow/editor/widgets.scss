@@ -1,0 +1,28 @@
+.widget_item {
+  list-style: none;
+  padding: 5px 0;
+  position: relative;
+
+  &.is_hidden {
+    display: none;
+  }
+
+  &.has_settings {
+    .widget_type {
+      padding-right: 40px;
+    }
+
+    .settings {
+      display: block;
+    }
+  }
+
+  .settings {
+    @include icon-only-button;
+    @include cog-icon;
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+  }
+}

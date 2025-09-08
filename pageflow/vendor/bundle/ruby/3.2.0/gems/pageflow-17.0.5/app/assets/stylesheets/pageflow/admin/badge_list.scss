@@ -1,0 +1,37 @@
+$pageflow-badge-color: #555 !default;
+$pageflow-badge-background-color: #fff !default;
+$pageflow-badge-border-color: #aaa !default;
+$pageflow-badge-border-radius: null !default;
+$pageflow-badge-margin: -4px 0 !default;
+
+.badge_list {
+  margin: $pageflow-badge-margin;
+  padding: 0;
+
+  li {
+    position: relative;
+    list-style: none;
+    float: left;
+  }
+
+  .abbreviation {
+    padding: 0 8px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 2px;
+    background-color: $pageflow-badge-background-color;
+    border: solid 1px $pageflow-badge-border-color;
+    color: $pageflow-badge-color;
+    border-radius: $pageflow-badge-border-radius;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+}
+
+.entry_user_badge_list {
+  .abbreviation {
+    width: 2em;
+    line-height: 2em;
+    padding: 0;
+  }
+}

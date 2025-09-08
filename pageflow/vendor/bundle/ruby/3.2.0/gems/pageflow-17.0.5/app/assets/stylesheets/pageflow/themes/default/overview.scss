@@ -1,0 +1,47 @@
+////
+/// @group overview
+////
+
+/// Type of icons to use:
+///
+/// - `"icon-font"`: Circular buttons with font awesome icons.
+///
+/// - `"sprite"`: Custom icons from `icon_sprite.png` in theme
+///   directory.
+$overview-icons: $standard-icons !default;
+
+/// @see $default-widget-icon-font-options
+$overview-icon-font-options: () !default;
+
+.overview {
+  @import "./overview/icons/icon_font";
+  @import "./overview/icons/sprite";
+  @import "./overview/chapter_border_images";
+  @import "./overview/typography";
+  @import "./overview/colors";
+  @import "./overview/chapter_numbers";
+
+  @if $overview-icons == "sprite" {
+    @include overview-icons-sprite;
+  } @else {
+    @include overview-icons-icon-font(
+      widget-icon-font-options($overview-icon-font-options)...
+    );
+  }
+
+  .button {
+    display: block;
+  }
+
+  .close .label {
+    position: absolute;
+    @include margin-end(130%);
+    @include text-align-end;
+    width: 500%;
+    @include position-end(0);
+  }
+
+  .content {
+    @extend %pageflow_widget_margin_right !optional;
+  }
+}

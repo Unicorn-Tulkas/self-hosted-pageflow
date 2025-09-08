@@ -1,0 +1,144 @@
+.publish_entry {
+  .notice.files_pending,
+  .notice.published,
+  .notice.success,
+  &.published .notice.not_published {
+    display: none;
+  }
+
+  &.files_pending {
+    > div {
+      display: none;
+    }
+
+    .notice.files_pending {
+      display: block;
+    }
+  }
+
+  &.published .notice.published {
+    display: block;
+  }
+
+  &.succeeded {
+    > div {
+      display: none;
+    }
+
+    .notice.success {
+      display: block;
+    }
+  }
+
+  .notice {
+    @include background-icon-left($color: var(--ui-primary-color), $left: 10px, $top: 18px);
+    background-color: var(--ui-selection-color-lighter);
+    border-radius: rounded(md);
+    padding: 10px 10px 10px 40px;
+
+    &.files_pending {
+      @include hourglass-icon;
+    }
+
+    &.not_published {
+      @include lock-icon;
+    }
+
+    &.published {
+      @include eye-icon;
+    }
+
+    &.success {
+      @include check-icon;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  input[type=text] {
+    display: block;
+    width: auto;
+    margin: 5px 0 0 0;
+
+    &.invalid {
+      border: 1px solid var(--ui-error-color);
+    }
+  }
+
+  .check_box_input,
+  .radio_input {
+    position: relative;
+    padding-left: 40px;
+    padding-top: 10px;
+  }
+
+  label {
+    padding: 0;
+  }
+
+  input[type=checkbox],
+  input[type=radio] {
+    position: absolute;
+    vertical-align: top;
+    left: 7px;
+    top: 11px;
+  }
+
+  input[type=text] {
+    margin-bottom: 5px;
+  }
+
+  .inline_help {
+    top: 5px;
+    right: 0;
+    box-sizing: border-box;
+
+    &:hover {
+      padding: 23px 15px 10px 40px;
+    }
+  }
+
+  .publish_until_fields,
+  .password_fields {
+    padding-left: 40px;
+    padding-top: 10px;
+  }
+
+  .publish_until_fields {
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .password_fields {
+    &.disabled {
+      display: none;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+  }
+
+  .already_published_without_password {
+    @include background-icon-left($left: -30px, $top: 9px);
+    @include attention-icon;
+  }
+
+  .save {
+    @include icon-button("primary");
+    @include check-icon;
+
+    margin-top: 15px;
+  }
+
+  &.publishing .save {
+    @include hourglass-icon;
+  }
+}

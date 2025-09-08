@@ -1,0 +1,152 @@
+$pageflow-folders-icon-directory: "pageflow/admin/icons" !default;
+
+$pageflow-active-folder-background-color: #75a1c2 !default;
+$pageflow-active-folder-color: #fff !default;
+$pageflow-folder-drop-target-background-color: #fff !default;
+$pageflow-folder-drop-target-outline-color: #000 !default;
+$pageflow-folders-heading-color: #888 !default;
+
+#folders_sidebar_section {
+  $icon-dir: $pageflow-folders-icon-directory;
+
+  position: relative;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+    position: relative;
+  }
+
+  .name,
+  .edit_folder,
+  .new,
+  .delete,
+  .edit_toggle {
+    background-size: $pageflow-icon-size $pageflow-icon-size;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .edit_folder,
+  .delete,
+  .edit_toggle {
+    background-position: center;
+  }
+
+  .name,
+  .new {
+    background-position: 7px center;
+  }
+
+  .folders {
+    margin-bottom: 10px;
+
+    .name {
+      background-image: image-url("#{$icon-dir}/folder.svg");
+
+      display: block;
+      padding: 5px 10px 5px 35px;
+      margin: 3px 0;
+
+      text-decoration: none;
+    }
+
+    span.name {
+      background-image: image-url("#{$icon-dir}/folder_active.svg");
+      background-color: $pageflow-active-folder-background-color;
+      color: $pageflow-active-folder-color;
+      cursor: default;
+    }
+
+    .edit_folder,
+    .delete {
+      @include hide-text;
+
+      position: absolute;
+      top: 0;
+      width: 30px;
+      height: 26px;
+    }
+
+    .edit_folder {
+      background-image: image-url("#{$icon-dir}/edit.svg");
+      right: 30px;
+    }
+
+    .delete {
+      background-image: image-url("#{$icon-dir}/delete.svg");
+      right: 0;
+    }
+
+    .drop_target {
+      background-color: $pageflow-folder-drop-target-background-color;
+    }
+
+    .drop_over {
+      outline: solid 1px $pageflow-folder-drop-target-outline-color;
+    }
+  }
+
+  h4 {
+    margin: 0px 0 5px 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: $pageflow-folders-heading-color;
+  }
+
+  .new {
+    background-image: image-url("#{$icon-dir}/new.svg");
+
+    display: block;
+    padding: 5px 10px 5px 35px;
+    margin: 0 0 10px 0;
+    border-bottom: solid 1px #ddd;
+  }
+
+  .delete,
+  .new,
+  .edit_folder,
+  .edit_toggle.done {
+    display: none;
+  }
+
+  &.editable {
+    .delete,
+    .edit_folder,
+    .new,
+    .edit_toggle.done {
+      display: block;
+    }
+
+    .edit_toggle.edit {
+      display: none;
+    }
+  }
+
+  .edit_toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+
+    &.done {
+      background-image: image-url("#{$icon-dir}/done.svg");
+    }
+
+    &.edit {
+      background-image: image-url("#{$icon-dir}/edit.svg");
+    }
+  }
+}
+
+.dragged_entry {
+  border: solid 1px #888;
+  background-color: #eee;
+  padding: 15px;
+  z-index: 1000;
+}

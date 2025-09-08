@@ -1,0 +1,119 @@
+.extended_select_input,
+.extended_select_input_menu {
+  .ui-widget {
+    font-family: var(--ui-font-family);
+    font-size: var(--ui-font-size);
+  }
+}
+
+.extended_select_input {
+  .ui-selectmenu-button {
+    background: var(--ui-primary-color-lightest);
+    border-color: var(--ui-on-surface-color-lighter);
+    border-radius: rounded();
+    color: var(--ui-on-surface-color);
+  }
+}
+
+.extended_select_input_menu {
+  box-shadow: var(--ui-box-shadow);
+  border-radius: rounded();
+  overflow: hidden;
+
+  .ui-menu {
+    width: 620px;
+    border: 0;
+    border-radius: 0;
+    padding: 0 space(2.5) space(2.5) space(2.5);
+    background: var(--ui-primary-color);
+    color: var(--ui-on-primary-color);
+  }
+
+  .ui-state-hover,
+  .ui-widget-content .ui-state-hover,
+  .ui-widget-header .ui-state-hover,
+  .ui-state-focus,
+  .ui-widget-content .ui-state-focus,
+  .ui-widget-header .ui-state-focus {
+    margin: 0;
+    background: var(--ui-on-primary-color-lightest);
+    color: inherit;
+  }
+
+  .type_pictogram {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: space(2);
+    filter: invert(100%);
+    opacity: 0.8;
+  }
+
+  .item-text {
+    font-weight: 500;
+    margin-bottom: space(1);
+  }
+
+  .item-description {
+    font-size: 11px;
+    color: var(--ui-on-primary-color-light);
+    padding-right: space(4);
+    line-height: 1.4;
+  }
+
+  .ui-state-focus {
+    .type_pictogram {
+      opacity: 1;
+    }
+
+    a {
+      color: var(--ui-on-primary-color);
+    }
+  }
+
+  .text-container {
+    margin-left: space(10);
+    overflow: hidden;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    @include help-circled-icon;
+
+    text-decoration: none;
+    opacity: 0.1;
+    position: absolute;
+    bottom: space(2);
+    right: space(2);
+    color: var(--ui-on-primary-color);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .ui-menu-item {
+    float: left;
+    width: 33.33%;
+    outline: 0;
+    box-sizing: border-box;
+    min-height: 90px;
+    padding: space(3) space(2);
+    background: transparent;
+    border: 0;
+  }
+
+  .ui-menu .ui-selectmenu-optgroup {
+    float: left;
+    width: 100%;
+    margin: space(2.5) 0 space(1);
+    padding-left: 0;
+    border: 0;
+    font-weight: 700;
+    border-bottom: solid 1px var(--ui-on-primary-color-lighter);
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,12 @@
+// scss-lint:disable VendorPrefix
+
+@mixin mask-bottom {
+  // Safari 12 requires CORS headers for cross origin mask images
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAfQCAYAAAAD0DWNAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AIaCRgIHOV+XQAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAABNSURBVGje7cwxDsJQDETBh79y//NCEShSgRSUPtOM1lrbVe+pAgAAAAAAAAAAAAAAAADcmn2q11TP73R1PF35KS5c/P9ypFVtq3pUzQdYvjO9lSdVBgAAAABJRU5ErkJggg==);
+  -webkit-mask-position: bottom left;
+  -webkit-mask-repeat: repeat-x;
+}
+
+@mixin mask-none {
+  -webkit-mask-image: none;
+}

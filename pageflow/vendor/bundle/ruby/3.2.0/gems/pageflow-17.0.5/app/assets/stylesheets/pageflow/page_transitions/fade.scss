@@ -1,0 +1,90 @@
+/* fading background, vertical scrolling content */
+
+section.page {
+  background-color: transparent;
+}
+
+section.fade {
+  background-color: transparent;
+
+  &.invert {
+    background-color: transparent;
+  }
+
+  .black_layer {
+    display: none;
+  }
+
+  .page_background {
+    background-color: black;
+    -webkit-backface-visibility: hidden;
+  }
+
+  &.invert .page_background {
+    background-color: white;
+  }
+
+  &.animate-in-forwards .page_background,
+  &.animate-in-backwards .page_background {
+    opacity: 0;
+  }
+
+  &.animate-out-forwards .page_background,
+  &.animate-out-backwards .page_background,
+  &.active .page_background {
+    opacity: 1;
+  }
+
+  .content {
+    -webkit-backface-visibility: hidden;
+  }
+
+  &.animate-in-forwards,
+  &.animate-in-backwards {
+    z-index: 2;
+  }
+
+  @mixin define($translate, $duration) {
+    &.active .page_background,
+    &.animate-out-forwards .page_background,
+    &.animate-out-backwards .page_background {
+      @include transition(opacity $duration ease);
+    }
+
+    &.active .content,
+    &.animate-out-forwards .content,
+    &.animate-out-backwards .content {
+      @include transition($duration ease);
+    }
+
+    &.animate-in-forwards .content,
+    &.animate-out-backwards .content {
+      @include transform(call($translate, 100%));
+    }
+
+    &.animate-out-forwards .content,
+    &.animate-in-backwards .content {
+      @include transform(call($translate, -100%));
+    }
+  }
+
+  @function translateV($value) {
+    @return translate3d(0, $value, 0);
+  }
+
+  @function translateH($value) {
+    @return translate3d($value, 0, 0);
+  }
+
+  &-v {
+    @include define("translateV", 1s);
+  }
+
+  &-h {
+    @include define("translateH", 0.5s);
+  }
+
+  &.active div.content {
+    @include transform(translate3d(0, 0, 0));
+  }
+}

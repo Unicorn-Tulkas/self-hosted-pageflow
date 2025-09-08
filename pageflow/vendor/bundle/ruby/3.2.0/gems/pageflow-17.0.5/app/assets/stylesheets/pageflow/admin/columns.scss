@@ -1,0 +1,17 @@
+@if not $pageflow-custom-admin-theme {
+  .columns {
+    width: 100%;
+
+    > div {
+      width: 49%;
+    }
+
+    > div:first-child {
+      float: left;
+    }
+
+    > div:last-child {
+      float: right;
+    }
+  }
+}

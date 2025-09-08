@@ -1,0 +1,18 @@
+ul.menu {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 1px solid var(--ui-on-surface-color-lightest);
+
+  li {
+    position: relative;
+  }
+
+  a:first-child {
+    @include right-open-icon;
+    @include background-icon-right($color: var(--ui-primary-color-light));
+
+    border-bottom: 1px solid var(--ui-on-surface-color-lightest);
+    display: block;
+    padding: space(2.5);
+  }
+}

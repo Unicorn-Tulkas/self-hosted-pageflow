@@ -1,0 +1,23 @@
+.loading_spinner {
+  // Ensure loading spinner does not cover page if JS is
+  // disabled. Will be overridden by
+  // layouts/pageflow_paged/_loading_spinner_inline_script.html.erb
+  display: none;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+
+  .loading_spinner_inner {
+    @include animation-duration(0.5s);
+    @include animation-name(fade_in);
+    @include animation-iteration-count(1);
+    @include animation-timing-function(linear);
+  }
+
+  &.fade {
+    @include transition(opacity 0.5s linear);
+    opacity: 0;
+  }
+}

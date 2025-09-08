@@ -1,0 +1,26 @@
+# Docker ignore patterns to prevent cache issues
+.git
+.gitignore
+README.md
+*.md
+.env*
+docker-compose.yml
+context/
+scripts/
+
+# Development files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# IDE files  
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cache directories
+node_modules/.cache/
+.npm/
+.cache/

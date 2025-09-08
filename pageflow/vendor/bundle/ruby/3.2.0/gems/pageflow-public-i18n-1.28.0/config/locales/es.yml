@@ -1,0 +1,277 @@
+es:
+  pageflow:
+    public:
+      _language: Español
+      audio: Audio
+      back: Volver
+      back_to_chapter: Volver al capítulo
+      before_after:
+        drag_hint: Presionar el botón izquierdo y moverse a izquierda o derecha
+        hint: Vista antes/después
+        leave_view: Abandonar vista antes/después
+        start: Iniciar vista antes/después
+        start_title: Iniciar vista antes/después
+      chapter: Capítulo
+      chart:
+        consent_vendor_name: 
+        opt_in_prompt: 
+        toggle: Pulsar
+      close: Cerrar
+      close_hint: Cerrar consejo
+      close_navigation: Cerrar navegación
+      close_overview: Cerrar vista general
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      cookie_notice_html: 
+      deprecated_browser: "<p>La versión de su browser no es la más reciente por lo que ésta página puede funcionar de forma incorrecta. Le recomendamos actualizar su browser a la versión más actual.</p>"
+      dismiss_cookie_notice: 
+      embedded_video:
+        consent:
+          vimeo:
+            vendor_name: 
+          youtube:
+            vendor_name: 
+        leave_video: Abandonar vídeo integrado
+        opt_in_prompt: 
+      enlarge_view: Vista ampliada
+      enter_fullscreen: Iniciar modo de pantalla completa
+      first_page: Primera página
+      forward: Avanzar
+      fullscreen: Pantalla completa
+      goto_first_page: Ir a la primera página
+      goto_top: Ir a la primera página
+      hide_text: Ocultar texto
+      home: Inicio
+      imprint: Imprimir
+      javascript_hint: Esta aplicación utiliza JavaScript para una funcionalidad y experiencia de usuario óptimas. Su browser probablemente no es compatible con JavaScript o ésta función quizá se encuentre inhabilitada.
+      languages:
+        ar: Árabe
+        cs: 
+        de: Alemán
+        dk: Danés
+        el: Griego
+        en: Inglés
+        es: Español
+        fi: 
+        fr: Francés
+        fy: 
+        hi: 
+        it: Italiano
+        ja: 
+        lb: 
+        nb: 
+        nl: Holandés
+        nn: 
+        'no': 
+        pl: Polaco
+        pt: Portugués
+        rm: 
+        ru: Ruso
+        se: 
+        sr: Serbio
+        sv: 
+        tr: Turco
+        unknown: Desconocido
+        zh: Chino
+      leave_fullscreen: Abandonar modo de pantalla completa
+      lets_go: Comencemos
+      logo: Logo
+      media_quality: Calidad
+      mute_off: Abandonar modo silencio
+      mute_on: Iniciar modo silencio
+      navigate_top: Ir a la primera página
+      navigation: Navegación
+      new_pages_box:
+        additional_pages_html: "...y <span></span> más"
+        description: Desde su última visita han sido añadidas páginas a éste Pageflow
+        title: Páginas nuevas
+      notice: Nota
+      open_audio: Abrir audio
+      open_navigation: Abrir navegación
+      open_overview: Abrir vista general
+      open_video: Abrir video
+      overview: Vista general
+      panorama:
+        close: Cerrar vista panorama de 360° y mostrar texto
+        start: Iniciar vista panorama de 360°
+      play_video: Iniciar vídeo
+      privacy_notice: Nota privada
+      read_more: 
+      scroll_back_indicator: Desplazarse hacia atrás
+      scroll_down: Desplazarse hacia abajo
+      scroll_hint: Utilice la rueda de desplazamiento de su ratón o las teclas de dirección de su teclado para navegar entre las páginas.
+      scroll_indicator: Desplazarse hacia abajo para continuar
+      scroll_left: Desplazarse hacia la izquierda
+      scroll_right: Desplazarse hacia la derecha
+      scroll_up: Desplazarse hacia arriba
+      share: Compartir
+      share_in_telegram: 
+      share_in_whats_app: 
+      share_on_facebook: Compartir en Facebook
+      share_on_google: Compartir en Google+
+      share_on_linked_in: 
+      share_on_twitter: Compartir en X
+      share_this_entry: Esta historia
+      share_this_page: Esta página
+      share_via_email: 
+      show_home: Inicio
+      show_text: Mostrar texto
+      skip_links_content: Ir al contenido
+      skip_links_navigation: Ir al menú
+      skip_links_top_navigation: Ir al menú principal
+      sound_hint: 'Este formato de historia multimedia utiliza secuencias de vídeo y audio. Por favor asegúrese de que sus altavoces estén encendidos.  '
+      start_audio: Iniciar audio ahora
+      start_video: Iniciar vídeo ahora
+      swipe_hint: Deslíze el dedo por la pantalla para navegar entre las páginas.
+      swipe_indicator: Deslíze el dedo por la pantalla para continuar
+      swipe_to_continue: 
+      text_track_modes:
+        auto: Auto (%{label})
+        auto_off: Auto (Apagado)
+        none: 
+      text_tracks: Subtítulos
+      third_party_embed_consent:
+        opt_in:
+          confirm: 
+          more_information: 
+        opt_out_info:
+          prompt_html: 
+          prompt_link: 
+      toggle_info_box: 
+      video: Vídeo
+      video_qualities:
+        annotations:
+          4k: 4k
+          fullhd: Alta definición HD
+          medium: 
+        labels:
+          4k: 
+          auto: 
+          fullhd: 
+          medium: 
+      volume: Volúmen
+      vr:
+        no_vr:
+          link: Mostrar video en la aplicación de Youtube
+          text: Los videos en 360 grados no pueden mostrarse en este navegador.
+        select_quality: Elegir calidad del video
+        start: Mirar video en 360 grados
+        start_cardboard: 
+        video_qualities:
+          4k: 
+          fullhd: 
+          high: 
+        video_quality_annotations:
+          4k: 
+          fullhd: 
+          high: 
+  pageflow_scrolled:
+    public:
+      chart:
+        default_title: 
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      enter_fullscreen: 
+      exit_fullscreen: 
+      image_rights: 
+      inline_file_rights_labels:
+        after: 
+        atmo: 
+        audio: 
+        before: 
+        image: 
+        poster: 
+        video: 
+      js_required: 
+      languages:
+        ar: 
+        cs: 
+        de: 
+        dk: 
+        el: 
+        en: 
+        es: 
+        fi: 
+        fr: 
+        fy: 
+        hi: 
+        it: 
+        ja: 
+        lb: 
+        nb: 
+        nl: 
+        nn: 
+        'no': 
+        pl: 
+        pt: 
+        rm: 
+        ru: 
+        se: 
+        sr: 
+        sv: 
+        tr: 
+        unknown: 
+        zh: 
+      media: 
+      more: 
+      navigation:
+        chapter: 
+        close_mobile_menu: 
+        language: 
+        legal_info: 
+        mute: 
+        open_mobile_menu: 
+        share: 
+        unmute: 
+      navigation_skip_links:
+        content: 
+      next: 
+      player_controls:
+        pause: 
+        play: 
+        progress: 
+        quality: 
+        text_tracks: 
+      previous: 
+      sound_disclaimer:
+        help_muted: 
+        help_unmuted: 
+      text_track_modes:
+        auto: 
+        auto_off: 
+        none: 
+      third_party_consent:
+        confirm: 
+        opt_in_prompt:
+          datawrapper: 
+          facebook: 
+          tiktok: 
+          twitter: 
+          vimeo: 
+          youtube: 
+        opt_out:
+          prompt: 
+          prompt_link: 
+      unsupported_browser: 
+      video_qualities:
+        annotations:
+          4k: 
+          fullhd: 
+          medium: 
+        labels:
+          4k: 
+          auto: 
+          fullhd: 
+          medium: 

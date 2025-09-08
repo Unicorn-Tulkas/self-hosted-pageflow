@@ -1,0 +1,171 @@
+@import "bourbon";
+
+@import "pageflow/fonts";
+
+@import "pageflow/jquery_ui";
+@import "pageflow/ui/normalize";
+@import "pageflow/ui";
+@import "pageflow/animations";
+
+@import "./blank_entry";
+@import "./dialogs";
+@import "./colors";
+@import "./entry_preview";
+@import "./background_positioning";
+@import "./page_selection";
+@import "./files_explorer";
+@import "./locked";
+@import "./help";
+@import "./indicators";
+@import "./disabled_atmo_indicator";
+@import "./unsupported_browser_hint";
+@import "./file_import";
+
+.editor {
+  @import "./change_theme";
+  @extend %pageflow-ui;
+
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size);
+
+  padding: 0;
+  display: block;
+  background-color: var(--ui-surface-color);
+  border: 0;
+  color: var(--ui-on-surface-color);
+  overflow: hidden;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar-header {
+    font-size: inherit;
+    font-weight: 500;
+    margin: 15px 0 5px 0;
+  }
+
+  ul {
+    list-style: none;
+    min-height: 10px;
+  }
+
+  a {
+    color: var(--ui-on-surface-color);
+    text-decoration: none;
+  }
+
+  @import "./composables";
+  @import "./list";
+  @import "./drop_down_button";
+
+  @import "./outline";
+  @import "./failures";
+  @import "./menu";
+  @import "./inputs";
+  @import "./confirm_upload";
+  @import "./manage_files";
+  @import "./files";
+  @import "./confirm_encoding";
+  @import "./files_gallery";
+  @import "./filtered_files";
+  @import "./file_meta_data";
+  @import "./file_stages";
+  @import "./file_thumbnails";
+  @import "./file_settings_dialog";
+  @import "./info_box";
+  @import "./text_tracks";
+  @import "./static_thumbnails";
+  @import "./notifications";
+  @import "./publish_entry";
+  @import "./other_entry_item";
+  @import "./select_button";
+  @import "./quotas";
+  @import "./back_button_decorator";
+  @import "./widgets";
+  @import "./page_links";
+  @import "./storyline_picker";
+  @import "./loading";
+  @import "./sidebar_footer";
+  @import "./emulation_mode_button";
+  @import "./help_image";
+
+  a.publish {
+    @include eye-icon;
+    @include icon-button("primary");
+    float: right;
+  }
+
+  a.close {
+    @include cancel-icon;
+    @include icon-button;
+  }
+
+  a.back {
+    @include left-open-icon;
+    @include icon-button;
+  }
+
+  a.add_chapter,
+  a.add_page {
+    @include plus-circled-icon;
+    @include icon-button;
+  }
+
+  a.destroy {
+    @include icon-button("destructive");
+    @include trash-icon;
+    float: right;
+  }
+
+  a.upload {
+    @include icon-button("primary");
+    @include up-icon;
+    float: right;
+  }
+
+  .scrolling {
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 31px;
+    overflow: auto;
+    overflow-y: scroll;
+  }
+}
+
+main.ui-layout-pane {
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background-color: #000;
+}
+
+.ui-layout-resizer {
+  background-color: var(--ui-surface-color);
+  border: 0;
+  border-left: solid 1px var(--ui-on-surface-color-lightest);
+  border-top-left-radius: rounded(sm);
+  border-bottom-left-radius: rounded(sm);
+}
+
+.ui-layout-toggler {
+  border: 0;
+  border-top-right-radius: rounded(lg);
+  border-bottom-right-radius: rounded(lg);
+}
+
+#entry_preview {
+  height: 100%;
+}
+
+#help_entries_seed {
+  display: none;
+}
+
+form#upload {
+  visibility: hidden;
+}

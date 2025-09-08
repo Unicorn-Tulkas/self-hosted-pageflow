@@ -1,0 +1,79 @@
+////
+/// @group page-typography
+////
+
+/// Base typography for page.
+$page-typography: () !default;
+
+/// Typography for content text.
+$page-content-text-typography: () !default;
+
+/// Typography for content text in phone layout.
+$page-content-text-phone-typography: () !default;
+
+/// Base font size for page content
+$page-content-font-size: 1em !default;
+
+/// Base font size for page content in phone layout
+$page-content-phone-font-size: 0.7em !default;
+
+
+// Deprecated. Use typography variables above.
+
+$page-font-family: $standard-font !default;
+$page-font-size: 16px !default;
+$page-content-text-font-family: $page-font-family !default;
+$page-content-text-font-size: 1.2em !default;
+$page-content-text-line-height: 1.5em !default;
+$page-content-list-margin: 1em !default;
+$page-content-list-indent: 40px !default;
+
+@import "./page/anchors";
+@import "./page/colors";
+@import "./page/header";
+@import "./page/hyphenate";
+@import "./page/paddings";
+@import "./page/content_text_margin";
+@import "./page/scroller";
+@import "./page/shadow";
+
+@import "./page/line_lengths";
+
+.page {
+  @include typography(
+    $page-typography,
+    (
+      font-family: $page-font-family,
+      font-size: $page-font-size
+    )
+  );
+
+  .content {
+    font-size: $page-content-font-size;
+
+    @include phone {
+      font-size: $page-content-phone-font-size;
+    }
+  }
+
+  .page_text > * {
+    @include typography(
+      $page-content-text-typography,
+      (
+        font-family: $page-content-text-font-family,
+        font-size: $page-content-text-font-size,
+        line-height: $page-content-text-line-height
+      )
+    );
+
+    @include phone {
+      @include typography($page-content-text-phone-typography);
+    }
+  }
+
+  .page_text > .paragraph ul,
+  .page_text > .paragraph ol {
+    margin: $page-content-list-margin 0;
+    padding: 0 0 0 $page-content-list-indent;
+  }
+}

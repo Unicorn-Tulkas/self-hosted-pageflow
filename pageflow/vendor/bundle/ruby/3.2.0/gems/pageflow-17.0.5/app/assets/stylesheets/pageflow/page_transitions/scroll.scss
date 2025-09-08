@@ -1,0 +1,105 @@
+/* scroll transition to left*/
+
+section.scroll {
+  @include animation-duration(1s);
+  @include animation-fill-mode(forwards);
+
+  &-fast {
+    @include animation-duration(0.5s);
+  }
+
+  &-in {
+    &.animate-in-forwards,
+    &.animate-in-backwards {
+      z-index: 2;
+    }
+  }
+
+  &-over {
+    &.animate-in-forwards,
+    &.animate-out-backwards {
+      z-index: 2;
+    }
+  }
+
+  &-from_right {
+    &.animate-in-forwards {
+      @include animation-name(scroll-in-right);
+    }
+
+    &.animate-out-backwards {
+      @include animation-name(scroll-out-right);
+    }
+
+    &.scroll-in {
+      &.animate-in-backwards {
+        @include animation-name(scroll-in-left);
+      }
+
+      &.animate-out-forwards {
+        @include animation-name(scroll-out-left);
+      }
+    }
+  }
+
+  &-from_left {
+    &.animate-in-forwards {
+      @include animation-name(scroll-in-left);
+    }
+
+    &.animate-out-backwards {
+      @include animation-name(scroll-out-left);
+    }
+
+    &.scroll-in {
+      &.animate-in-backwards {
+        @include animation-name(scroll-in-right);
+      }
+
+      &.animate-out-forwards {
+        @include animation-name(scroll-out-right);
+      }
+    }
+  }
+
+
+  &-from_bottom {
+    &.animate-in-forwards {
+      @include animation-name(scroll-in-forwards);
+    }
+
+    &.animate-out-backwards {
+      @include animation-name(scroll-out-backwards);
+    }
+
+    &.scroll-in {
+      &.animate-in-backwards {
+        @include animation-name(scroll-in-backwards);
+      }
+
+      &.animate-out-forwards {
+        @include animation-name(scroll-out-forwards);
+      }
+    }
+  }
+
+  &-from_top {
+    &.animate-in-forwards {
+      @include animation-name(scroll-in-backwards);
+    }
+
+    &.animate-out-backwards {
+      @include animation-name(scroll-out-forwards);
+    }
+
+    &.scroll-in {
+      &.animate-in-backwards {
+        @include animation-name(scroll-in-forwards);
+      }
+
+      &.animate-out-forwards {
+        @include animation-name(scroll-out-backwards);
+      }
+    }
+  }
+}

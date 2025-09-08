@@ -1,0 +1,92 @@
+ul.files {
+  margin-top: space(2);
+
+  > li {
+    background-color: var(--ui-primary-color-lightest);
+    border-radius: rounded();
+    margin-bottom: 2px;
+    position: relative;
+    padding: 37px 10px 0 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 23px;
+  }
+
+  > li.expanded {
+    height: auto;
+  }
+
+  li.blank_slate {
+    text-align: center;
+    padding: 10px 5px 20px 5px;
+    color: var(--ui-on-surface-color-light);
+  }
+
+  .file_thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 60px;
+    vertical-align: middle;
+  }
+
+  .file_name {
+    margin-bottom: 10px;
+    display: block;
+
+    @include label;
+  }
+
+  .actions {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    text-align: right;
+
+    a {
+      float: left;
+      margin-left: 5px;
+    }
+  }
+
+  a.settings,
+  a.cancel,
+  a.confirm,
+  a.retry {
+    @include icon-only-button();
+  }
+
+  a.settings {
+    @include cog-icon;
+  }
+
+  a.remove {
+    @include icon-only-button("destructive");
+    @include trash-icon;
+  }
+
+  a.cancel {
+    @include cancel-icon;
+  }
+
+  a.confirm {
+    @include check-icon;
+  }
+
+  a.retry {
+    @include arrows-ccw-icon;
+  }
+
+  a.select {
+    @include simple-button("primary");
+
+    padding-left: 5px;
+    padding-right: 5px;
+    vertical-align: middle;
+
+    position: absolute;
+    top: 3px;
+    left: 70px;
+  }
+}

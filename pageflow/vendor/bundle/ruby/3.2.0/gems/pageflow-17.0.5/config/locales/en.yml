@@ -1,0 +1,2006 @@
+en:
+  active_admin:
+    access_denied:
+      message: You are not authorized to perform this action.
+    any: Any
+    batch_actions:
+      action_label: "%{title} Selected"
+      button_label: Batch Actions
+      default_confirmation: Are you sure you want to do this?
+      delete_confirmation: Are you sure you want to delete these %{plural_model}?
+      labels:
+        destroy: Delete
+      link: Create one
+      selection_toggle_explanation: "(Toggle Selection)"
+      succesfully_destroyed:
+        one: Successfully destroyed 1 %{model}
+        other: Successfully destroyed %{count} %{plural_model}
+    blank_slate:
+      content: There are no %{resource_name} yet.
+      link: Create one
+    cancel: Cancel
+    clear_filters: Clear filters
+    comments:
+      add: Add Comment
+      author: Author
+      author_missing: Anonymous
+      author_type: Author Type
+      body: Body
+      errors:
+        empty_text: Comment wasn't saved, text was empty.
+      no_comments_yet: No comments yet.
+      resource: Resource
+      resource_type: Resource Type
+      title: Comment
+      title_content: Comments (%{count})
+    create_model: Create %{model}
+    dashboard: Dashboard
+    dashboard_welcome:
+      call_to_action: To add dashboard sections, checkout 'app/admin/dashboard.rb'
+      welcome: Welcome to Active Admin. This is the default dashboard page.
+    delete: Delete
+    delete_confirmation: Are you sure you want to delete this?
+    delete_model: Delete %{model}
+    details: "%{model} Details"
+    devise:
+      change_password:
+        submit: Change my password
+        title: Change your password
+      email:
+        title: Email
+      links:
+        forgot_your_password: Forgot your password?
+        resend_confirmation_instructions: Re-send confirmation instructions
+        resend_unlock_instructions: Re-send unlock instructions
+        sign_in: Sign in
+        sign_in_with_omniauth_provider: Sign in with %{provider}
+        sign_up: Sign up
+      login:
+        remember_me: Remember me
+        submit: Login
+        title: Login
+      password:
+        title: Password
+      resend_confirmation_instructions:
+        submit: Resend confirmation instructions
+        title: Resend confirmation instructions
+      reset_password:
+        submit: Reset My Password
+        title: Forgot your password?
+      sign_up:
+        submit: Sign up
+        title: Sign up
+      subdomain:
+        title: Subdomain
+      unlock:
+        submit: Resend unlock instructions
+        title: Resend unlock instructions
+      username:
+        title: Username
+    download: 'Download:'
+    dropdown_actions:
+      button_label: Actions
+    edit: Edit
+    edit_model: Edit %{model}
+    empty: Empty
+    equal_to: Equal to
+    filter: Filter
+    filters:
+      buttons:
+        clear: Clear Filters
+        filter: Filter
+      predicates:
+        contains: Contains
+        ends_with: Ends with
+        equals: Equals
+        from: From
+        greater_than: Greater than
+        gteq_datetime: Greater or equal to
+        less_than: Less than
+        lteq_datetime: Lesser or equal to
+        starts_with: Starts with
+        to: To
+    greater_than: Greater than
+    has_many_delete: Delete
+    has_many_new: Add New %{model}
+    has_many_remove: Remove
+    index_list:
+      block: List
+      blog: Blog
+      grid: Grid
+      table: Table
+    less_than: Less than
+    logout: Logout
+    main_content: Please implement %{model}#main_content to display content.
+    new: Create new
+    new_model: New %{model}
+    next: Next
+    pagination:
+      empty: No %{model} found
+      entry:
+        one: entry
+        other: entries
+      multiple: Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{total}</b> in total
+      multiple_without_total: Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b>
+      one_page: Displaying <b>all %{n}</b> %{model}
+    powered_by: " "
+    previous: Previous
+    scopes:
+      frozen: All
+      publications: Only published
+      publications_and_user_snapshots: Only published/snapshots
+    search_field: 'Search %{field} '
+    sidebars:
+      filters: Filters
+      folders: Folders
+    status_tag:
+      'no': 'No'
+      'yes': 'Yes'
+    undelete: Undelete
+    unsupported_browser:
+      headline: Please note that Internet Explorer versions 9 or less is no longer supported.
+      recommendation: We recommend upgrading to the latest <a href="http://windows.microsoft.com/ie">Internet Explorer</a>, <a href="https://chrome.google.com/">Google Chrome</a>, or <a href="https://mozilla.org/firefox/">Firefox</a>.
+      turn_off_compatibility_view: If you are using IE 9 or later, make sure you <a href="http://windows.microsoft.com/en-US/windows7/webpages-look-incorrect-in-Internet-Explorer">turn off "Compatibility View"</a>.
+    view: View
+  activerecord:
+    attributes:
+      admin_user:
+        created_at: Created at
+        current_sign_in_at: Current sign in at
+        current_sign_in_ip: Current IP-Address
+        email: Email
+        encrypted_Password: Encrypted password
+        id: ID
+        last_sign_in_at: Last sign-in at
+        last_sign_in_ip: Last sign-in IP
+        remember_created_at: Remember password since
+        reset_password_sent_at: Password reset instructions sent at
+        reset_password_token: Passwort reset token
+        sign_in_count: Sign-in count
+        updated_at: Updated at
+      pageflow/account:
+        created_at: Created at
+        default_file_rights: Default file credits
+        default_site: Default site
+        entries_count: "# Stories"
+        landing_page_name: Landing page
+        name: Name
+        own_role: Own Role
+        users_count: "# Users"
+      pageflow/audio_file:
+        duration: Duration
+        format: Format
+      pageflow/chapter:
+        display_parent_page_button: Display 'Parent Page'-Button
+        navigation_bar_mode: Navigation Bar
+        parent_page_perma_id: Parent Page
+        title: Title
+      pageflow/entry:
+        account: Account
+        author: Author
+        created_at: Created
+        credits: Credits
+        edited_at: Edited
+        embed_code: Embed
+        first_published_at: First published at
+        keywords: Keywords
+        locale: Language
+        own_role: Role
+        published?: Publication state
+        published_at: Published
+        published_revision_published_at: Published since
+        publisher: Publisher
+        share_image_id: Social Sharing Image
+        share_providers: Social Share Links
+        share_url: Social Sharing URL
+        summary: Summary
+        theme_name: Theme
+        title: Title
+        type_name: Story type
+        updated_at: Updated at
+        url: Permalink
+        with_publication_state: Publication state
+      pageflow/entry_template:
+        configuration:
+          group_label: Configuration
+          home_button_enabled: "'Home'-Button enabled by default"
+        default_author: Default author
+        default_keywords: Default keywords
+        default_locale: Default locale
+        default_publisher: Default publisher
+        default_share_providers: Default share links
+        entry_type_name: Story type
+        theme_name: Theme
+      pageflow/folder:
+        account: Account
+        name: Name
+      pageflow/image_file:
+        dimensions: Dimensions
+      pageflow/membership:
+        account: Account
+        created_at: Member since
+        entity: Entity
+        entry: Story
+        role: Role
+        user: Editor
+      pageflow/page:
+        additional_description: Infobox Description
+        additional_title: Infobox Title
+        allow_full_screen: Allow fullscreen
+        atmo_audio_file_id: Atmo Audio
+        atmo_during_playback: Atmo during playback
+        audio_file_id: Audio
+        auto_change_page_on_ended: Go to next page on end
+        autoplay: Autoplay
+        background_image_id: Background-Image
+        background_video_id: Background-Video
+        delayed_text_fade_in: Fade in text after delay
+        description: Description (Overview)
+        display_in_navigation: Show in navigationbar
+        emphasize_in_navigation: Emphasize in navigationbar
+        gradient_opacity: Gradient opacity
+        hide_logo: Hide logo
+        hide_title: Hide titles
+        invert: Invert colors
+        linked_page_ids: Link pages
+        linked_pages_layout: Hero
+        mobile_poster_image_id: Posterimage (mobile)
+        poster_image_id: Posterimage
+        scroll_indicator_mode: Visible scroll indicators
+        scroll_indicator_orientation: Scroll indicator orientation
+        subtitle: Subtitle
+        tagline: Tagline
+        template: Pagetype
+        text: Text
+        text_position: Textposition
+        thumbnail_image_id: Thumbnail
+        title: Title
+        transition: Transition effect
+        video_file_id: Video
+      pageflow/revision:
+        created_at: Created at
+        created_with: Created by
+        creator: Created by
+        frozen_at: Effective
+        published_at: Published at
+        published_until: Published until
+        updated_at: Updated at
+      pageflow/site:
+        account: Account
+        additional_cnames: Additional CNAMES
+        cname: CNAME
+        copyright_link_label: Copyright link Text
+        copyright_link_url: Copyright link URL
+        feeds_enabled: Atom feeds
+        home_url: Redirect URL
+        imprint_link_label: Legal notice link label
+        imprint_link_url: Legal notice link URL
+        privacy_link_url: Privacy link URL
+        share_providers: Default Share Links
+        sitemap_enabled: XML sitemap
+        title: Title
+      pageflow/text_track_file:
+        kind: Kind
+        label: Label
+        srclang: Language
+      pageflow/video_file:
+        dimensions: Dimensions
+        duration: Duration
+        format: Format
+      pageflow/widget:
+        blur_strength: Blurriness
+        invert: Invert Color
+        remove_logo: Remove Logo
+      user:
+        account: Account
+        admin: System administrator
+        admin?: System administrator
+        created_at: Registered at
+        current_password: Current password
+        current_sign_in_at: Signed in at
+        email: Email address
+        entry: Story
+        first_name: First name
+        full_name: Full name
+        initial_account: Account
+        initial_role: Role
+        last_name: Last name
+        last_sign_in_at: Last signed in at
+        locale: Language
+        membership: Membership
+        password: Password
+        password_confirmation: Password confirmation
+        role: Role
+        sign_in_count: "# of sign ins"
+        suspended?: Suspended
+        unconfirmed_email: Unconfirmed Email
+    errors:
+      messages:
+        accepted: has to be accepted
+        blank: required
+        confirmation: not equal
+        empty: required
+        equal_to:
+          one: must be equal to %{count}
+          other: must be equal to %{count}
+        even: must be even
+        exclusion: not available
+        greater_than:
+          one: must be greater than %{count}
+          other: must be greater than %{count}
+        greater_than_or_equal_to:
+          one: must be greater or equal %{count}
+          other: must be greater or equal %{count}
+        inclusion: invalid
+        invalid: invalid
+        invalid_date: is not a valid date
+        less_than:
+          one: must be smaller than %{count}
+          other: must be smaller than %{count}
+        less_than_or_equal_to:
+          one: must be smaller or equal than %{count}
+          other: must be smaller or equal than %{count}
+        not_a_number: not a number
+        not_an_integer: not an integer
+        odd: must be odd
+        record_invalid: Record is invalid %{errors}
+        taken: already taken
+        too_long:
+          one: too long (only %{count} chars allowed)
+          other: too long (only %{count} chars allowed)
+        too_short:
+          one: too short (minimum of %{count} chars required)
+          other: too short (minimum of %{count} chars required)
+        validation: has to be at least 5 chars and to contain one decimal
+        wrong_length:
+          one: wrong length (must be exactly %{count} chars)
+          other: wrong length (must be exactly %{count} chars)
+      models:
+        pageflow/entry:
+          attributes:
+            folder:
+              must_be_same_account: Folder must belong to same account as story
+            type_name:
+              must_be_available_for_account: "'%{type_name}' isn't available for this account"
+        pageflow/entry_template:
+          attributes:
+            entry_type_name:
+              taken: already configured. A story template for the story type already exists in this account. Return to the story templates tab and edit the existing story template instead of creating a new one.
+        pageflow/membership:
+          attributes:
+            user:
+              required: User must be selected
+    models:
+      account:
+        one: Account
+        other: Accounts
+      admin_user:
+        one: System administrator
+        other: System administrators
+      entry:
+        one: Story
+        other: Stories
+      folder:
+        one: Folder
+        other: Folders
+      membership:
+        one: Membership
+        other: Memberships
+      pageflow/account:
+        one: Account
+        other: Accounts
+      pageflow/audio_file:
+        one: Audio File
+        other: Audio Files
+      pageflow/entry:
+        one: Story
+        other: Stories
+      pageflow/entry_template:
+        one: Story template
+        other: Story templates
+      pageflow/folder:
+        one: Folder
+        other: Folders
+      pageflow/image_file:
+        one: Image File
+        other: Image Files
+      pageflow/membership:
+        one: Membership
+        other: Memberships
+      pageflow/other_file:
+        many: Unknown files
+        one: Unknown file
+      pageflow/revision:
+        one: Version
+        other: Versions
+      pageflow/site:
+        one: Site
+        other: Sites
+      pageflow/text_track_file:
+        one: Text Track File
+        other: Text Track Files
+      pageflow/video_file:
+        one: Video File
+        other: Video Files
+      revision:
+        one: Version
+        other: Versions
+      site:
+        one: Site
+        other: Sites
+      user:
+        one: User
+        other: Users
+    values:
+      pageflow/chapter:
+        navigation_bar_mode:
+          all: All pages
+          current_chapter: Current chapter only
+          inherit_from_parent: Inherit from parent chapter
+          non: Hide
+          same_parent_chapter: Chapters with same parent chapter only
+          same_parent_page: Chapters with same parent page only
+      pageflow/entry:
+        publication_states:
+          not_published: Not published
+          published_with_noindex: Published but excluded from search engines
+          published_with_password_protection: Published with password protection
+          published_without_password_protection: Published without password protection
+        share_providers:
+          email: Email
+          facebook: Facebook
+          linked_in: LinkedIn
+          telegram: Telegram (only mobile)
+          whats_app: WhatsApp (only mobile)
+        type_names:
+          paged: Page-based / Classic
+          scrolled: Continuously scrolling / Pageflow Next
+      pageflow/membership:
+        role:
+          editor: Editor
+          manager: Manager
+          member: Member
+          previewer: Previewer
+          publisher: Publisher
+      pageflow/page:
+        atmo_during_playback:
+          mute: Mute
+          play: Keep playing
+          turn_down: Keep playing at lower volume
+        delayed_text_fade_in:
+          long: Long delay
+          medium: Medium delay
+          no_fade: No fade in
+          short: Short delay
+        linked_pages_layout:
+          default: "(none)"
+          hero_top_left: Top left
+          hero_top_right: Top right
+        scroll_indicator_mode:
+          all: Forwards and Backwards
+          non: Non
+          only_back: Backwards only
+          only_next: Forwards only
+        scroll_indicator_orientation:
+          horizontal: Horizontal
+          vertical: Vertical
+        template:
+          audio: Audio
+          background_image: Background-Image
+          internal_links: Internal Links
+          video: Video
+        text_position:
+          center: Center
+          left: Left
+          right: Right
+        transition:
+          fade: Fade
+          scroll: Scroll
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  devise:
+    confirmations:
+      confirmed: Your account was successfully confirmed. You are now signed in.
+      send_instructions: You will receive an email with instructions about how to confirm your account in a few minutes.
+      send_paranoid_instructions: If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes.
+    failure:
+      admin_user:
+        invalid: Password or username was not correct.
+        unauthenticated: Please log in using a system administrator account.
+      already_authenticated: You are already signed in.
+      inactive: Your account was not activated yet.
+      invalid: Invalid email or password.
+      invalid_token: Invalid authentication token.
+      locked: Your account is locked.
+      not_found_in_database: Invalid email or password.
+      timeout: Your session expired, please sign in again to continue.
+      unauthenticated: You need to sign in or sign up before continuing.
+      unconfirmed: You have to confirm your account before continuing.
+    mailer:
+      confirmation_instructions:
+        subject: Confirmation instructions
+      reset_password_instructions:
+        subject: Reset password instructions
+      unlock_instructions:
+        subject: Unlock Instructions
+    oauth_providers:
+      facebook: Facebook
+      google_oauth2: Google
+    omniauth_callbacks:
+      failure: Could not authenticate you from %{kind} because "%{reason}".
+      success: Successfully authenticated from %{kind} account.
+    passwords:
+      no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
+      send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
+      send_paranoid_instructions: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
+      updated: Your password was changed successfully. You are now signed in.
+      updated_not_active: Your password was changed successfully.
+    registrations:
+      destroyed: Bye! Your account was successfully cancelled. We hope to see you again soon.
+      edit:
+        are_you_sure: Are you sure?
+        change_password: Change password
+        delete_account: Delete account
+        submit: Save
+        userdata: Userinfo
+      new:
+        cancel_oauth_sign_up: Cancel
+        registration: Registration
+        sign_up_with_facebook: Log-in using Facebook
+        sign_up_with_google: Log in using Google
+        submit: Submit
+      signed_up: Welcome! You have signed up successfully.
+      signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
+      signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
+      signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
+      update_needs_confirmation: You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.
+      updated: You updated your account successfully.
+    sessions:
+      admin_user:
+        signed_in: Successfully signed in as system administrator.
+      new:
+        sign_in_with_facebook: Sign in with Facebook
+        sign_in_with_google: Sign in with Google
+      signed_in: Signed in successfully.
+      signed_out: Signed out successfully.
+    unlocks:
+      send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
+      send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
+      unlocked: Your account has been unlocked successfully. Please sign in to continue.
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      already_confirmed: was already confirmed, please try signing in
+      blank: can't be blank
+      confirmation: not equal with confirmation
+      confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
+      empty: can't be empty
+      equal_to:
+        one: must be equal to %{count}
+        other: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      expired: has expired, please request a new one
+      greater_than:
+        one: must be greater than %{count}
+        other: must be greater than %{count}
+      greater_than_or_equal_to:
+        one: must be greater than or equal to %{count}
+        other: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      invalid_date: is not a valid date
+      less_than:
+        one: must be less than %{count}
+        other: must be less than %{count}
+      less_than_or_equal_to:
+        one: must be less than or equal to %{count}
+        other: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      not_found: not found
+      not_locked: was not locked
+      not_saved:
+        one: Could not save. One error.
+        other: Could not save. %{count} errors.
+      odd: must be odd
+      other_than:
+        one: must be other than %{count}
+        other: must be other than %{count}
+      present: must be blank
+      readonly: readonly
+      record_invalid: 'Validation failed: %{errors}'
+      restrict_dependent_destroy:
+        many: Cannot delete record because dependent %{record} exist
+        one: Cannot delete record because a dependent %{record} exists
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+    template:
+      body: 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: "%{count} errors prohibited this %{model} from being saved"
+  formtastic:
+    cancel: Cancel
+    create: 'Create %{model} '
+    'no': 'No'
+    required: required
+    reset: 'Reset %{model} '
+    submit: 'Submit %{model} '
+    update: 'Update %{model} '
+    'yes': 'Yes'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  i18n:
+    transliterate:
+      rule:
+        ä: 
+        ö: 
+        ü: 
+  language: English
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            one: Billion
+            other: Billion
+          million: Million
+          quadrillion:
+            one: Quadrillion
+            other: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: Unit
+      format:
+        delimiter: ","
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ","
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ","
+  pageflow:
+    admin:
+      account:
+        add: Add Account
+        cannot_add: What you want to do is not possible at the moment.
+        none_addable_tooltip: No account available
+      accounts:
+        no_entries: No Stories
+        no_members: No members
+        site_defaults_inline_help: The following settings will be used as defaults for new stories in this account. Changes do not affect existing stories.
+      entries:
+        add_folder: Add folder
+        confirm_depublish: Depublish this story?
+        confirm_duplicate: Duplicate this story?
+        confirm_restore: Restore story to the selected version? A snapshot will be created, so that you can roll back later.
+        depublish: Depublish story
+        duplicate: Copy Story
+        edit: Edit
+        edit_config: Edit configuration
+        edit_revision: Edit
+        editor: Editor
+        editor_hint: Open editor
+        embed_code_hint: Embed the published story on a website.
+        entries: Stories
+        forever: "(unlimited)"
+        members: Members
+        no_members: No members assigned
+        no_revisions: No versions yet
+        noindex: Excluded from search engines
+        not_allowed_to_see_entry_types: You are not allowed to access the available story types for this account.
+        not_published: Not yet published
+        password_protected: Password protected
+        preview: Preview
+        preview_hint: Open preview
+        published_forever: Published
+        published_revision_legend: Currently published version
+        published_until: Published until %{published_until}
+        remove: Remove
+        remove_logo: Remove logo
+        restore: Restore
+        revision_created_with:
+          auto: Automatic snapshot
+          publish: Publish
+          restore: Automatic snapshot
+          user: Manual snapshot
+        revision_created_with_hint:
+          auto: This version was automatically saved
+          publish: This version has been published
+          restore: This version has been automatically saved before an resrore was made
+          user: This version was manually saved
+        show: View
+        show_public: Public
+        show_public_hint: Visit public page
+        snapshot: Save current version
+        title_hint: This field determines the URL for this story.
+      entry:
+        add: Add Story
+        entry_membership_hint: Invite users to your account to assign them as members of this Story.
+        none_addable_tooltip: No story available
+        user_quota_exhausted: Your user quota is exhausted.
+      entry_templates:
+        page_title:
+          edit: Edit story template for story type
+          new: Create new story template for story type
+      features:
+        states:
+          default: Default (%{inherited})
+          disabled: Disabled
+          enabled: Enabled
+          undefined: "(Default)"
+      folders:
+        all: All
+        confirm_destroy: 'Delete folder? Note: Containing stories will be preserved.'
+        destroy: Delete
+        edit: Edit
+      memberships:
+        on_account:
+          role:
+            hint_html: You can assign roles on individual stories of this account to a <strong>Member</strong>.<br>A <strong>Previewer</strong> can additionally preview all stories of this account.<br>An <strong>Editor</strong> can additionally edit all stories of this account.<br>A <strong>Publisher</strong> can additionally publish all stories of this account.<br>A <strong>Manager</strong> can additionally set user roles on all stories of this account and edit them.
+        on_entry:
+          role:
+            hint_html: A <strong>Previewer</strong> can preview this story.<br>An <strong>Editor</strong> can additionally edit this story.<br>A <strong>Publisher</strong> can additionally publish this story.<br>A <strong>Manager</strong> can additionally set user roles on this story and edit them.
+      resource_tabs:
+        account_editor_hint: Users who are assigned on an account level are not listed here
+        accounts: Accounts
+        entries: Stories
+        entry_templates: Story templates
+        features: Features
+        members: Members
+        revisions: Versions
+        sites: Sites
+        users: User
+      revisions:
+        published_until_hint: Leave blank to publish indefinitely.
+        restored: Version restored
+      sites:
+        add: Add site
+        additional_cnames_hint: Comma separated list of additional CNAMES. Used only to select the correct redirect URL.
+        cname_hint: Used in public sharing URLs.
+        default_author_hint: Default 'author' meta field for stories
+        default_keywords_hint: Default 'keywords' meta field for stories
+        default_locale_hint: Default language for stories
+        default_name: "(Default)"
+        default_publisher_hint: Default 'publisher' meta field for stories
+        feeds_hint: |-
+          When enabled, feeds containing all published entries of the
+          site are available via URLs of the form
+          https://%{site_host}/feeds/en.atom where "en" can be
+          replaced with any locale you want to filter by.
+        home_url_hint: Used for requests to the root path with one of the above CNAMES. Default target location for the home button.
+        name: "%{account_name}"
+        remove_logo: Remove logo
+        show: View
+        sitemap_hint: |-
+          When enabled, a sitemap with all published entries of the
+          site is available at
+          https://%{site_host}/sitemap.xml. Register the URL in Google
+          Search Console or similar tools.
+        title_hint: Used in entry titles and as title for the atom feed.
+      user:
+        cannot_add: What you want to do is not possible. You need to upgrade.
+        none_addable_tooltip: No user available
+      users:
+        account: Profile
+        accounts: Accounts
+        add: Add user
+        add_entry: Add story
+        confirm_delete: Delete this user? This action cannot be undone.
+        delete: Delete
+        delete_account_membership_confirmation: |-
+          Really delete the account membership of this user?
+
+          CAUTION: All of the user's story memberships in this account are also deleted.
+        delete_entry_membership_confirmation: Really delete the story membership of this user?
+        delete_me:
+          cancel_label: No, do not delete my account!
+          delete_label: Delete account
+          warning_html: Please enter your current password to confirm deletion of your account. <b>All data will be deleted. This action cannot be undone.</b>
+        deleted: This user was deleted.
+        edit: Edit
+        edit_role: Edit Role
+        email_invitation_hint: The user will be invited to choose a password.
+        empty: 'This user has no associated stories. '
+        invite_user: Invite user
+        me:
+          change_password_hint: Leave blank to keep your current password.
+          delete_account: Delete account
+          delete_account_hint: You don't want to continue using Pageflow?
+          deleted: Your account has been deleted. You may sign-up for a new one at any time!
+          updated: Your profile has been updated.
+        member_exists: A user with the given email address is already member of the account.
+        member_exists_link: View user
+        no_accounts: No members
+        no_entries: No stories
+        none: There are no stories.
+        not_allowed_to_see_user_quota: You are not allowed to access the user quota for this account.
+        resend_invitation: Resend invitation email
+        resent_invitation: The invitation email has been resent.
+        roles:
+          account_manager: Konto-Administrator
+          accounts:
+            tooltip:
+              editor: Can edit stories of this account
+              manager: Can set roles on this account
+              member: Can be assigned roles on stories of this account
+              previewer: Can preview stories of this account
+              publisher: Can publish stories of this account
+          admin: System-Administrator
+          editor: Editor
+          entries:
+            tooltip:
+              editor: Can edit this story
+              manager: Can set roles on this story
+              previewer: Can preview this story
+              publisher: Can publish this story
+          manager: Manager
+          member: Member
+          own_account_role:
+            tooltip:
+              editor: You can edit stories in this account
+              manager: You can manage user and stories in this account
+              member: You can be assigned roles on stories in this account
+              previewer: You can preview stories in this account
+              publisher: You can publish stories in this account
+          own_entry_role:
+            tooltip:
+              editor: You can edit this story
+              manager: You can set roles on this story
+              previewer: You can preview this story
+              publisher: You can publish this story
+          previewer: Previewer
+          publisher: Publisher
+        suspend: Suspend
+        suspended: 'The user was suspended and will not be able to sign-in again. '
+        unsuspend: Unsuspend
+        unsuspended: The user was unsuspended.
+    audio:
+      help_entries:
+        page_type:
+          menu_item: Audio
+          text: "# Audio\n\n*Playing audio-files with controls*\n    \nHere you can combine audio-files with pictures or background videos and\ntext-content. Controls similar to the page type \"Video“\nare shown.  In addition to that you can write a\ndescription into an „Infobox“.\n\nVia \"Options\" the appearance of the player can be changed to the visualization of the waveform of an audio file.\n\nExamples of application: interviews, direct quotes, music"
+      open: Play audio
+      page_attributes:
+        audio_player_controls_variant:
+          inline_help: The audio page supports different display variants of player controls.
+          label: Player Controls Variante
+          values:
+            default: Standard
+            waveform: Waveform
+        waveform_color:
+          inline_help: Color of the waveform's parts that represents the already played part of the audio.
+          label: Waveform Color
+      page_type_category_name: Media
+      page_type_description: Audio player with controls
+      page_type_name: Audio
+    auto_change_page:
+      feature_name: Automatic Page Change
+    background_image:
+      help_entries:
+        page_type:
+          menu_item: Background Image/Video
+          text: "# Background Image/Video\n\n*Full-screen image or video loop and text*\n\nBy using the page type „Background-Image/Video“, large pictures\nor video loops are the background for the text and are paired with a\nmanually adjustable color gradient for an optimal\nlegibility. By adjusting the image section, you can ensure that your picture also shows the relevant section of your subject on mobile devices in portrait mode. \n\nOptionally the text color can be inverted. This\nis especially useful for bright background-images.\n\nUsers are able to hide the color-gradient and text in\nthe front-end, if they want to have a view of the\nbackground image or video.\n\nExamples: Presentation, part of a picture gallery,\nportrait\n\n**Note on sound for background video**: Due to technical restrictions based on the \"Autoplay Policy\" of the browser manufacturers, videos with sound cannot be played automatically on all devices/browsers. \n\nTo enable playback of video loops on mobile devices and in Safari on desktop and tablets, the sound is therefore suppressed. With Chrome this restriction is circumvented by a Unmute button, with Firefox users decide for themselves whether to allow automatic playback of audio."
+      page_type_category_name: Basic
+      page_type_description: Fullscreen image or video loop with text
+      page_type_name: Background image/video
+    chapter_hierachy:
+      feature_name: Chapter Hierachy
+    classic_loading_spinner:
+      widget_type_name: Classic
+    common_page_attributes:
+      background_type:
+        inline_help: The page background can either display an image or a video loop.
+        label: Background type
+        values:
+          image: Image
+          video: Video loop
+      mobile_poster_image_id:
+        inline_help: Displayed instead of the the background video loop on mobile devices.
+      poster_image_id:
+        inline_help: Displayed before the videos starts
+    common_page_link_attributes:
+      label:
+        inline_help: Choose a label to recognize the link within the overview. This label is for your orientation only and will not be displayed to the reader.
+        label: Label
+      page_transition:
+        inline_help: Choose the animation, that will be used to transition to the link's target page.
+        label: Page transition
+      target_page_id:
+        inline_help: Users will get to this page when clicking the link.
+        label: Target page
+    config:
+      text_track_kind:
+        captions: Audio Replacement Text Track
+        descriptions: Image Description Text Track
+        subtitles: Translation Text Track
+    consent_bar:
+      feature_name: Consent bar
+      widget_type_name: Consent bar
+    cookie_notice_bar:
+      widget_type_name: Cookied notice
+    default_theme:
+      name: Default
+    delayed_text_fade_in:
+      feature_name: Delayed text fade in
+    devise:
+      mailer:
+        reset_password_instructions:
+          ignore_hint: Please ignore this mail If you have not requested a password reset. Your password will not be changed in this case.
+          instruction: Somebody recently asked to reset your Pageflow password. Click here to change your password.
+          salutation: Hello %{first_name}
+    edit_locks:
+      break_action:
+        acquire: Continue here
+      errors:
+        held_by_other_session_error:
+          acquire_html: "<p>This story is already open in another editor window.</p>"
+          other_html: |-
+            <p>This story is already open in another editor window. Please reload this page and click on the 'Continue here' button.</p>
+            <p>If you continue working without reload, data loss may occur.</p>
+        held_by_other_user_error:
+          acquire_html: "<p><strong>%{user_name}</strong> is currently working on this story or has left the editor window open. Click 'Continue here' to take over.</p>"
+          other_html: "<p><strong>%{user_name}</strong> has ended your editor session. Please reload the page and click 'Continue here' to view the current version.</p>"
+        not_held_error:
+          other_html: "<p>Your editor session has been ended from another session. Please reload the page and click 'Continue here' to view the current version.</p>"
+      required: This action cannot be executed because this story has been opened in another editor session.
+      required_but_held_by_other_user: This action cannot be executed because this story has been opened by another user.
+    editor:
+      atmo:
+        disabled: Atmo disabled
+      blank_entry:
+        create_chapter: Click <em>New chapter</em> to create your first chapter.
+        create_page: Use the <em>New page</em> button within the chapter to add pages.
+        edit_page: Click directly on a page to switch to the pages edit view.
+        header: This is an empty Pageflow
+        intro: Each Pageflow consist of chapters and pages. The editor panel to your right shows the outline of your story.
+        outro: In this area, a live preview will be shown.
+      classic_loading_spinner:
+        widget_type_info_box_text: This is a preview of the classic loading spinner. It is displayed while the page is loading.
+      consent_bar:
+        widget_type_info_box_text: |-
+          The bar is displayed when first viewing an entry that uses
+          third party integrations (e.g., website tracking or embeds).
+      cookie_notice_bar:
+        widget_type_info_box_text: The notice is displayed when visiting a story that uses Cookies. Cookies are set, if an analytics integration is active or the 'Emphasize new pages' feature has been enabled.
+      entries:
+        unsupported_browser_hint:
+          message: The Pageflow editor does not support the browser version you are using. We recommend upgrading your browser to the most recent version.
+      errors:
+        UnmatchedUploadError: This filetype is not supported.
+        invalid_nested_type_error: 'Error: Upload file ''%{name}'' is a %{type}. Only the following types of files are allowed: %{validList}'
+        nested_type_error: 'Error while uploading ''%{name}'': %{type} cannot be uploaded as independent files. Use the settings menu for a file of the following type: %{validList}'
+        unknown: A unknown error has occurred.
+        unmatched_upload_error: No matching file type found for upload '%{name}' of type '%{type}'.
+        upload:
+          type_empty: none
+      file_settings_dialog:
+        tabs:
+          video_settings_tab: Video Details
+      files:
+        common_attributes:
+          alt:
+            inline_help: A hint describing the contents of the displayed element. Not displayed in the story, but can be used by screen reader software. Improves accessibility of the content.
+            label: Alt-Text
+          file_name:
+            column_header: File name
+            label: File name
+          license:
+            blank: "(Not specified)"
+            inline_help: Adds a link to the license in the credit note.
+            label: License
+          original_url:
+            label: Original
+          rights:
+            cell_title:
+              blank: Still blank
+              present: 'Present: %v{value}'
+            column_header: Rights
+            inline_help: Displayed in copyright area of story.
+            label: Rights
+          rights_display:
+            inline_help: |-
+              Decide if the file's credit note should be displayed in
+              the summary list in the info box, or right at the place
+              in the entry where the file is used.
+            label: Display rights
+            values:
+              credits: In the info box
+              inline: At the element where it is used
+          source_url:
+            inline_help: |-
+              Turns the credit note into a link to the original source
+              or to the author of the file.
+            label: Source URL
+          text_tracks:
+            label: Subtitles
+        settings_dialog_tabs:
+          general: Meta data
+          text_tracks: Text tracks
+        stages:
+          encoding:
+            action_required: Confirmation required.
+            active: Encoding in progress.
+            failed: Encoding failed.
+            finished: Encoding was successful.
+            pending: Encoding pending.
+          fetching_meta_data:
+            active: Fetching metadata.
+            failed: Metadata failure.
+            finished: Metadata successfully fetched.
+            pending: Metadata polling pending.
+          processing:
+            active: Processing.
+            failed: Processing failure.
+            finished: Processing successfully finished.
+            pending: Processing pending.
+          uploading:
+            active: Upload in progress.
+            failed: Upload failure.
+            finished: Successfully uploaded.
+            pending: Upload pending.
+          uploading_to_s3:
+            active: Transfering to S3.
+            failed: Transfer to S3 failed.
+            finished: Successfully transferred to S3.
+            pending: Transfer to S3 pending.
+        tabs:
+          audio_files: Audios
+          image_files: Images
+          other_files: Other
+          video_files: Videos
+      media_loading_spinner:
+        widget_type_info_box_text: This is a preview of the 'Image' loading view. The animation runs while the page is loading.
+      nested_files:
+        text_track_files:
+          delete:
+            cell_title: Delete text tracks
+            column_header: " "
+          file_name:
+            inline_help_html: "<ul><li>If the pattern of the file name resembles <strong>dateiname.wx_YZ.vtt</strong>, Pageflow will identify the language code, in this example <strong>wx</strong>.</li><li>An <strong>example</strong> for English (en) is <strong>subtitles.en_GB.vtt</strong>.</li></ul>"
+          kind:
+            cell_title:
+              captions: Audio Replacement Text Track
+              descriptions: Image Replacement Text Track
+              subtitles: Translation Text Track
+            column_header: Kind
+            inline_help_html: "<ul><li><strong>Audio Replacement Text Tracks</strong> are meant for users who understand a text track better than an audio track.</li><li><strong>Translation Text Tracks</strong> are meant for users who understand another language better than the language used in the audio track.</li><li><strong>Image Replacement Text Tracks</strong> are meant for users who understand a text track better than a video track. Image Replacement Text Tracks are often read aloud to the user by screen reading software supplied by the user.</li></ul>"
+            label: Kind
+          label:
+            column_header: Label
+            inline_help: For display in the text track picker as part of the media player
+            label: Label
+          no_files_blank_slate: Currently, there are no text tracks for this file.
+          srclang:
+            cell_title:
+              blank: Not yet entered
+              present: 'Entered: %{value}'
+            column_header: Language
+            inline_help_html: "<ul><li>The language used in a text track is specified as a two letter code according to ISO 639.1.</li> <li><strong>Examples:</strong> 'en' for English or 'fr' for French.</li> <li>Language codes are often given on the Wikipedia page of a language.</li></ul>"
+            label: Language
+      phone_horizontal_slideshow_mode:
+        page_transitions_inline_help: "<br /><br />Horizontal control gestures on phone have been enabled under 'Title and options > Appearance'. On phones, vertical page transitions (i.e. from bottom to top) are automatically turned into horizontal transitions (i.e. from right to left) and vice versa."
+        widget_type_info_box_text: "<p>Change current page using horizontal swipe gestures on phones.</p><p>Vertical page transitions (i.e. from bottom to top) are automatically turned into horizontal transitions (i.e. from right to left) and vice versa.</p><p>In desktop layout and on tablets the setting does not take any effect.</p>"
+      quotas:
+        loading: Checking quotas...
+      templates:
+        back_button_decorator:
+          outline: Outline
+        background_positioning:
+          cancel: Cancel
+          close: Close
+          help: In order to have an optimal presentation on mobile devices you can adjust the image detail to the display.
+          preview_title: Preview
+          previews:
+            banner: Banner
+            ratio16to9: 16:9 Landscape
+            ratio16to9Portrait: 16:9 Portrait
+            ratio4to3: 4:3 Landscape
+            ratio4to3Portrait: 4:3 Portrait
+          save: Save
+          title: Adjust position
+        change_theme_dialog:
+          close: Close
+          header: Themes
+          preview_header_prefix: Preview
+          preview_header_suffix: "-Theme"
+        chapter_item:
+          new_page: New page
+          save_error: Errors were detected while saving this chapter.
+        confirm_encoding:
+          all_released: 'All files have been scheduled for encoding. '
+          audios_tab: Audios
+          confirm_button: Encode selected files
+          link_to_progress: The %{link} page shows encoding progress.
+          manage_files: Manage files
+          videos_tab: Videos
+        confirm_upload:
+          close: Cancel
+          edit_file_header: Meta data
+          header: Add files
+          hint: Edit the files' meta data, then start the upload.
+          upload: Start upload
+        confirmable_file_item:
+          remove: Remove
+        edit_chapter:
+          destroy: Delete
+          outline: Outline
+          retry: Retry
+          save_error: Errors were detected while saving this chapter.
+        edit_entry:
+          close: Close
+          manage_files: Manage files
+          metadata: Title and options
+          publish: Publish
+          save_error: There were errors while saving metadata.
+        edit_meta_data:
+          outline: Outline
+          retry: Retry
+          save_error: There were errors while saving metadata.
+        edit_page:
+          destroy: Delete
+          outline: Outline
+          retry: Retry
+          save_error: There were errors while saving page.
+        edit_page_link:
+          back: Back
+          destroy: Delete
+        edit_storyline:
+          destroy: Delete
+          outline: Outline
+          retry: Retry
+          save_error: Errors were detected while saving the storyline.
+        edit_widget:
+          back: Appearance
+        embedded:
+          page_link:
+            reset: Reset
+        emulation_mode_button:
+          disabled_hint: Not supported by this page type
+          tooltip: Desktop/ Phone Preview
+        entry_preview:
+          navigation_disabled_hint: Page changes not possible in phone preview.
+        file_item:
+          cancel: Cancel
+          confirm: Confirm
+          credits: Credits
+          destroy: Delete
+          download: Download
+          retry: Retry
+          select: Select
+          settings: Settings
+          source: Source
+        file_meta_data_item_value_view:
+          edit: Edit
+        file_settings_dialog:
+          close: Close
+        files:
+          back: Back
+        files_blank_slate:
+          no_files: There are no files of this type, yet. You can upload one to get started.
+        files_explorer:
+          cancel: Cancel
+          ok: Ok
+          reuse_files: Reuse files from other stories
+        files_explorer_blank_slate:
+          choose_hint: Please choose a story.
+        files_gallery_blank_slate:
+          no_files: This story does not contain any files of this type.
+        help:
+          close: Close
+          title: Help
+        help_button:
+          open_help: Help
+        list_blank_slate:
+          text: "(No items)"
+        list_item:
+          edit: Edit
+          remove: Delete
+        loading:
+          loading: Loading...
+        locked:
+          close: Close editor
+          loading: Loading story. Please wait...
+          open_here: Continue here
+        notification:
+          approve_files: "%{num_files} files awaiting confirmation for the encoding process."
+          retry: Retry
+          save_error: There were errors while saving changes.
+          saved: All changes have been saved.
+          saving: Saving changes...
+          show: Show
+          upload_pending: Uploads pending.
+        other_entries_blank_slate:
+          none_available: There are no other stories yet
+        page_item:
+          save_error: There were errors while saving page.
+        page_link_item:
+          edit: Edit page
+          remove: Delete
+        page_links:
+          add: Add
+          label: Linked pages
+        page_selection:
+          cancel: Cancel
+          ok: OK
+          title: Select target page
+        publish_entry:
+          already_published_with_password_help: This story is already published with a password. Leave password field blank to keep the previous password.
+          already_published_without_password_help: This story is published without a password at the moment. Setting a password will prevent public access from now on.
+          date: Date
+          files_pending_notice: Please wait until all files have been processed and check the results. You may then publish your story.
+          noindex: Exclude from search engines
+          noindex_help: |
+            Set a meta tag that instructs crawlers of search engines
+            like Google or Bing to not include the published entry in
+            the index. The entry will, thus, not show up in search
+            results.
+          not_published_notice: This story is currently not published.
+          password: Password
+          password_help: Restrict access to the published version of this story. Visitors will have to enter a password.
+          password_protected: Protect with Password
+          previously_published_with_password_help: This story was published with a password before. Leave password field blank to keep the previous password.
+          publish: Publish
+          publish_current: Publish current version
+          publish_success: Your story has been sucessfully published.
+          published_notice: A version of this story is currently published.
+          published_url_hint: 'It can be accessed using following URL:'
+          show_files: Show files
+          time: Time
+          unlimited: indefinitely
+          until_including: Until including
+          user_name: User name
+          view_revisions: View versions
+        select_button:
+          select: Select
+        storyline_outline:
+          header: Outline
+          new_chapter: New chapter
+        storyline_picker:
+          add: Add
+          edit: Edit settings
+        text_tracks:
+          edit_file_header: Metadata
+          upload: Add
+        theme:
+          use: Use
+        widget_item:
+          settings: Settings
+      text_track_files:
+        label_missing: "(Label missing)"
+        srclang_missing: "(Missing)"
+      themes:
+        header: Themes
+      title_loading_spinner:
+        widget_type_info_box_text: This is a preview of the 'Title and Image' loading view. The animation runs while the page is loading.
+      views:
+        chapter_item_view:
+          chapter: Chapter
+          unnamed: "(New chapter)"
+        edit_chapter_view:
+          confirm_destroy: |-
+            Really delete this chapter including ALL its pages?
+
+            This operation cannot be undone.
+        edit_configuration:
+          back: Outline
+          confirm_destroy: Really delete this record? This action cannot be undone.
+          destroy: Delete
+          retry: Retry
+          save_error: Saving the record failed.
+        edit_entry_view:
+          cannot_publish: You do not have sufficient rights to publish this story.
+        edit_page_view:
+          confirm_destroy: Really delete this page?
+        edit_storyline_view:
+          cannot_destroy: Only empty storylines can be deleted.
+          confirm_destroy: Really delete storyline
+        editor_views:
+          files_pending_warning: You are currently uploading files. All uploads will be canceled if you leave this page.
+          hide_editor: Hide editor panel
+          resize_editor: Resize editor panel
+          show_editor: Show editor panel
+        entry_preview_view:
+          scroll_hint: Scroll down to continue
+        file_meta_data_item_value_view:
+          blank: "-"
+        files_view:
+          add: Add
+          authenticating: Authenticating
+          import: Import
+          importer:
+            heading: Import files from
+          reuse: Reuse
+          upload: Upload
+        filtered_files_view:
+          banner_prefix: 'Active filter:'
+        inputs:
+          file_input:
+            auto_default_text_track: "(Auto)"
+            default_text_track: 'Default texttrack:'
+            edit_background_positioning: Adjust field of view...
+            edit_file_settings: File settings...
+            no_default_text_track: "(None)"
+          reference_input_view:
+            choose: Edit
+            none: "(None)"
+            unset: Reset
+          theme_input_view:
+            choose: Change theme
+        page_item_view:
+          unnamed: "(New page)"
+        page_link_item_view:
+          no_page: "(No page)"
+          unnamed: "(No title)"
+        storylines_picker_view:
+          label: Storyline
+          without_parent_page: Without parent page
+      widgets:
+        attributes:
+          media_loading_spinner:
+            animation_duration:
+              inline_help: Controls the animation duration of loading spinner.
+              label: Animation duration
+            blur_strength:
+              inline_help: Control the bluriness of background image.
+              label: Blur Strength
+            custom_background_image_id:
+              inline_help: By default, the background image of the first page is used.
+              label: Background Image
+            remove_logo:
+              label: Remove logo
+          title_loading_spinner:
+            animation_duration:
+              inline_help: Controls the animation duration of loading spinner.
+              label: Animation duration
+            blur_strength:
+              inline_help: Control the bluriness of background image.
+              label: Blur Strength
+            custom_background_image_id:
+              inline_help: By default the background image of the first page is used.
+              label: Background image
+            subtitle:
+              inline_help: Subtitle to display in loading view.
+              label: Subtitle
+            title:
+              inline_help: Title to display in loading view. Defaults to story title.
+              label: Title
+    editor_emulation_mode:
+      feature_name: Editor phone emulation mode
+    entry:
+      duplicated_title: Copy of %{title}
+    entry_types:
+      paged:
+        editor:
+          entry_metadata_configuration_attributes:
+            emphasize_chapter_beginning:
+              inline_help: This option emphasizes the title of the first page of a chapter.
+              label: Emphasize chapter beginning
+            emphasize_new_pages:
+              inline_help: At the beginning of a Pageflow an info box shows news pages that were created since the last visit.
+              label: Emphasize new pages
+            home_button_enabled:
+              inline_help: Pageflow can display a button in the navigation that links to an external website, for example back to the website from which you linked the Pageflow.
+              label: Show 'Home' button
+            home_button_enabled_disabled:
+              inline_help: This option is not available for your theme.
+            home_url:
+              inline_help: URL of your home page. Leave empty to use your account's default setting.
+              label: "'Home' button URL"
+            home_url_disabled:
+              inline_help: This option is not available for your theme.
+            manual_start:
+              inline_help: Decide if tips or advice should be shown at the beginning of your Pageflow.
+              label: Show instruction overlay
+            overview_button_enabled:
+              inline_help: The overview displays chapters and pages of the main storyline.
+              label: Show 'Overview' button
+            overview_button_enabled_disabled:
+              inline_help: This option is not available for your theme.
+    file_licenses:
+      cc_by_4:
+        name: CC-BY 4.0
+        url: https://creativecommons.org/licenses/by/4.0/
+      cc_by_nc_4:
+        name: CC-BY-NC 4.0
+        url: https://creativecommons.org/licenses/by-nc/4.0/
+      cc_by_nc_nd_4:
+        name: CC-BY-NC-ND 4.0
+        url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+      cc_by_nc_sa_4:
+        name: CC-BY-NC-SA 4.0
+        url: https://creativecommons.org/licenses/by-sa-nc/4.0/
+      cc_by_nd_4:
+        name: CC-BY-ND 4.0
+        url: https://creativecommons.org/licenses/by-nd/4.0/
+      cc_by_sa_4:
+        name: CC-BY-SA 4.0
+        url: https://creativecommons.org/licenses/by-sa/4.0/
+    help_entries:
+      files:
+        menu_item: Manage Files
+        text: |-
+          # Manage Files
+
+          Pageflow processes all major media formats (photo, audio,
+          video) and converts them into different formats and
+          qualities. The system adapts the quality of the media to the
+          internet connection and the end device of the user
+          automatically. In principle the files should be uploaded in
+          the optimal resolution and not be compressed beforehand. In
+          order to have a well-structured work-flow, it is helpful to
+          store all audio-files, background-video-loops, movies,
+          pictures and texts in the required version in a separate
+          file on your computer.
+
+          ## Upload and Manage Files
+
+          The menu item „Manage Files“ leads to the files, which have
+          already been uploaded. If you click „Add more“ and „Upload“
+          you can add more files.
+
+          After you have uploaded the files, they are processed on the
+          server. This can take a few minutes - especially if the
+          videos are long. Click on the thumbnail of a file, in order
+          to see its status. Moreover you can see the general features
+          like the size of the picture or length of an audio-file and
+          you can download the original file.
+
+          The files can already be used before the process is
+          finished. You can therefore continue your work during the
+          loading process.
+
+          ## Reuse Files
+
+          Videos, audio files and pictures can be used in more than
+          one article. Thus, videos, for example, do not have to be
+          uploaded several times. Click on „Manage Files“ and on
+          „Add“/„Reuse“, to search for files in other articles and add
+          them to a new one.
+
+          ## Edit File Settings and Copyright
+
+          If you click on the thumbnail of a media file (picture,
+          video, audio), you can add information with regards to its
+          copyright. This information is shown automatically in the
+          legal notice.
+      meta_data:
+        general:
+          menu_item: General
+          text: |-
+            # General
+
+            ## Title of the Pageflow
+
+            Here you can choose a title for your Pageflow. It will be
+            shown on the title bar of the browser window. It also acts
+            as an indicator for search engines once the report is
+            published.
+
+            ## Language
+
+            Decide in which language your Pageflow should be displayed. This refers to the frontend text such as the legal notice and privacy settings.
+
+            ## Credits
+            Here you can enter your imprint information in free text. In addition, image rights can be assigned for all files under "Manage files", which are then automatically displayed in the imprint.
+        menu_item: Titel and Optionen
+        social:
+          menu_item: Social
+          text: |
+            # Social
+
+            ## Social Sharing Picture
+
+            Choose a picture, which should be shown, if your Pageflow is
+            shared in social networks.
+
+            ## Summary
+
+            Here you can write a description, which is shown, when your
+            Pageflow is shared in social networks.
+
+            ## Social Sharing URL
+
+            If contributions are embedded in your own web pages (with
+            a different URL), you can specify an individual URL here
+            that is to be used when sharing the contribution.
+
+            ## Social Share Links
+
+            Determine which share buttons should be displayed when
+            clicking on the "Share function".
+        text: |
+          # Title and Options
+
+          General settings for the entry. Please select a sub item on the left.
+      outline:
+        menu_item: Chapters and Pages
+        text: |-
+          # Chapters and Pages
+
+          A Pageflow consists of at least one chapter with at least
+          one page. You can create as many chapters and pages as you
+          want. In order to create content, click:
+
+          1. „New Chapter“ to create a new chapter,
+          2. „New Page“ to add a page,
+          3. onto the new page, in order to edit the content.
+
+          ## Structuring Chapters
+
+          You can structure the composition of your Pageflow with
+          chapters - e.g. thematically or chronologically . The
+          chapters are shown in the overview and help the users find
+          their way around. It is therefore advisable to give each
+          chapter a title.
+
+          If you create an unnamed chapter, Pageflow acts as if there
+          is no structure of chapters. The chapter and the title of
+          this chapter are consequently not shown in the
+          overview/navigation.
+      page_types:
+        menu_item: Page Types
+        text: |
+          # Page Types
+
+          By choosing the page type, you determine what type of media
+          files are used for which page. For each type of page you can
+          use different settings.  For further information please
+          click on a page type on the left column.
+      publishing:
+        menu_item: Publishing
+        text: "# Publishing\n\nClick on the „Publish“ button to publish your Pageflow. An entry can either be published for an unlimited period of time or until a specific deadline.\n\nBesides this, there is the possibility to publish Pageflows with \na password protection. Just activate „Protect with password“. \nPageflow uses the name of the account as user name and \nautomatically generates a password, which can be changed afterwords. \n\nAlready published stories can also be protected with a password by \npublishing another version - the other way round works as well. \nFor this please just click on the „Publishing“ button. The following \nsteps will then be shown and explained within the dialog window.\n\n### Changes After Publishing\nPublished Pageflows can also be depublished manually at any time. If a\nPageflow has already been published, changes will not be\nshown until you publish your report again.  A Pageflow can\nonly be edited by one author at one time.\n\n### Embedding as iframe\nPublished articles can also be embedded in your own website. You can find more information in this [article](https://pageflow.freshdesk.com/support/solutions/articles/11000002744)  \n\n### Embedding iframe Teaser\nThumbnail for embedding the Pageflow on external websites\nAfter publishing your Pageflow, the system generates a\nthumbnail, which can be embedded as an iframe to the\nhyperlink of another website. By means of the code, the size of the iframe can be adjusted. The minimum size is a height 150px and a width of 220px."
+      text_tracks:
+        menu_item: Text tracks
+        text: |-
+          # Text tracks
+
+          Text tracks can be added to video and audio files. Open the
+          file setting dialog of a video or audio file by clicking the
+          files's "Settings" button in the "Manage files" view and
+          switch to the "Text tracks" tab.
+
+          Here you can upload SRT or VTT text track files. Each text
+          track has a language, kind and label attribute. The label is
+          displayed to the user in the subtitles menu on video and
+          audio pages.
+
+          If a video or audio file has text tracks, the user can
+          choose to activate them on video or audio pages. Please note
+          that text tracks will not be displayed when a video plays as
+          a loop in the page background or when an audio file is used
+          as background atmo.
+
+          ## Automatic subtitles
+
+          The selection made by the user in the subtitles menu on
+          video or audio pages is stored between pages and
+          sessions.
+
+          By default the option "Auto" is selected in the subtitles
+          menu. A text track to display is then choosen automatically
+          according to the following rules:
+
+
+          * If a file has a text track of kind "translation" in the
+            language of the story, it is displayed as subtitle
+            automatically. This is meant for people who are able to
+            understand the language of the story, but not the language
+            spoken in the video or audio.
+
+          * If instead the file has a text track of kind "audio
+            replacement", it is displayed automatically if the volume
+            has been set to mute using the controls in the navigation
+            bar. Please note that for technical reasons it is not
+            possible to detect if the volume has been set to mute
+            outside of the browser or on mobile devices in general.
+
+          ## Default text track
+
+          If the automatic selection described above does not fit your
+          needs, you can select a default text track for each video or
+          audio page. It will be displayed if the user has not
+          selected a text track from the subtitles menu.
+
+          Open the files tab of the page and choose a default text
+          track from the conext menu available via the menu button
+          inside the video or audio file field.
+    helpers:
+      entries:
+        global_links: Global links
+        image_rights: Credits
+    highdef_background_images:
+      feature_name: High resolution background images
+    highdef_video_encoding:
+      feature_name: Full HD and 4K videos
+    initial_password:
+      submit: Save and sign in
+      title: Set your password
+    invalid_transition: Invalid transition
+    languages:
+      ar: Arabic
+      cs: Czech
+      de: German
+      dk: Danish
+      el: Greek
+      en: English
+      es: Spanish
+      fi: Finnish
+      fr: French
+      fy: Frisian
+      hi: Hindi
+      it: Italian
+      ja: Japanese
+      lb: Letzeburgesch
+      nb: Norsk Bokmål
+      nl: Dutch
+      nn: Norsk Nynorsk
+      'no': Norsk
+      pl: Polish
+      pt: Portuguese
+      rm: Romansh
+      ru: Russian
+      se: Northern Sami
+      sr: Serbian
+      sv: Swedish
+      tr: Turkish
+      unknown: "(Unknown)"
+      zh: Chinese
+    large_player_pool:
+      feature_name: Large Player-Pool
+    media_loading_spinner:
+      widget_type_name: Media
+    page_transitions:
+      crossfade: Crossfade
+      cut: Cut
+      default: "(Default)"
+      fade: Fade
+      fade_to_black: Fade to black
+      scroll: Scroll
+      scroll_left: Scroll left
+      scroll_over_from_left: Scroll over from left
+      scroll_over_from_right: Scroll over from right
+      scroll_right: Scroll right
+    paged_entry_type:
+      feature_name: Story type page-based/classic
+    phone_horizontal_slideshow_mode:
+      feature_name: Horizontal swipe on phone
+    quotas:
+      exhausted: Quota exhausted
+    scrolled_entry_type:
+      feature_name: Story type scrolling continuously/Pageflow Next
+    selectable_themes:
+      feature_name: Editor theme selection
+    storyline_attributes:
+      main:
+        inline_help: Turns the first page of this storyline into the start page of the story.
+        inline_help_disabled: The first page of this storyline is the start page of the story.
+        label: Main storyline
+      navigation_bar_mode:
+        label: Navigation bar mode
+        values:
+          current_storyline: Current storyline
+          inherit_from_parent: Display parent storyline
+          non: Hide
+      page_transition:
+        inline_help: By default, comming from the parent page, the first page of the storyline is scrolled in from the right. When clicking the back button, pages of the storyline are scrolled back out to the right. Here you can choose an alternative effect.
+        label: Transition effect
+      parent_page_perma_id:
+        inline_help: The user is redirected to this page when reaching the end of the storyline or when clicking the back button. The parent page settings determine the chapter hierachy. For more information on the chapter hierarchy see the 'Storylines' help topic.
+        label: Parent page
+      scroll_successor_id:
+        inline_help: Page to go to when scrolling down from the last page of the storyline. By default the user is brought back to the storyline's parent page.
+        label: Scroll successor
+      title:
+        label: Title
+    storylines:
+      feature_name: Storylines
+      main: Main storyline
+      untitled: Unnamed storyline
+    structured_data:
+      feature_name: Embedded structured data
+    title_loading_spinner:
+      feature_name: "'Title and image' loading view"
+      widget_type_name: Title and Image
+    ui:
+      configuration_editor:
+        tabs:
+          consent_bar: Consent bar
+          cookie_notice_bar: Cookie Notice
+          files: Files
+          general: General
+          links: Links
+          loading_spinner: Loading View
+          options: Options
+          phone_horizontal_slideshow_mode: Horizontal swipe on phone
+          social: Social
+          widgets: Appearance
+      inline_help:
+        pageflow/chapter:
+          title: Will be shown on the overview page.
+        pageflow/entry:
+          author: The author's name.
+          credits: Will be shown in the info box.
+          keywords: Keywords as a suggestion for search engines.
+          locale: Language to use for labels in the entry's navigation bars and player controls.
+          publisher: The publisher's name or company name.
+          share_providers: Social media platforms to be listed in the "Share"-dialog of the entry
+          share_url: URL to share via social media buttons. Leave blank to use URL of published story.
+          summary: Here you can write a description, which is shown, when your Pageflow is shared in social networks.
+          title: Here you can choose a title for your Pageflow. It will be shown on the title bar of the browser window. It also acts as an indicator for search engines once the report is published.
+        pageflow/page:
+          additional_title: The info box appears close to the player controls.
+          atmo_audio_file_id: Choose an audio file, that shall be played in the background. If you want this audio to continue playing on following pages, just choose the same file again there. Not available on mobile devices at the moment.
+          atmo_during_playback: Choose which way the atmo shall behave during playback of this page's main media.
+          delayed_text_fade_in: Fades in the page contents after a delay such that the background image can be viewed initially.
+          description: You can enter a text, which appears when the user navigates with the mouse over the particular page. This text matches with the mouse-over-text for the page-type „Page References“ as well as with the text, which appears when you share the Pageflow in social networks.
+          gradient_opacity: |-
+            The opacity of the gradient improves the legibility of the text on background-videos or pictures.
+
+            You can use the slider to darken or lighten up the background until the contrast between text and background is optimal.
+          hide_logo: Hide logo on current page
+          invert: |-
+            If you invert the colors, „bright“ and „dark“ are interchanged. Thus the normally white font changes into black.
+
+            A general rule: Bright font for dark pictures, dark font for bright pictures.
+          mobile_poster_image_id: This image is used as poster image on mobile devices.
+          text: |-
+            The text-block can be formatted with the buttons underneath the input field. [B= bold / I=italic / U=underlined / infinity symbol= Link/URL to an external website]
+
+            All changes are visible in the left front-end-view as soon as you leave the appropriate input field in the editor.
+          thumbnail_image_id: The thumbnail replaces the automatically generated preview-picture in the navigation and overview.
+          transition: Choose the animation, that will be used when users scroll to this page.
+      templates:
+        inputs:
+          file_input:
+            edit: Edit
+            reset: Reset
+          page_reference:
+            drag_hint: Drag pages into the preview to create links.
+          text_area_input:
+            bold: Bold
+            cancel: Cancel
+            create_link: Insert link
+            insert_ordered_list: Insert ordered list
+            insert_unordered_list: Insert unordered list
+            italic: Italic
+            link_type:
+              page_link: Page
+              url: URL
+            open_in_new_tab: Open in new tab
+            open_in_new_tab_help: Recommended. Otherwise the entry has to be reloaded when returning from the link. Please note that inside the editor preview links always open in a new tab.
+            remove_link: Remove link
+            save: Save
+            target: Target
+            underline: Underline
+            url: URL
+          url_display:
+            link_text: Download
+      text_table_cell_view:
+        empty: "(empty)"
+      views:
+        extended_select_input_view:
+          display_help: Display help
+        inputs:
+          file_input_view:
+            none: "(none)"
+          json_input_view:
+            invalid: Invalid JSON data.
+          proxy_url_input_view:
+            http_error: The given URL could not be fetched. (The server answered with a HTTP status code ' %{status}')
+            url_validation: Checking URL...
+          select_input_view:
+            none: "(none)"
+            placeholder: Default (%{text})
+          text_input_view:
+            max_characters_exceeded: Maximum number of characters exceeded (%{max_length})
+            required_field: Required field
+          url_input_view:
+            required_field: Required field
+            supported_vendors: 'Following providers are supported:'
+            url_hint: 'URL must start with http:// '
+            url_hint_https: URL must start with http:// or https://
+    unauthorized: You are not authorized to view this page.
+    unmute_button:
+      widget_type_name: Unmute button
+    user_mailer:
+      invitation:
+        ending: Thank you and have fun,
+        greeting: Your Pageflow Team
+        instruction: 'Welcome to Pageflow. Please use the following link to set your personal password. You may use your email address to sign-in. '
+        salutation: Hello %{first_name}
+        subject: Your Pageflow Invitation
+    video:
+      help_entries:
+        page_type:
+          menu_item: Video
+          text: "# Video\n\n*Playing a video with control*\n    \nIn contrast to „Background-Videos“ the text elements fade\nout after a few seconds, in order to draw attention to the\nvideo. With controls the user can start and pause the\nvideo or even fast-forward and rewind it. You can choose\nwhether the video should start automatically as soon as\nthe page is opened.\n\nAs an alternative to the normal text input, you can write\na description into an „Infobox“ with text.\n\nOn the „Options“ tab you can activate auto-scrolling to the next page at the end of a video. \nThis can be useful to create a seamless transition.\n\nExamples of application: Videos of all kinds, interviews, portraits\n\n*Note on autoplay for videos: Due to technical restrictions, based on the \"Autoplay Policy\" of the browser manufacturers, videos with sound cannot be played automatically on all devices/browsers. On Safari and mobile devices, videos can only be started manually."
+      page_attributes:
+        mobile_poster_image_id:
+          inline_help: Displayed on mobile devices before the video starts.
+      page_type_category_name: Media
+      page_type_description: Video player with controls
+      page_type_name: Video
+    waveform_player_controls:
+      feature_name: Waveform player controls variant for audio page
+    webp_images:
+      feature_name: webp images
+    widgets:
+      none: "(none)"
+      roles:
+        analytics: Tracking
+        background_media_control: Background media control
+        consent: Privacy settings
+        cookie_notice: Privacy settings
+        loading_spinner: Loading View
+        mobile_navigation: Mobile navigation
+        navigation: Navigation bar
+        player_controls: Player Controls
+        slideshow_mode: Control gestures
+      type_names:
+        classic_player_controls: Classic
+        default_mobile_navigation: Navigation bar with thumbnails
+        default_navigation: Navigation bar with thumbnails
+        default_slideshow_mode: Vertical scoll/swipe
+        phone_horizontal_slideshow_mode: Horizontal swipe on phone
+        slim_player_controls: Minimal
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      date: "%Y-%m-%d"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      time_today: Today, %H:%M
+    pm: pm
+  views:
+    pagination:
+      first: "|<"
+      last: ">|"
+      next: ">>"
+      previous: !!str '<<'
+      truncate: "..."

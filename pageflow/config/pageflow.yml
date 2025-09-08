@@ -1,0 +1,4 @@
+default: &default
+  # Intentionally minimal – the container uses ENV like S3_* and REDIS_URL.
+production:
+  <<: *default

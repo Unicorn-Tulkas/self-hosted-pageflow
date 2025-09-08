@@ -1,0 +1,56 @@
+.file_input {
+  position: relative;
+  white-space: nowrap;
+
+  .file_thumbnail {
+    width: 60px;
+    height: 60px;
+    vertical-align: bottom;
+    margin-right: 5px;
+    border-radius: rounded();
+    border: solid 1px var(--ui-primary-color-light);
+  }
+
+  div.file_name {
+    position: absolute;
+    top: space(7);
+    left: 70px;
+    right: 20px;
+    overflow: hidden;
+  }
+
+  a.choose {
+    @include icon-only-button;
+    @include pencil-icon;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  a.unset {
+    @include icon-only-button("destructive");
+    @include cancel-circled-icon;
+
+    position: absolute;
+    bottom: 0;
+    right: 35px;
+  }
+
+  .drop_down_button {
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+  }
+
+  .inline_help {
+    white-space: normal;
+  }
+
+  &.is_unset {
+    .unset,
+    .drop_down_button {
+      display: none;
+    }
+  }
+}

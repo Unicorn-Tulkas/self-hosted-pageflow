@@ -1,0 +1,33 @@
+.js .audio_page.has_text_tracks,
+.js .video_page {
+  .scroller {
+    @include transition(opacity 0.2s linear);
+  }
+
+  .shadow,
+  .scroller {
+    @include transition-delay(3s);
+
+    &.is_paused {
+      @include transition-delay(0.5s);
+    }
+
+    &.is_playing {
+      // Override inline style on shadow
+      // scss-lint:disable ImportantRule
+      opacity: 0 !important;
+      // scss-lint:enable ImportantRule
+    }
+  }
+
+  &.has_played {
+    .shadow,
+    .scroller {
+      @include transition-delay(0s);
+
+      &.is_paused {
+        @include transition-delay(0.5s);
+      }
+    }
+  }
+}

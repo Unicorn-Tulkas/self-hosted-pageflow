@@ -1,0 +1,14 @@
+$pageflow-hint-icon-directory: "pageflow/admin/icons" !default;
+
+.side_hint {
+  margin: 10px 0;
+  color: $pageflow-hint-color;
+
+  p {
+    background-size: $pageflow-icon-size $pageflow-icon-size;
+    background-repeat: no-repeat;
+    background-position: left 1px;
+    background-image: image-url("#{$pageflow-hint-icon-directory}/info.svg");
+    padding-left: 1.75rem;
+  }
+}

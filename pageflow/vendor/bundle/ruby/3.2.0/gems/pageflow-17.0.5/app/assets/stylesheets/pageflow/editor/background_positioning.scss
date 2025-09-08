@@ -1,0 +1,128 @@
+.background_positioning {
+  .box {
+    min-width: 500px;
+    min-height: 400px;
+    max-width: 1000px;
+  }
+
+  label {
+    float: left;
+    margin-right: 10px;
+    top: 12px;
+    position: relative;
+    font-size: 12px;
+  }
+
+  .wrapper {
+    text-align: center;
+    margin: 35px;
+  }
+
+  .previews {
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+
+    > div {
+      height: 100%;
+      white-space: nowrap;
+    }
+  }
+
+  .preview {
+    display: inline-block;
+    margin: 5px 10px;
+    vertical-align: middle;
+
+    .image {
+      outline: solid 1px var(--ui-on-surface-color-light);
+      background-size: cover;
+    }
+
+    .label {
+      padding: 3px 0;
+      font-size: 11px;
+      color: var(--ui-on-surface-color-light);
+    }
+  }
+
+  .container {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+
+    img {
+      outline: solid 1px var(--ui-on-surface-color-light);
+      display: block;
+      max-height: 300px;
+      max-width: 600px;
+      cursor: crosshair;
+    }
+  }
+
+  .slider {
+    position: absolute;
+    border: none;
+    background: var(--ui-on-surface-color-lightest);
+
+    &.horizontal {
+      bottom: -10px;
+      left: 9px;
+      right: 11px;
+      height: 2px;
+
+      a {
+        @include transform(rotate(90deg));
+        margin-left: -20px;
+        margin-top: -20px;
+      }
+    }
+
+    &.vertical {
+      right: -10px;
+      top: 12px;
+      bottom: 11px;
+      width: 2px;
+      height: auto;
+
+      a {
+        margin-left: -20px;
+        margin-bottom: -20px;
+      }
+    }
+  }
+
+  .percent {
+    position: absolute;
+    font-size: 12px;
+    white-space: nowrap;
+
+    input {
+      display: inline;
+      width: 55px;
+      height: 25px;
+      box-sizing: border-box;
+      padding-right: space(1);
+    }
+
+    &.horizontal {
+      left: -80px;
+      bottom: -26px;
+    }
+
+    &.vertical {
+      left: 115%;
+      top: 0;
+    }
+  }
+
+  a.save {
+    @include check-icon;
+    @include icon-button("primary");
+  }
+
+  a.close {
+    @include icon-button;
+  }
+}

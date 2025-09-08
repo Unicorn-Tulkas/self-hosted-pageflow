@@ -1,0 +1,39 @@
+&.confirm_upload {
+  .box {
+    min-width: 500px;
+    min-height: 400px;
+    max-width: 1100px;
+  }
+
+  .files_panel {
+    overflow: auto;
+    flex: 1;
+  }
+
+  .selected_file_panel {
+    margin-left: space(6);
+    width: 330px;
+  }
+
+  .uploadable_files {
+    margin: 0 space(2) space(4) 0;
+
+    &.is_empty {
+      display: none;
+    }
+  }
+
+  .table_view {
+    width: 100%;
+  }
+
+  .upload {
+    @include icon-button("primary");
+    @include up-icon;
+  }
+
+  .close {
+    @include icon-button;
+    @include cancel-icon;
+  }
+}

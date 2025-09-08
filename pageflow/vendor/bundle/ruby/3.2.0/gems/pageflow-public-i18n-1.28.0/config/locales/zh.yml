@@ -1,0 +1,277 @@
+zh:
+  pageflow:
+    public:
+      _language: 中国
+      audio: 音频
+      back: 返回
+      back_to_chapter: 返回章节
+      before_after:
+        drag_hint: 拖动提示
+        hint: 前/后 查看
+        leave_view: 离开 前/后 查看
+        start: 开始 前/后 查看
+        start_title: 开始 前/后 查看
+      chapter: 章节
+      chart:
+        consent_vendor_name: 
+        opt_in_prompt: 
+        toggle: 开关
+      close: 关闭
+      close_hint: 关闭提示
+      close_navigation: 关闭导航
+      close_overview: 关闭概述
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      cookie_notice_html: 本网站使用Cookies。通过使用我们的服务，您同意我们使用Cookie。 <a href="%{privacyLinkUrl}" target="_blank">了解详情</a>
+      deprecated_browser: "<p>您的浏览器已经过时，该界面或许不能正常工作. 我们建议您升级您的浏览器版本</p>"
+      dismiss_cookie_notice: 隐藏
+      embedded_video:
+        consent:
+          vimeo:
+            vendor_name: 
+          youtube:
+            vendor_name: 
+        leave_video: 离开嵌入的视频
+        opt_in_prompt: 
+      enlarge_view: 进入大图模式
+      enter_fullscreen: 进入全屏模式
+      first_page: 首页
+      forward: 前一页
+      fullscreen: 全屏
+      goto_first_page: 进入第一页
+      goto_top: 进入第一页
+      hide_text: 隐藏文本
+      home: 开始
+      imprint: 盖章
+      javascript_hint: 本应用使用JavaScript工具增强用户体验和功能。您的浏览器不支持JavaScript或者已禁用。
+      languages:
+        ar: 阿拉伯
+        cs: 捷克
+        de: 德国
+        dk: 丹麦
+        el: 希腊
+        en: 英格兰
+        es: 西班牙
+        fi: 完成
+        fr: 法国
+        fy: 
+        hi: 
+        it: 意大利
+        ja: 
+        lb: 
+        nb: 
+        nl: 荷兰
+        nn: 
+        'no': 
+        pl: 波兰
+        pt: 葡萄牙
+        rm: 
+        ru: 俄罗斯
+        se: 
+        sr: 塞尔维亚
+        sv: 
+        tr: 土耳其
+        unknown: 未知
+        zh: 中国
+      leave_fullscreen: 退出全屏
+      lets_go: 一起走
+      logo: 标志
+      media_quality: 质量
+      mute_off: 取消静音
+      mute_on: 静音
+      navigate_top: 进入第一页
+      navigation: 导航
+      new_pages_box:
+        additional_pages_html: "...和 <span></span> 更多"
+        description: '从你上次访问后，界面已经被加到页面流:'
+        title: 新界面
+      notice: 通知
+      open_audio: 打开音频
+      open_navigation: 打开导航
+      open_overview: 打开缩略图
+      open_video: 打开视频
+      overview: 缩略图
+      panorama:
+        close: 关闭 360° 全景并显示文字
+        start: 打开 360° 全景
+      play_video: 播放视频
+      privacy_notice: 隐私声明
+      read_more: 
+      scroll_back_indicator: " "
+      scroll_down: 向下滚动
+      scroll_hint: 使用鼠标滚轮或键盘上的方向键进行界面间的切换。
+      scroll_indicator: 继续向下滚动
+      scroll_left: 向左滚动
+      scroll_right: 向右滚动
+      scroll_up: 向上滚动
+      share: 分享
+      share_in_telegram: 分享到Telegram
+      share_in_whats_app: 分享到WhatsApp
+      share_on_facebook: 分享到 Facebook
+      share_on_google: 分享到 Google+
+      share_on_linked_in: 分享到LinkedIn
+      share_on_twitter: 分享到 X
+      share_this_entry: 这个故事
+      share_this_page: 这个界面
+      share_via_email: 分享到邮件
+      show_home: 开始
+      show_text: 显示文字
+      skip_links_content: 查看内容
+      skip_links_navigation: 跳转到导航
+      skip_links_top_navigation: 跳转到主导航
+      sound_hint: 这个多媒体故事需要音频和视频播放。请确认话筒和音响开启状态。
+      start_audio: 立即播放音频
+      start_video: 立即播放视频
+      swipe_hint: 滑动界面间导航
+      swipe_indicator: 继续滑动
+      swipe_to_continue: 点击继续
+      text_track_modes:
+        auto: 自动 (%{label})
+        auto_off: 自动 (关闭)
+        none: "(无)"
+      text_tracks: 子标题
+      third_party_embed_consent:
+        opt_in:
+          confirm: 
+          more_information: 
+        opt_out_info:
+          prompt_html: 
+          prompt_link: 
+      toggle_info_box: 切换信息框
+      video: 视频
+      video_qualities:
+        annotations:
+          4k: 4K
+          fullhd: 高清
+          medium: 高清
+        labels:
+          4k: 2160p
+          auto: 自动
+          fullhd: 1080p
+          medium: 720p
+      volume: 音量
+      vr:
+        no_vr:
+          link: 展示视频在Youtube应用
+          text: 您的浏览器不支持播放360°视频
+        select_quality: 选择视频质量
+        start: 观看360°视频
+        start_cardboard: 开启卡片模式
+        video_qualities:
+          4k: 2160s
+          fullhd: 1080s
+          high: 720s
+        video_quality_annotations:
+          4k: 4K
+          fullhd: 高清
+          high: 高清
+  pageflow_scrolled:
+    public:
+      chart:
+        default_title: 
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      enter_fullscreen: 
+      exit_fullscreen: 
+      image_rights: 
+      inline_file_rights_labels:
+        after: 
+        atmo: 
+        audio: 
+        before: 
+        image: 
+        poster: 
+        video: 
+      js_required: 
+      languages:
+        ar: 
+        cs: 
+        de: 
+        dk: 
+        el: 
+        en: 
+        es: 
+        fi: 
+        fr: 
+        fy: 
+        hi: 
+        it: 
+        ja: 
+        lb: 
+        nb: 
+        nl: 
+        nn: 
+        'no': 
+        pl: 
+        pt: 
+        rm: 
+        ru: 
+        se: 
+        sr: 
+        sv: 
+        tr: 
+        unknown: 
+        zh: 
+      media: 
+      more: 
+      navigation:
+        chapter: 
+        close_mobile_menu: 
+        language: 
+        legal_info: 
+        mute: 
+        open_mobile_menu: 
+        share: 
+        unmute: 
+      navigation_skip_links:
+        content: 
+      next: 
+      player_controls:
+        pause: 
+        play: 
+        progress: 
+        quality: 
+        text_tracks: 
+      previous: 
+      sound_disclaimer:
+        help_muted: 
+        help_unmuted: 
+      text_track_modes:
+        auto: 
+        auto_off: 
+        none: 
+      third_party_consent:
+        confirm: 
+        opt_in_prompt:
+          datawrapper: 
+          facebook: 
+          tiktok: 
+          twitter: 
+          vimeo: 
+          youtube: 
+        opt_out:
+          prompt: 
+          prompt_link: 
+      unsupported_browser: 
+      video_qualities:
+        annotations:
+          4k: 
+          fullhd: 
+          medium: 
+        labels:
+          4k: 
+          auto: 
+          fullhd: 
+          medium: 

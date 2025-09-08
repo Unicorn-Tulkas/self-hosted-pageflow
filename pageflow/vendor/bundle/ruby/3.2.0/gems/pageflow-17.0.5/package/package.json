@@ -1,0 +1,33 @@
+{
+  "name": "pageflow",
+  "version": "15.1.0",
+  "description": "Multimedia storytelling for the web",
+  "module": "dist/index.js",
+  "repository": "https://github.com/codevise/pageflow",
+  "author": "Codevise Solutions GmbH <info@codevise.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "babel-jest": "^27.0.6",
+    "eslint": "^6.6.0",
+    "eslint-import-resolver-jest": "^3.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.4",
+    "jest": "^27.0.6",
+    "jest-css-modules-processor": "^0.0.9",
+    "jest-jquery-matchers": "^2.1.0",
+    "jest-sinon": "^1.0.0",
+    "sinon": "^7.5.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "backbone-events-standalone": "^0.2.7",
+    "classlist.js": "^1.1.20150312",
+    "core-js": "^3.4.1",
+    "i18n-js": "^3.5.1",
+    "postcss-functions": "^3.0.0"
+  }
+}

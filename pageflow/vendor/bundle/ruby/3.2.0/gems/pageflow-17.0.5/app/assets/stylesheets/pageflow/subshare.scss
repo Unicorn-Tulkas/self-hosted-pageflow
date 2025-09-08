@@ -1,0 +1,30 @@
+div.sub_share {
+  display: none;
+  width: 210px;
+  margin: 15px auto 0;
+
+  a {
+    line-height: 1;
+    width: 100px;
+    padding: 7px 0;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
+.navigation_mobile div.sub_share a {
+  width: auto;
+  display: block;
+  margin: 1em 1em;
+  padding: 1em 0;
+}
+

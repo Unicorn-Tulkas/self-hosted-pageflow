@@ -1,0 +1,78 @@
+.print_image, .print_only {
+  display: none;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+
+  > * {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .content_and_background {
+    width:100%;
+    min-height:100%;
+    position: initial;
+  }
+
+  .shadow {
+    @include transition(opacity 0.2s linear, visibility 0.2s linear);
+    pointer-events: none;
+  }
+
+  &.invert {
+    color: #000;
+    background-color: #fff;
+  }
+
+  .content {
+    width: 100%;
+    position: relative;
+  }
+
+  .page_background {
+    width:100%;
+    height: 100%;
+  }
+
+  .scroller > div {
+    width: 75%;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &.hide_title .page_header {
+    display: none;
+  }
+
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+}
+
+.js .page {
+  height: 100%;
+
+  .content_and_background {
+    height: 100%;
+    position: absolute;
+  }
+
+  .scroller > div {
+    width: 100%;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

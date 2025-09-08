@@ -1,0 +1,234 @@
+.overview {
+  @include unselectable;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include transition(visibility 0.5s);
+
+  &.active {
+    visibility: visible;
+  }
+
+  &.active:after {
+    opacity: 1;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    @include transition(0.5s ease);
+  }
+
+  &.active .content {
+    @include transform(translate(0, 0));
+  }
+
+  .overview_scroll_indicator {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+
+    &.left {
+      @include position-start(10px);
+    }
+
+    &.right {
+      @include position-end(0);
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    @include position-start(8%);
+    @include position-end(4%);
+    height: 555px;
+    overflow: hidden;
+    z-index: 2;
+    margin: auto;
+    @include transition(0.5s ease);
+    @include transform(translate(200%,0));
+
+    .overview_headline {
+      @include margin-start(10px);
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    .close {
+      position: absolute;
+      @include position-end(0);
+      top: 20px;
+    }
+
+    .scroller {
+      overflow: hidden;
+      height: 465px;
+      position: relative;
+    }
+
+    .ov_chapter {
+      position: relative;
+      @include float-start;
+      width: 265px;
+      height: 400px;
+      margin-top: 25px;
+      @include margin-end(10px);
+
+      &:before, &:after {
+        content: " ";
+        position: absolute;
+
+        width: 265px;
+        height: 10px;
+      }
+
+      &:before {
+        top: -10px;
+        left: 0;
+      }
+
+      &:after {
+        bottom: -10px;
+        left: 0;
+      }
+
+      .heading-4 {
+        display: block;
+        margin: 10px 17px;
+        margin-top: 0;
+        height: 44px;
+        overflow: hidden;
+      }
+
+      .heading-5 {
+        display: block;
+        margin: 5px 17px;
+        height: 20px;
+      }
+
+      @mixin dimensions {
+        width: 230px;
+        height: 72px;
+      }
+
+      .ov_page {
+        @include transform-style(preserve-3d);
+        @include perspective(700px);
+        @include perspective-origin(left 50%);
+
+        display: block;
+
+        @include dimensions;
+        position: relative;
+
+        margin: 0 15px 5px 15px;
+
+        &.active {
+          cursor: default;
+        }
+
+        &:active {
+          outline: none;
+        }
+
+        img {
+          @include dimensions;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0.8;
+          border: none;
+        }
+
+        &:hover img, &.touched img {
+          opacity: 1;
+        }
+
+        .pictogram {
+          @include transition(background-position 350ms);
+          @include dimensions;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-position: 0;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          opacity: 1;
+
+          .ov_page_description {
+            opacity: 1;
+
+            @include transform(rotateY(0deg));
+            -webkit-transition: -webkit-transform 400ms, opacity 100ms;
+            -moz-transition: -moz-transform 400ms, opacity 100ms;
+            transition: transform 400ms, opacity 100ms;
+          }
+
+          .pictogram {
+            @include transition(background-position 250ms);
+            background-position: 79px;
+          }
+        }
+
+        .has_touch_support & {
+          opacity: 1;
+
+          .ov_page_description {
+            opacity: 0.8;
+            @include transform(rotateY(0deg));
+          }
+
+          .pictogram {
+            @include transition(background-position 250ms);
+            background-position: 79px;
+          }
+        }
+      }
+
+      .ov_page_description {
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        padding: 5px;
+        width: 149px;
+        height: 62px;
+        overflow: hidden;
+        opacity: 0;
+
+        @include backface-visibility(hidden);
+        @include transform-origin(0 0);
+        @include transform(rotateY(-90deg));
+        -webkit-transition: -webkit-transform 400ms, opacity 100ms 300ms;
+        -moz-transition: -moz-transform 400ms, opacity 100ms 300ms;
+        transition: transform 400ms, opacity 100ms 300ms;
+
+        p {
+          margin: 0;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,277 @@
+ja:
+  pageflow:
+    public:
+      _language: 日本語
+      audio: オーディオ
+      back: 戻る
+      back_to_chapter: 章に戻る
+      before_after:
+        drag_hint: マウスの左クリックボタンを押し左右に動かして下さい
+        hint: ビフォー/アフター
+        leave_view: ビフォー/アフターをやめる
+        start: ビフォー/アフターを始める
+        start_title: ビフォー/アフターを始める
+      chapter: 章
+      chart:
+        consent_vendor_name: 
+        opt_in_prompt: 
+        toggle: トグル
+      close: 閉じる
+      close_hint: ヒントを閉じる
+      close_navigation: ナビゲーションを閉じる
+      close_overview: オーバービューを閉じる
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      cookie_notice_html: このウェブサイトはCookieを使用しています。こちらのサービスを使用することで、Cookieの利用規約に同意したものと見なされます。<a href="%{privacyLinkUrl}" target="_blank">Learn more</a>
+      deprecated_browser: "<p>ブラウザが最新のバージョンに更新されていないため、ページがうまく表示されない可能性があります。ブラウザを最新のバージョンに更新して下さい。</p>"
+      dismiss_cookie_notice: 隠す
+      embedded_video:
+        consent:
+          vimeo:
+            vendor_name: 
+          youtube:
+            vendor_name: 
+        leave_video: ビデオをやめる
+        opt_in_prompt: 
+      enlarge_view: 拡大する
+      enter_fullscreen: 全画面表示にする
+      first_page: 初めのページ
+      forward: 進む
+      fullscreen: 全画面表示
+      goto_first_page: 初めのページに行く
+      goto_top: 初めのページに行く
+      hide_text: テキストを隠す
+      home: スタート
+      imprint: 奥付
+      javascript_hint: 'このアプリケーションはユーザーエクスペリエンスおよび機能向上のためJavaScriptを使用しています。ご使用のブラウザはJavaScript をサポートしていない可能性があります。 '
+      languages:
+        ar: アラビア語
+        cs: チェコ語
+        de: ドイツ語
+        dk: デンマーク語
+        el: ギリシャ語
+        en: 英語
+        es: スペイン語
+        fi: 
+        fr: フランス語
+        fy: 
+        hi: 
+        it: イタリア語
+        ja: 
+        lb: 
+        nb: 
+        nl: オランダ語
+        nn: 
+        'no': 
+        pl: ポーランド語
+        pt: ポルトガル語
+        rm: 
+        ru: ロシア語
+        se: 
+        sr: セルビア語
+        sv: 
+        tr: トルコ語
+        unknown: "（不明）"
+        zh: 中国語
+      leave_fullscreen: 全画面表示をやめる
+      lets_go: Let's go
+      logo: ロゴ
+      media_quality: 品質
+      mute_off: ミュートをやめる
+      mute_on: ミュートにする
+      navigate_top: 初めのページに行く
+      navigation: ナビゲーション
+      new_pages_box:
+        additional_pages_html: 'もっと<span></span>みる '
+        description: 最後の訪問時から、ページが追加されました：
+        title: 新しいページ
+      notice: 通知
+      open_audio: オーディオを開く
+      open_navigation: ナビゲーションを開く
+      open_overview: オーバービューを開く
+      open_video: ビデオを開く
+      overview: オーバービュー
+      panorama:
+        close: 360° パノラマを閉じてテキストを表示する
+        start: 360° パノラマを始める
+      play_video: ビデオを再生する
+      privacy_notice: プライバシー通知
+      read_more: 
+      scroll_back_indicator: 
+      scroll_down: 下にスクロールする
+      scroll_hint: マウスかキーボードの矢印キーでページの間を移動する
+      scroll_indicator: 下にスクロールして進む
+      scroll_left: 左にスクロールする
+      scroll_right: 右にスクロールする
+      scroll_up: 上にスクロールする
+      share: シェア
+      share_in_telegram: 
+      share_in_whats_app: 
+      share_on_facebook: Facebookでシェアする
+      share_on_google: Google+でシェアする
+      share_on_linked_in: 
+      share_on_twitter: Xでシェアする
+      share_this_entry: この記事
+      share_this_page: このページ
+      share_via_email: 
+      show_home: スタート
+      show_text: テキストを表示する
+      skip_links_content: コンテンツに行く
+      skip_links_navigation: ナビゲーションに行く
+      skip_links_top_navigation: メインナビゲーションに行く
+      sound_hint: このマルチメディアストーリーのフォーマットはビデオとオーディオが含まれています。スピーカーをオンにして下さい。
+      start_audio: オーディオを再生する
+      start_video: ビデオを再生する
+      swipe_hint: スワイプしてページ間を移動する
+      swipe_indicator: スワイプして続ける
+      swipe_to_continue: スワイプして続ける
+      text_track_modes:
+        auto: オート(%{label})
+        auto_off: オート (Off)
+        none: "（なし）"
+      text_tracks: 字幕
+      third_party_embed_consent:
+        opt_in:
+          confirm: 
+          more_information: 
+        opt_out_info:
+          prompt_html: 
+          prompt_link: 
+      toggle_info_box: インフォボックスをトグル
+      video: ビデオ
+      video_qualities:
+        annotations:
+          4k: 4K
+          fullhd: HD
+          medium: HD
+        labels:
+          4k: 2610p
+          auto: オート
+          fullhd: 1080p
+          medium: 720p
+      volume: ボリューム
+      vr:
+        no_vr:
+          link: Youtubeアプリでビデオを見る
+          text: 360° ビデオをこのブラウザーで表示できません。
+        select_quality: ビデオの解像度を選ぶ
+        start: 360° ビデオを見る
+        start_cardboard: cardboardモードを始める
+        video_qualities:
+          4k: 2160s
+          fullhd: 1080s
+          high: 720s
+        video_quality_annotations:
+          4k: 4K
+          fullhd: HD
+          high: HD
+  pageflow_scrolled:
+    public:
+      chart:
+        default_title: 
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      enter_fullscreen: 
+      exit_fullscreen: 
+      image_rights: 
+      inline_file_rights_labels:
+        after: 
+        atmo: 
+        audio: 
+        before: 
+        image: 
+        poster: 
+        video: 
+      js_required: 
+      languages:
+        ar: 
+        cs: 
+        de: 
+        dk: 
+        el: 
+        en: 
+        es: 
+        fi: 
+        fr: 
+        fy: 
+        hi: 
+        it: 
+        ja: 
+        lb: 
+        nb: 
+        nl: 
+        nn: 
+        'no': 
+        pl: 
+        pt: 
+        rm: 
+        ru: 
+        se: 
+        sr: 
+        sv: 
+        tr: 
+        unknown: 
+        zh: 
+      media: 
+      more: 
+      navigation:
+        chapter: 
+        close_mobile_menu: 
+        language: 
+        legal_info: 
+        mute: 
+        open_mobile_menu: 
+        share: 
+        unmute: 
+      navigation_skip_links:
+        content: 
+      next: 
+      player_controls:
+        pause: 
+        play: 
+        progress: 
+        quality: 
+        text_tracks: 
+      previous: 
+      sound_disclaimer:
+        help_muted: 
+        help_unmuted: 
+      text_track_modes:
+        auto: 
+        auto_off: 
+        none: 
+      third_party_consent:
+        confirm: 
+        opt_in_prompt:
+          datawrapper: 
+          facebook: 
+          tiktok: 
+          twitter: 
+          vimeo: 
+          youtube: 
+        opt_out:
+          prompt: 
+          prompt_link: 
+      unsupported_browser: 
+      video_qualities:
+        annotations:
+          4k: 
+          fullhd: 
+          medium: 
+        labels:
+          4k: 
+          auto: 
+          fullhd: 
+          medium: 

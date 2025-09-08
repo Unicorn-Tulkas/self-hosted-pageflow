@@ -1,0 +1,66 @@
+.confirm_encoding {
+  .blank_slate {
+    margin: 10px 0;
+    padding: 20px 0;
+
+    p {
+      margin: 10px 5px;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .intro {
+    p {
+      margin-top: space(3);
+    }
+  }
+
+  ul.confirmable_files {
+    margin-bottom: 15px;
+
+    li {
+      background-color: var(--ui-primary-color-lightest);
+      margin-bottom: space(1);
+      display: flex;
+      padding: space(2);
+      border-radius: rounded();
+      align-items: center;
+    }
+
+    input[type=checkbox] {
+      display: block;
+    }
+
+    .file_name {
+      font-weight: normal;
+      margin: 0 space(2);
+    }
+
+    .duration {
+      color: var(--ui-on-surface-color-light);
+    }
+
+    .actions {
+      margin-left: space(2);
+    }
+
+    a.remove {
+      @include icon-only-button("destructive");
+      @include trash-icon;
+    }
+  }
+
+  button.confirm {
+    @include icon-button("primary");
+    @include check-icon;
+
+    &.checking {
+      @include arrows-ccw-icon;
+      @include background-icon-animation(blink);
+    }
+  }
+}

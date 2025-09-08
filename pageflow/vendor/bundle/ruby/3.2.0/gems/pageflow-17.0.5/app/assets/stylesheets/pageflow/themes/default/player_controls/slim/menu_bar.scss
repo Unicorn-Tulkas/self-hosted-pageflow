@@ -1,0 +1,23 @@
+.player_controls {
+  &-menu_bar {
+    right: 90px;
+
+    @include phone {
+      right: 0;
+    }
+  }
+
+  &-menu_bar-stand_alone {
+    right: 20px;
+  }
+}
+
+%player_controls-page-audio .player_controls-toggle_info_box_menu_button {
+  display: none;
+}
+
+@include phone {
+  .player_controls-toggle_info_box_menu_button {
+    display: none;
+  }
+}

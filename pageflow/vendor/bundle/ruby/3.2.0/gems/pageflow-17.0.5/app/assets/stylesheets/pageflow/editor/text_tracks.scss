@@ -1,0 +1,23 @@
+.text_tracks {
+  .text_tracks_container {
+    margin-top: space(4);
+    display: flex;
+  }
+
+  .files_upload_panel {
+    flex: 1;
+    margin-right: space(8);
+  }
+
+  .selected_file_panel {
+    width: 300px;
+  }
+
+  .table_view {
+    width: 100%;
+  }
+
+  .upload {
+    margin-top: space(4);
+  }
+}

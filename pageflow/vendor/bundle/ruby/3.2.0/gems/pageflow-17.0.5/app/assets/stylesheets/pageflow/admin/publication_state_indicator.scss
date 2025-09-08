@@ -1,0 +1,29 @@
+$pageflow-publication-state-indicator-icon-directory: "pageflow/admin/icons" !default;
+
+$pageflow-publication-state-indicator-size: 25px !default;
+
+.publication_state_indicator {
+  display: inline-block;
+  position: relative;
+  width: $pageflow-publication-state-indicator-size;
+  height: $pageflow-publication-state-indicator-size;
+  vertical-align: middle;
+  border-bottom: none;
+  background-size: $pageflow-icon-size $pageflow-icon-size;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  $dir: $pageflow-publication-state-indicator-icon-directory;
+
+  &.published_without_password_protection {
+    background-image: image-url("#{$dir}/published.svg");
+  }
+
+  &.published_with_password_protection {
+    background-image: image-url("#{$dir}/published_with_password.svg");
+  }
+
+  &.published_with_noindex {
+    background-image: image-url("#{$dir}/published_with_noindex.svg");
+  }
+}

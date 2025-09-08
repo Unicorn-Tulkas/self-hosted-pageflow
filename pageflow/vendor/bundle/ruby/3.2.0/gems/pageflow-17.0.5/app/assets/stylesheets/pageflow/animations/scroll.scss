@@ -1,0 +1,53 @@
+@include keyframes(scroll-in-forwards) {
+  from {
+    @include transform(translateY(100%));
+  }
+  to {
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(scroll-in-backwards) {
+  from {
+    @include transform(translateY(-100%));
+  }
+  to {
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(scroll-out-forwards) {
+  from {
+    @include transform(translateY(0));
+  }
+  to {
+    @include transform(translateY(-100%));
+  }
+}
+
+@include keyframes(scroll-out-backwards) {
+  from {
+    @include transform(translateY(0));
+  }
+  to {
+    @include transform(translateY(100%));
+  }
+}
+
+@include keyframes(scroll-in-left) {
+  0%   { @include transform(translate(-100%,0)); }
+  100% { @include transform(translate(0,0)); }
+}
+
+@include keyframes(scroll-in-right) {
+  0%   { @include transform(translate(100%,0)); }
+  100% { @include transform(translate(0,0)); }
+}
+@include keyframes(scroll-out-left) {
+  0%   { @include transform(translate(0,0)); }
+  100% { @include transform(translate(-100%,0)); }
+}
+@include keyframes(scroll-out-right) {
+  0%   { @include transform(translate(0,0)); }
+  100% { @include transform(translate(100%,0)); }
+}

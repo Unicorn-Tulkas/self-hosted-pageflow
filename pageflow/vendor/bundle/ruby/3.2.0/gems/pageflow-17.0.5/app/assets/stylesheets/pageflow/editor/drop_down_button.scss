@@ -1,0 +1,150 @@
+.drop_down_button {
+  display: inline-block;
+  position: relative;
+
+  > button.has_icon_and_text {
+    @include icon-button;
+  }
+
+  > button.has_icon_only {
+    @include icon-only-button;
+  }
+
+  > button.ellipsis_icon {
+    @include fa-ellipsis-v-icon;
+    width: 31px;
+  }
+
+  &.full_width {
+    width: 100%;
+
+    > button {
+      width: 100%;
+    }
+  }
+}
+
+.drop_down_button_menu {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  @include transition(visibility 100ms, opacity 100ms);
+
+  position: absolute;
+  z-index: 6;
+  padding: 1px;
+  border: solid 1px var(--ui-on-surface-color-lighter);
+  border-radius: rounded(sm);
+  box-shadow: var(--ui-box-shadow);
+  background-color: var(--ui-surface-color);
+  box-sizing: border-box;
+
+  &.is_visible {
+    @include transition(visibility 0ms, opacity 100ms);
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.drop_down_button_item {
+  a,
+  .label {
+    padding: 5px 15px;
+    line-height: 1.75;
+  }
+
+  a {
+    display: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--ui-selection-color-light);
+    }
+  }
+
+  .label {
+    cursor: default;
+    font-weight: 500;
+  }
+
+  &.is_hidden {
+    display: none;
+  }
+
+  &.is_selectable {
+    a {
+      display: block;
+    }
+
+    .label {
+      display: none;
+    }
+  }
+
+  &.is_disabled a {
+    opacity: 0.5;
+
+    &:hover {
+      background-color: inherit;
+    }
+  }
+
+  &.separated {
+    border-top: solid 1px var(--ui-on-surface-color-lighter);
+    margin-top: 1px;
+    padding-top: 1px;
+  }
+
+  &.has_radio,
+  &.has_check_box {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: space(2);
+
+      &:after {
+        content: "";
+        flex-shrink: 0;
+        display: block;
+        box-sizing: border-box;
+        border: solid 1px var(--ui-on-surface-color-light);
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &.is_checked a:after {
+      background-color: var(--ui-primary-color);
+      background-size: 100% 100%;
+      background-position: center;
+    }
+  }
+
+  &.has_check_box {
+    a:after {
+      border-radius: size(1);
+    }
+
+    &.is_checked a:after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    }
+  }
+
+  &.has_radio {
+    a:after {
+      border-radius: 100%;
+    }
+
+    &.is_checked a:after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+    }
+  }
+
+  ul {
+    border-bottom: solid 1px var(--ui-on-surface-color-lighter);
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+  }
+}

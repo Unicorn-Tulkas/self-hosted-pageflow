@@ -1,0 +1,277 @@
+ar:
+  pageflow:
+    public:
+      _language: العربية
+      audio: الصوت
+      back: عودة
+      back_to_chapter: عودة إلى الفصل
+      before_after:
+        drag_hint: انقر زر الفأرة الأيسر وحركها يمينًا أو يسارًا
+        hint: عرض قبل/بعد
+        leave_view: إغلاق عرض قبل/بعد
+        start: بدء عرض قبل/بعد
+        start_title: بدء عرض قبل/بعد
+      chapter: " الفصل"
+      chart:
+        consent_vendor_name: 
+        opt_in_prompt: 
+        toggle: تفعيل/إيقاف
+      close: " إغلاق"
+      close_hint: إغلاق الشرح
+      close_navigation: إغلاق التصفح
+      close_overview: إغلاق العرض العام
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      cookie_notice_html: 
+      deprecated_browser: " <p>متصفحك قديم وقد لا تظهر هذه الصفحة بالشكل المطلوب. نوصي بترقية المتصفح إلى أحدث نسخة.</p>"
+      dismiss_cookie_notice: 
+      embedded_video:
+        consent:
+          vimeo:
+            vendor_name: 
+          youtube:
+            vendor_name: 
+        leave_video: إغلاق عرض الفيديو
+        opt_in_prompt: 
+      enlarge_view: تكبير العرض
+      enter_fullscreen: العرض على كامل الشاشة
+      first_page: " الصفحة الأولى"
+      forward: " إلى الأمام"
+      fullscreen: كامل الشاشة
+      goto_first_page: ذهاب إلى الصفحة الأولى
+      goto_top: ذهاب إلى الصفحة الأولى
+      hide_text: " إخفاء النص"
+      home: بدء
+      imprint: طباعة
+      javascript_hint: " هذا التطبيق يستخدم JavaScript لتسهيل عمله ولتجربة مستخدم أفضل. قد يكون متصفحك لا يدعم JavaScript، أو قد تكون هذه التقنية غير مفعلة."
+      languages:
+        ar: " العربية"
+        cs: 
+        de: 
+        dk: 
+        el: 
+        en: الإنكليزية
+        es: 
+        fi: 
+        fr: 
+        fy: 
+        hi: 
+        it: 
+        ja: 
+        lb: 
+        nb: 
+        nl: 
+        nn: 
+        'no': 
+        pl: 
+        pt: 
+        rm: 
+        ru: 
+        se: 
+        sr: 
+        sv: 
+        tr: 
+        unknown: 
+        zh: 
+      leave_fullscreen: " إغلاق العرض على كامل الشاشة"
+      lets_go: البداية
+      logo: " الشعار"
+      media_quality: الجودة
+      mute_off: " تشغيل الصوت"
+      mute_on: إخفاء الصوت
+      navigate_top: ذهاب إلى الصفحة الأولى
+      navigation: التصفح
+      new_pages_box:
+        additional_pages_html: "...والمزيد"
+        description: 'منذ زيارتك الأخيرة، تمت إضافة صفحات جديدة:'
+        title: الصفحات الجديدة
+      notice: تنويه
+      open_audio: فتح ملف الصوت
+      open_navigation: فتح التصفح
+      open_overview: فتح العرض العام
+      open_video: فتح ملف الفيديو
+      overview: العرض العام
+      panorama:
+        close: إغلاق بانوراما 360 درجة وعرض النص
+        start: " بدء بانوراما 360 درجة"
+      play_video: " تشغيل الفيديو"
+      privacy_notice: سياسة الخصوصية
+      read_more: 
+      scroll_back_indicator: 
+      scroll_down: " إلى الأسفل"
+      scroll_hint: استخدم عجلة الفأرة أو أزرار الأسهم على لوحة المفاتيح للتنقل بين الصفحات
+      scroll_indicator: اذهب إلى الأسفل للاستمرار
+      scroll_left: " اذهب إلى اليسار"
+      scroll_right: اذهب إلى اليمين
+      scroll_up: " اذهب إلى الأعلى"
+      share: مشاركة
+      share_in_telegram: 
+      share_in_whats_app: 
+      share_on_facebook: مشاركة على فيسبوك
+      share_on_google: مشاركة على غوغل+
+      share_on_linked_in: 
+      share_on_twitter: مشاركة على تويتر
+      share_this_entry: هذه القصة
+      share_this_page: " هذه الصفحة"
+      share_via_email: 
+      show_home: " بدء"
+      show_text: " إظهار النص"
+      skip_links_content: عرض المحتويات
+      skip_links_navigation: " عرض التصفح"
+      skip_links_top_navigation: عرض التصفح الرئيسي
+      sound_hint: " هذه القصة متعددة الوسائط تستخدم الفيديو والصوت. يُرجى التأكد من تشغيل مكبرات الصوت."
+      start_audio: بدء تشغيل الصوت الآن
+      start_video: بدء تشغيل الفيديو الآن
+      swipe_hint: حرك إصبعك على الشاشة للتنقل بين الصفحات
+      swipe_indicator: 'حرك إصبعك للاستمرار '
+      swipe_to_continue: 
+      text_track_modes:
+        auto: " أوتوماتيكي (%{label}) "
+        auto_off: " أوتوماتيكي (إيقاف)"
+        none: " (لا شيء)"
+      text_tracks: الترجمة
+      third_party_embed_consent:
+        opt_in:
+          confirm: 
+          more_information: 
+        opt_out_info:
+          prompt_html: 
+          prompt_link: 
+      toggle_info_box: " تشغيل/إيقاف صندوق المعلومات"
+      video: فيديو
+      video_qualities:
+        annotations:
+          4k: 4K
+          fullhd: " HD"
+          medium: HD
+        labels:
+          4k: " 2160p"
+          auto: " أوتوماتيكي"
+          fullhd: 1080p
+          medium: 720p
+      volume: " درجة الصوت"
+      vr:
+        no_vr:
+          link: " عرض الفيديو في تطبيق يوتيوب"
+          text: فيديوهات 360 درجة لا يمكن تشغيلها في متصفحك
+        select_quality: " اختيار جودة الفيديو"
+        start: مشاهدة فيديو 360 درجة
+        start_cardboard: 'بدء نمط لوح البطاقات '
+        video_qualities:
+          4k: " 2160s"
+          fullhd: " 1080s"
+          high: 720s
+        video_quality_annotations:
+          4k: 4K
+          fullhd: HD
+          high: HD
+  pageflow_scrolled:
+    public:
+      chart:
+        default_title: 
+      consent_accept_all: 
+      consent_configure: 
+      consent_deny_all: 
+      consent_expand_vendor: 
+      consent_no_vendors: 
+      consent_prompt_html: 
+      consent_save: 
+      consent_settings: 
+      enter_fullscreen: 
+      exit_fullscreen: 
+      image_rights: 
+      inline_file_rights_labels:
+        after: 
+        atmo: 
+        audio: 
+        before: 
+        image: 
+        poster: 
+        video: 
+      js_required: 
+      languages:
+        ar: 
+        cs: 
+        de: 
+        dk: 
+        el: 
+        en: 
+        es: 
+        fi: 
+        fr: 
+        fy: 
+        hi: 
+        it: 
+        ja: 
+        lb: 
+        nb: 
+        nl: 
+        nn: 
+        'no': 
+        pl: 
+        pt: 
+        rm: 
+        ru: 
+        se: 
+        sr: 
+        sv: 
+        tr: 
+        unknown: 
+        zh: 
+      media: 
+      more: 
+      navigation:
+        chapter: 
+        close_mobile_menu: 
+        language: 
+        legal_info: 
+        mute: 
+        open_mobile_menu: 
+        share: 
+        unmute: 
+      navigation_skip_links:
+        content: 
+      next: 
+      player_controls:
+        pause: 
+        play: 
+        progress: 
+        quality: 
+        text_tracks: 
+      previous: 
+      sound_disclaimer:
+        help_muted: 
+        help_unmuted: 
+      text_track_modes:
+        auto: 
+        auto_off: 
+        none: 
+      third_party_consent:
+        confirm: 
+        opt_in_prompt:
+          datawrapper: 
+          facebook: 
+          tiktok: 
+          twitter: 
+          vimeo: 
+          youtube: 
+        opt_out:
+          prompt: 
+          prompt_link: 
+      unsupported_browser: 
+      video_qualities:
+        annotations:
+          4k: 
+          fullhd: 
+          medium: 
+        labels:
+          4k: 
+          auto: 
+          fullhd: 
+          medium: 

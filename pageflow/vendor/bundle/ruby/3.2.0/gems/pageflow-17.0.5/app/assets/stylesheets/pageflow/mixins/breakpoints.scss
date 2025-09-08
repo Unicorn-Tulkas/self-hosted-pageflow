@@ -1,0 +1,94 @@
+$simulated-media-queries: false !default;
+
+@mixin mobile {
+  @if $simulated-media-queries {
+    .simulate_mobile & {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (max-width: 900px) {
+      @content;
+    }
+  }
+}
+
+@mixin phone {
+  @if $simulated-media-queries {
+    .simulate_phone & {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (orientation: portrait) and (max-width: 500px),
+           screen and (orientation: landscape) and (max-height: 500px) {
+      @content;
+    }
+  }
+}
+
+@mixin desktop {
+  @if $simulated-media-queries {
+    .simulate_desktop & {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (orientation: portrait) and (min-width: 501px),
+           screen and (orientation: landscape) and (min-height: 501px) {
+      @content;
+    }
+  }
+}
+
+@mixin narrow_desktop {
+  @if $simulated-media-queries {
+    .simulate_narrow_desktop & {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin wide_desktop {
+  @if $simulated-media-queries {
+    .simulate_wide_desktop & {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: 1601px) {
+      @content;
+    }
+  }
+}
+
+@mixin pad_portrait {
+  @if $simulated-media-queries {
+    .simulate_pad_portrait & {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (max-width: 768px) and (orientation: portrait) {
+      @content;
+    }
+  }
+}
+
+@mixin phone_portrait {
+  @if $simulated-media-queries {
+    .simulate_phone_portrait & {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (max-width: 500px) and (orientation: portrait) {
+      @content;
+    }
+  }
+}

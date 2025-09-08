@@ -1,0 +1,47 @@
+@mixin pageflow-page-type($name) {
+  .#{$name} .type_pictogram {
+    background-image: image-url("pageflow/#{$name}_pictogram_small.png");
+  }
+}
+
+@mixin pageflow-page-type-pictograms($name, $directory: "pageflow/#{$name}/themes/default/pictograms") {
+  $pictogram-dir: $directory;
+  $custom-page-type-pictograms: false !default;
+
+  @if $custom-page-type-pictograms {
+    $pictogram-dir: "pageflow/themes/#{$theme-name}/page_type_pictograms/#{$name}";
+  }
+
+  .overview {
+    .#{$name} .pictogram {
+      background-image: image-url("#{$pictogram-dir}/wide.png");
+    }
+  }
+
+  .navigation_mobile {
+    .#{$name}:after {
+      background-image: image-url('#{$pictogram-dir}/sprite.png');
+    }
+  }
+
+  %pageflow_page_type_thumbnail.is_#{$name}:after {
+    background-image: image-url('#{$pictogram-dir}/sprite.png');
+  }
+}
+
+@mixin pageflow-uploadable-file-stage($stage-name) {
+  .editor {
+    .file_thumbnail .pictogram.#{$stage-name},
+    .file_stage_item.#{$stage-name} {
+      @content;
+    }
+  }
+}
+
+@mixin pageflow-widget-margin($widget-name, $position) {
+  .widget_#{$widget-name}_present {
+    %pageflow_widget_margin_#{$position} {
+      @content;
+    }
+  }
+}

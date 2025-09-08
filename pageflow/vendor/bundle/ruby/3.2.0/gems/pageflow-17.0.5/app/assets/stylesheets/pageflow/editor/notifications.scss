@@ -1,0 +1,80 @@
+.notifications {
+  border-bottom: solid 1px var(--ui-on-surface-color-lightest);
+  color: var(--ui-on-surface-color-light);
+  font-size: 11px;
+
+  margin: -10px -10px 10px -10px;
+
+  &.uploading li.uploading,
+  &.saving li.saving,
+  &.failed li.failed,
+  &.has_confirmable_files li.confirmable_files {
+    display: block;
+  }
+
+  &.uploading li.saved,
+  &.saving li.saved,
+  &.failed li.saved,
+  &.saving li.failed,{
+    display: none;
+  }
+
+  .count {
+    font-weight: bold;
+  }
+
+  .display_confirmable_files,
+  .retry {
+    text-decoration: underline;
+  }
+
+  .display_confirmable_files {
+    display: block;
+    margin: 8px 0;
+  }
+
+  li {
+    @include background-icon-left($font-size: 15px, $left: 15px, $color: var(--ui-primary-color-light));
+    padding: 4px 10px 4px 35px;
+  }
+
+  li.uploading {
+    @include background-icon-animation(blink);
+    @include background-icon-color(var(--ui-primary-color-light));
+    @include up-bold-icon;
+    color: var(--ui-primary-color-light);
+    display: none;
+  }
+
+  li.saving {
+    @include background-icon-animation(blink);
+    @include background-icon-color(var(--ui-primary-color-light));
+    @include arrows-ccw-icon;
+    color: var(--ui-primary-color-light);
+    display: none;
+  }
+
+  li.failed {
+    @include background-icon-animation(blink);
+    @include background-icon-color(var(--ui-error-color));
+    @include attention-icon;
+    color: var(--ui-primary-color-light);
+    display: none;
+  }
+
+  li.confirmable_files {
+    @include background-icon-left($font-size: 15px, $top: 15px, $left: 15px, $color: var(--ui-primary-color));
+    @include background-icon-animation(blink);
+    @include bell-icon;
+    margin: space(1) space(1) space(1) 0;
+    background-color: var(--ui-selection-color-lighter);
+    border-radius: rounded(md);
+    color: var(--ui-on-surface-color);
+    padding-top: 8px;
+    display: none;
+  }
+
+  li.saved {
+    @include check-icon;
+  }
+}

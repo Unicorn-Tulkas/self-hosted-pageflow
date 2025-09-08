@@ -1,0 +1,284 @@
+version: '3.8'
+
+services:
+  # ============================================================================
+  # CORE APPLICATION SERVICES
+  # ============================================================================
+  
+  pageflow:
+    build: 
+      context: ./pageflow
+      dockerfile: Dockerfile
+    container_name: pageflow_app
+    ports:
+      - "${PAGEFLOW_HOST_PORT}:3000"
+    environment:
+      # Rails Configuration
+      - RAILS_ENV=production
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      
+      # Database Configuration
+      - DB_HOST=pageflow_mysql
+      - DB_PORT=${MYSQL_CONTAINER_PORT:-3306}
+      - DB_NAME=pageflow_production
+      - DB_USERNAME=pageflow
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+      
+      # Redis Configuration
+      - REDIS_URL=${REDIS_URL:-redis://pageflow_redis:6379/0}
+      
+      # MinIO S3-Compatible Storage Configuration
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-minioadmin}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-minioadmin123}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      
+      # S3 Buckets
+      - S3_BUCKET=${S3_BUCKET:-pageflow-main}
+      - S3_OUTPUT_BUCKET=${S3_OUTPUT_BUCKET:-pageflow-output}
+      
+      # MinIO Endpoints
+      - S3_ENDPOINT_INTERNAL=${S3_ENDPOINT_INTERNAL:-http://pageflow_minio:9000}
+      - S3_ENDPOINT_EXTERNAL=${S3_ENDPOINT_EXTERNAL}
+      - S3_FORCE_PATH_STYLE=true
+      
+      # Application Configuration  
+      - DEFAULT_LOCALE=${DEFAULT_LOCALE:-en}
+      - TRANSCODER_SERVICE_KEY=${TRANSCODER_SERVICE_KEY:-pageflow-transcoder}
+      
+      # Custom FFmpeg Transcoder
+      - TRANSCODER_BASE_URL=${TRANSCODER_BASE_URL:-http://pageflow_transcoder:8080}
+      - TRANSCODER_WEBHOOK_URL=${TRANSCODER_WEBHOOK_URL:-http://pageflow:3000/api/transcoding/webhook}
+      
+      # Application URLs
+      - PAGEFLOW_HOST=${PAGEFLOW_HOST:-localhost:${PAGEFLOW_HOST_PORT:-3000}}
+      
+    volumes:
+      - ./pageflow:/app:cached
+      - pageflow_bundle_cache:/usr/local/bundle
+      - pageflow_app_storage:/app/storage
+      - pageflow_app_log:/app/log
+      - pageflow_app_tmp:/app/tmp
+    depends_on:
+      - pageflow_mysql
+      - pageflow_redis
+      - pageflow_minio
+    restart: unless-stopped
+    networks:
+      - pageflow_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/admin/login"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Background job workers
+  pageflow_worker:
+    build: 
+      context: ./pageflow
+      dockerfile: Dockerfile
+    command: bundle exec rake resque:work QUEUE='*'
+    environment:
+      - RAILS_ENV=production
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      - DB_HOST=pageflow_mysql
+      - DB_PORT=${MYSQL_CONTAINER_PORT:-3306}
+      - DB_NAME=pageflow_production
+      - DB_USERNAME=pageflow
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+      - REDIS_URL=${REDIS_URL:-redis://pageflow_redis:6379/0}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-minioadmin}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-minioadmin123}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      - S3_ENDPOINT_INTERNAL=${S3_ENDPOINT_INTERNAL:-http://pageflow_minio:9000}
+      - S3_BUCKET=${S3_BUCKET:-pageflow-main}
+      - S3_OUTPUT_BUCKET=${S3_OUTPUT_BUCKET:-pageflow-output}
+      - S3_FORCE_PATH_STYLE=true
+      - S3_ENDPOINT_EXTERNAL=${S3_ENDPOINT_EXTERNAL}
+      - DEFAULT_LOCALE=${DEFAULT_LOCALE:-en}
+      
+      # Zencoder/Transcoder Configuration (ADDED)
+      - TRANSCODER_SERVICE_KEY=${TRANSCODER_SERVICE_KEY:-pageflow-transcoder}
+      - TRANSCODER_BASE_URL=${TRANSCODER_BASE_URL:-http://pageflow_transcoder:8080}
+    volumes:
+      - pageflow_app_storage:/app/storage
+      - pageflow_app_log:/app/log
+    depends_on:
+      - pageflow_mysql
+      - pageflow_redis
+      - pageflow_minio
+    restart: unless-stopped
+    deploy:
+      replicas: 1
+    networks:
+      - pageflow_network
+
+  # Job scheduler
+  pageflow_scheduler:
+    build: 
+      context: ./pageflow
+      dockerfile: Dockerfile
+    container_name: pageflow_scheduler
+    command: bundle exec rake resque:scheduler
+    environment:
+      # Rails Configuration
+      - RAILS_ENV=production
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      
+      # Database Configuration
+      - DB_HOST=pageflow_mysql
+      - DB_PORT=${MYSQL_CONTAINER_PORT:-3306}
+      - DB_NAME=pageflow_production
+      - DB_USERNAME=pageflow
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+      
+      # Redis Configuration
+      - REDIS_URL=${REDIS_URL:-redis://pageflow_redis:6379/0}
+      
+      # Application Configuration
+      - DEFAULT_LOCALE=${DEFAULT_LOCALE:-en}
+    depends_on:
+      - pageflow_mysql
+      - pageflow_redis
+    restart: unless-stopped
+    networks:
+      - pageflow_network
+
+  # ============================================================================
+  # STORAGE SERVICES
+  # ============================================================================
+  
+  pageflow_minio:
+    image: minio/minio:latest
+    container_name: pageflow_minio
+    ports:
+      - "${MINIO_API_HOST_PORT}:9000"    # S3 API for browser uploads
+      - "${MINIO_CONSOLE_HOST_PORT}:9001"                   # Admin console
+    environment:
+      - MINIO_ROOT_USER=${AWS_ACCESS_KEY_ID:-minioadmin}
+      - MINIO_ROOT_PASSWORD=${AWS_SECRET_ACCESS_KEY:-minioadmin123}
+      - MINIO_BROWSER_REDIRECT_URL=${MINIO_BROWSER_REDIRECT_URL:-http://192.168.0.161:9001}
+    command: server /data --console-address ":9001"
+    volumes:
+      - pageflow_minio_data:/data
+    restart: unless-stopped
+    networks:
+      - pageflow_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+
+  # ============================================================================
+  # TRANSCODING SERVICES
+  # ============================================================================
+  
+  pageflow_transcoder:
+    build:
+      context: ./transcoder
+      dockerfile: Dockerfile
+    container_name: pageflow_transcoder
+    # Internal service - no external port mapping needed
+    # Uncomment next line if external transcoder access needed for debugging
+    # ports:
+    #   - "${TRANSCODER_HOST_PORT:-8080}:8080"
+    environment:
+      - MINIO_ENDPOINT=http://192.168.0.161:9002
+      - MINIO_ACCESS_KEY=${AWS_ACCESS_KEY_ID:-minioadmin}
+      - MINIO_SECRET_KEY=${AWS_SECRET_ACCESS_KEY:-minioadmin123}
+      - MINIO_SOURCE_BUCKET=${S3_BUCKET:-pageflow-main}
+      - MINIO_OUTPUT_BUCKET=${S3_OUTPUT_BUCKET:-pageflow-output}
+      - FFMPEG_THREADS=4
+      - MAX_CONCURRENT_JOBS=${MAX_CONCURRENT_JOBS:-4}
+      - WEBHOOK_TIMEOUT=30
+      - GPU_ACCELERATION=${GPU_ACCELERATION:-true}
+      - OUTPUT_FORMATS=webm_high,webm_medium,mp4_high,mp4_medium,mp4_low
+    volumes:
+      - pageflow_transcoder_temp:/tmp/transcoding
+    depends_on:
+      - pageflow_minio
+    restart: unless-stopped
+    networks:
+      - pageflow_network
+    # NVIDIA GPU support enabled
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  # ============================================================================
+  # DATABASE SERVICES
+  # ============================================================================
+  
+  pageflow_mysql:
+    image: mysql:8.0
+    container_name: pageflow_mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=pageflow_production
+      - MYSQL_USER=pageflow
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --innodb-buffer-pool-size=512M
+      --max-connections=200
+    # Internal service - no external port mapping needed
+    # Uncomment next line if external database access needed for debugging
+    # ports:
+    #   - "${MYSQL_HOST_PORT:-3306}:3306"
+    volumes:
+      - pageflow_mysql_data:/var/lib/mysql
+      - ./mysql/conf.d:/etc/mysql/conf.d:ro
+    restart: unless-stopped
+    networks:
+      - pageflow_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "pageflow", "-p${MYSQL_PASSWORD}"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  pageflow_redis:
+    image: redis:7-alpine
+    container_name: pageflow_redis
+    # Internal service - no external port mapping needed
+    # Uncomment next line if external Redis access needed for debugging
+    # ports:
+    #   - "${REDIS_HOST_PORT:-6379}:6379"
+    volumes:
+      - pageflow_redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    restart: unless-stopped
+    networks:
+      - pageflow_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+# ============================================================================
+# NETWORKS
+# ============================================================================
+networks:
+  pageflow_network:
+    driver: bridge
+
+# ============================================================================
+# PERSISTENT VOLUMES
+# ============================================================================
+volumes:
+  pageflow_bundle_cache:
+  pageflow_app_storage:
+  pageflow_app_log:
+  pageflow_app_tmp:
+  pageflow_mysql_data:
+  pageflow_redis_data:
+  pageflow_minio_data:
+  pageflow_transcoder_temp:

@@ -1,0 +1,28 @@
+# Extracted from initializer to allow auto loading changes in
+# development
+class ScrolledThemesPlugin
+  def configure(config) # rubocop:disable Metrics/MethodLength
+    config.themes.register(:default,
+                           stylesheet_packs: ['fonts/sourceSansPro'],
+                           font_family: {
+                             entry: '"Source Sans Pro", sans-serif',
+                             widget: '"Source Sans Pro", sans-serif'
+                           },
+                           custom_theme_icons: <%= @custom_theme_icons %>,
+                           colors: {
+                             accent: '#e10028',
+                             widget: {
+                               surface: '#fff',
+                               on_surface: '#000',
+                               primary: '#00375a',
+                               on_primary: '#fff',
+                               secondary: '#c2c2c2',
+                               on_seconday: '#000',
+                               background: 'rgba(255, 255, 255, 0.95)',
+                               on_background: '#000'
+                             }
+                           },
+                           logo_alt_text: 'Pageflow',
+                           theme_color: '#ffffff')
+  end
+end

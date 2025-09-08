@@ -1,0 +1,68 @@
+div.page_links {
+  .add_link {
+    @include plus-circled-icon;
+    @include icon-button;
+  }
+
+  ul.links {
+    margin-bottom: 10px;
+  }
+
+  a.edit {
+    @include icon-only-button;
+    @include pencil-icon;
+    position: absolute;
+    right: 40px;
+    top: 3px;
+  }
+
+  a.remove {
+    @include icon-only-button("destructive");
+    @include trash-icon;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+  }
+
+  li {
+    margin-bottom: 2px;
+    border-radius: rounded();
+    overflow: hidden;
+
+    > div:first-child {
+      padding-left: 45px;
+    }
+
+    .title {
+      cursor: default;
+      padding-right: 65px;
+    }
+
+    .label {
+      margin-top: 10px;
+      color: var(--ui-on-surface-color-light);
+    }
+
+    .thumbnail,
+    .missing_page_thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 35px;
+      background-size: cover;
+    }
+
+    .missing_page_thumbnail {
+      @include attention-icon;
+      @include background-icon-center($color: var(--ui-error-color));
+      background-color: var(--ui-error-surface-color);
+      display: none;
+      position: absolute;
+    }
+
+    &.dangling .missing_page_thumbnail {
+      display: block;
+    }
+  }
+}
