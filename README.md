@@ -9,6 +9,11 @@ A fully self-hosted deployment of [Pageflow CMS](https://pageflow.io/) that elim
 ![GPU](https://img.shields.io/badge/GPU-NVIDIA%20Supported-76b900)
 ![AWS](https://img.shields.io/badge/AWS-Independent-red)
 
+<img width="956" height="990" alt="image" src="https://github.com/user-attachments/assets/fa2479c1-f407-4652-9108-984e6accf4d3" />
+
+## About Me
+Hi, I'm Cole. I'm not a full time developer and I like it that way. I really liked the look of Pageflow, but couldn't bring myself to subscribe to more services. So I wanted to implement a self-hosted version in the most maintainable way, minimal modifications to Pageflow, minimal modifications to containers in the stack, and all in docker compose for portability. I do this in the hopes that someone who similarly wants to self-host Pageflow can learn from what I've done here, and maybe take it the next steps beyond. This is just a proof of concept to me, any further development I do on this project will be in private. To whoever reads this, good luck in all your endeavours.
+
 ## **Why This Project Exists**
 
 Pageflow CMS is an excellent platform for creating multimedia stories, but it traditionally requires:
