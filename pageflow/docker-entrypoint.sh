@@ -133,4 +133,4 @@ echo "🧹 Cleaning up stale PID files..."
 rm -f tmp/pids/server.pid
 
 # Start Rails server
-exec ./bin/rails server -b 0.0.0.0 -p 3002 -e ${RAILS_ENV:-production}
+exec ./bin/rails server -b 0.0.0.0 -p 3000 -e ${RAILS_ENV:-production}
