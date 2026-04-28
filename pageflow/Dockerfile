@@ -47,7 +47,7 @@ ENV BUNDLE_PATH=/usr/local/bundle
 ENV PATH=/usr/local/bundle/bin:$PATH
 
 # Expose port
-EXPOSE 3000
+EXPOSE 3002
 
 # Entrypoint
 CMD ["./docker-entrypoint.sh"]
