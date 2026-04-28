@@ -51,7 +51,7 @@ get_env_value() {
 echo "🔍 Checking port availability..."
 
 # Get actual port values that will be used (from .env or defaults)
-PAGEFLOW_HOST_PORT=$(get_env_value "PAGEFLOW_HOST_PORT" "3002")
+PAGEFLOW_HOST_PORT=$(get_env_value "PAGEFLOW_HOST_PORT" "3000")
 MINIO_API_HOST_PORT=$(get_env_value "MINIO_API_HOST_PORT" "9002")
 MINIO_CONSOLE_HOST_PORT=$(get_env_value "MINIO_CONSOLE_HOST_PORT" "9001")
 MYSQL_HOST_PORT=$(get_env_value "MYSQL_HOST_PORT" "")
