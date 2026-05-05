@@ -368,16 +368,18 @@ function extractBitrateValue(bitrate, defaultValue) {
 function buildFFmpegCommand(inputPath, output) {
     let command = ffmpeg(inputPath);
     
-    // Configure GPU acceleration
-    if (gpuConfig.nvidia && process.env.GPU_ACCELERATION === 'true') {
+    // Configure GPU acceleration for AMD (VA-API)
+    if (process.env.GPU_ACCELERATION === 'true') {
         command = command
-            .inputOptions(['-hwaccel', 'cuda'])
-            .videoCodec('h264_nvenc')
+            .inputOptions([
+                '-hwaccel', 'vaapi',
+                '-hwaccel_device', '/dev/dri/renderD128',
+                '-hwaccel_output_format', 'vaapi'
+            ])
+            .videoFilter('format=nv12,hwupload') // Notwendig für VA-API
+            .videoCodec('h264_vaapi')
             .outputOptions([
-                '-preset', 'fast',
-                '-profile:v', 'main',
-                '-rc', 'vbr',
-                '-cq', '23',
+                '-qp', '23', // Äquivalent zu CQ bei VA-API
                 '-b:v', normalizeBitrate(output.video_bitrate, '2000k'),
                 '-maxrate', normalizeBitrate(output.video_bitrate, '2000k'),
                 '-bufsize', '4000k'
@@ -391,7 +393,7 @@ function buildFFmpegCommand(inputPath, output) {
                 '-b:v', normalizeBitrate(output.video_bitrate, '2000k')
             ]);
     }
-    
+
     // Audio configuration
     command = command
         .audioCodec(output.audio_codec || 'aac')
