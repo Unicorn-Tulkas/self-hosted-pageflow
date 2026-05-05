@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     mesa-va-drivers \
     va-driver-all \
     vainfo \
+    libva-drm2 \
     # FFmpeg mit VA-API Support
     ffmpeg \
     && rm -rf /var/lib/apt/lists/*
