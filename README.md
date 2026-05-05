@@ -64,7 +64,7 @@ This project **completely eliminates those dependencies**, providing:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/self-hosted-pageflow.git
+git clone https://github.com/unicorn-tulkas/self-hosted-pageflow.git
 cd self-hosted-pageflow
 
 # One-command setup (handles everything automatically)
