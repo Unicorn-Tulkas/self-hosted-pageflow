@@ -194,20 +194,13 @@ services:
       - OUTPUT_FORMATS=webm_high,webm_medium,mp4_high,mp4_medium,mp4_low
     volumes:
       - pageflow_transcoder_temp:/tmp/transcoding
+    devices:
+      - /dev/dri:/dev/dri
     depends_on:
       - pageflow_minio
     restart: unless-stopped
     networks:
       - pageflow_network
-    # NVIDIA GPU support enabled
-    runtime: nvidia
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
 
   # ============================================================================
   # DATABASE SERVICES
