@@ -162,22 +162,16 @@ async function getMappingCount() {
     }
 }
 
-// GPU detection and configuration
+// GPU detection - Force to false for CPU encoding
 let gpuConfig = {
     nvidia: false
 };
 
-// Detect available GPU acceleration
 function detectGPU() {
     return new Promise((resolve) => {
-        // Check for NVIDIA GPU
-        exec('nvidia-smi', (error) => {
-            if (!error) {
-                gpuConfig.nvidia = true;
-                console.log('✅ NVIDIA GPU detected');
-            }
-            resolve(gpuConfig);
-        });
+        console.log('ℹ️  Software encoding mode enabled (Ryzen 9 CPU)');
+        gpuConfig.nvidia = false;
+        resolve(gpuConfig);
     });
 }
 
@@ -197,13 +191,13 @@ console.log(`🗄️  MinIO client configured: ${endpointUrl.hostname}:${endpoin
 
 app.use(express.json());
 
-// Health check with GPU status
+// Health check with CPU status
 app.get('/health', async (req, res) => {
     const activeJobs = await getJobCount();
     res.json({ 
         status: 'healthy', 
         service: 'pageflow-transcoder',
-        gpu: gpuConfig,
+        mode: 'CPU (Software Encoding)', // Information hinzugefügt
         activeJobs: activeJobs
     });
 });
@@ -386,12 +380,14 @@ function buildFFmpegCommand(inputPath, output) {
             ]);
     } else {
         command = command
-            .videoCodec(output.video_codec || 'libx264')
-            .outputOptions([
-                '-preset', 'medium',
-                '-crf', '23',
-                '-b:v', normalizeBitrate(output.video_bitrate, '2000k')
-            ]);
+    .videoCodec('libx264')
+    .outputOptions([
+        '-preset', 'veryfast', // 'veryfast' ist ideal für gute Balance zwischen Speed/Qualität
+        '-crf', '23',          // Standard für gute Qualität
+        '-threads', '0',       // '0' lässt FFmpeg automatisch alle verfügbaren Kerne nutzen
+        '-b:v', normalizeBitrate(output.video_bitrate, '2000k'),
+        '-pix_fmt', 'yuv420p'  // Höchste Kompatibilität für Web-Player
+    ]);
     }
 
     // Audio configuration
@@ -744,17 +740,17 @@ app.get('/jobs/:id', (req, res) => {
     app.handle(req, res);
 });
 
-// Initialize GPU detection and start server
+// Initialize detection and start server
 detectGPU().then(() => {
     const PORT = process.env.PORT || 8080;
     app.listen(PORT, () => {
-        log(`🚀 GPU-accelerated transcoder running on port ${PORT}`);
-        console.log(`🎮 GPU Config:`, gpuConfig);
+        // Text angepasst: "CPU-based" statt "GPU-accelerated"
+        log(`🚀 Transcoder (CPU-based) running on port ${PORT}`);
+        console.log(`💻 Mode: Software Encoding (Ryzen 9 Optimization)`);
         console.log(`📊 Max concurrent jobs: ${process.env.MAX_CONCURRENT_JOBS || 6}`);
         console.log(`🔄 Zencoder API compatibility enabled at /v1/jobs`);
     });
 });
-
 // Periodic cleanup stats logging - Redis handles TTL automatically
 setInterval(async () => {
     try {
