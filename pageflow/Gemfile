@@ -32,6 +32,11 @@ gem 'cancancan'
 gem 'bootsnap', require: false
 gem 'jbuilder'
 
+# Pageflow plugins
+gem 'pageflow-embedded-video'
+gem 'pageflow-timeline-page'
+gem 'pageflow-external-links'
+
 group :development do
   gem 'listen'
   gem 'spring'
