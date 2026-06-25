@@ -13,6 +13,11 @@ Pageflow.configure do |config|
   config.plugin(PageflowPaged.plugin)
   config.plugin(PageflowScrolled.plugin)
 
+  # Additional blocks and features
+  config.plugin(Pageflow::EmbeddedVideo.plugin)   # For YT/Vimeo
+  config.plugin(Pageflow::TimelinePage.plugin)    # For Timelines
+  config.plugin(Pageflow::ExternalLinks.plugin)   # For external link grids
+
   # Plugins that provide page types and widget types.
   config.plugin(Pageflow.built_in_page_types_plugin)
   config.plugin(Pageflow.built_in_widget_types_plugin)
