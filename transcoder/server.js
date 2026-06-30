@@ -401,63 +401,54 @@ function extractBitrateValue(bitrate, defaultValue) {
 
 function buildFFmpegCommand(inputPath, output) {
     let command = ffmpeg(inputPath);
-    const format = (output.format || 'mp4').toLowerCase();
     
-    // 1. Reine Audio-Formate abfangen (MP3 / M4A / OGG)
-    if (format === 'mp3' || format === 'm4a' || format === 'ogg') {
-        command = command.noVideo(); // Verhindert das Hinzufügen von Videospuren
-        
-        if (format === 'mp3') {
-            return command
-                .audioCodec('libmp3lame') // Korrekter Codec für MP3
-                .audioBitrate(extractBitrateValue(output.audio_bitrate, '192k'));
-        } else if (format === 'm4a') {
-            return command
-                .audioCodec('aac')        // Native AAC für M4A-Container
-                .audioBitrate(extractBitrateValue(output.audio_bitrate, '128k'));
-        } else if (format === 'ogg') {
-            return command
-                .audioCodec('libvorbis')  // Der richtige Standard-Codec für OGG-Audio
-                .audioBitrate(extractBitrateValue(output.audio_bitrate, '128k'));
+    // Prüfen, ob das Zielformat ein reines Audioformat ist
+    const isAudioOnly = output.format === 'mp3' || output.format === 'wav' || output.format === 'ogg' || output.format === 'aac';
+    
+    if (isAudioOnly) {
+        // Deaktiviere die Videospur für reine Audio-Dateien
+        command = command.noVideo();
+    } else {
+        // Konfiguration für Video-Encoding (bestehender Code)
+        if (process.env.GPU_ACCELERATION === 'true') {
+            command = command
+                .inputOptions([
+                    '-hwaccel', 'vaapi',
+                    '-hwaccel_device', '/dev/dri/renderD128',
+                    '-hwaccel_output_format', 'vaapi'
+                ])
+                .videoFilter('format=nv12,hwupload') // Notwendig für VA-API
+                .videoCodec('h264_vaapi')
+                .outputOptions([
+                    '-qp', '23', // Äquivalent zu CQ bei VA-API
+                    '-b:v', normalizeBitrate(output.video_bitrate, '2000k'),
+                    '-maxrate', normalizeBitrate(output.video_bitrate, '2000k'),
+                    '-bufsize', '4000k'
+                ]);
+        } else {
+            command = command
+                .videoCodec('libx264')
+                .outputOptions([
+                    '-preset', 'veryfast', // 'veryfast' ist ideal für gute Balance zwischen Speed/Qualität
+                    '-crf', '23',          // Standard für gute Qualität
+                    '-threads', '0',       // '0' lässt FFmpeg automatisch alle verfügbaren Kerne nutzen
+                    '-b:v', normalizeBitrate(output.video_bitrate, '2000k'),
+                    '-pix_fmt', 'yuv420p'  // Höchste Kompatibilität für Web-Player
+                ]);
+        }
+
+        // Auflösung nur bei Videos anpassen
+        if (output.size) {
+            command = command.size(output.size);
         }
     }
-    
-    // 2. Video-Konfiguration (wird nur ausgeführt, wenn es KEIN Audio-Format ist)
-    if (process.env.GPU_ACCELERATION === 'true') {
-        command = command
-            .inputOptions([
-                '-hwaccel', 'vaapi',
-                '-hwaccel_device', '/dev/dri/renderD128',
-                '-hwaccel_output_format', 'vaapi'
-            ])
-            .videoFilter('format=nv12,hwupload') 
-            .videoCodec('h264_vaapi')
-            .outputOptions([
-                '-qp', '23', 
-                '-b:v', normalizeBitrate(output.video_bitrate, '2000k'),
-                '-maxrate', normalizeBitrate(output.video_bitrate, '2000k'),
-                '-bufsize', '4000k'
-            ]);
-    } else {
-        command = command
-            .videoCodec('libx264')
-            .outputOptions([
-                '-preset', 'veryfast', 
-                '-crf', '23',          
-                '-threads', '0',       
-                '-b:v', normalizeBitrate(output.video_bitrate, '2000k'),
-                '-pix_fmt', 'yuv420p'  
-            ]);
-    }
 
-    // Audio-Konfiguration für Videodateien
-    command = command
-        .audioCodec(output.audio_codec || 'aac')
-        .audioBitrate(extractBitrateValue(output.audio_bitrate, '128k'));
+    // Audio-Konfiguration: Nutze libmp3lame für MP3-Dateien, falls kein Codec definiert ist
+    const defaultAudioCodec = output.format === 'mp3' ? 'libmp3lame' : 'aac';
     
-    if (output.size) {
-        command = command.size(output.size);
-    }
+    command = command
+        .audioCodec(output.audio_codec || defaultAudioCodec)
+        .audioBitrate(extractBitrateValue(output.audio_bitrate, '128k'));
     
     return command;
 }
