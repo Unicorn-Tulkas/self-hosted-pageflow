@@ -45,7 +45,7 @@ services:
       
       # Custom FFmpeg Transcoder
       - TRANSCODER_BASE_URL=${TRANSCODER_BASE_URL:-http://pageflow_transcoder:8080}
-      - TRANSCODER_WEBHOOK_URL=${TRANSCODER_WEBHOOK_URL:-http://pageflow:3000/api/transcoding/webhook}
+      - TRANSCODER_WEBHOOK_URL=${TRANSCODER_WEBHOOK_URL:-http://pageflow_app:3000/api/transcoding/webhook}
       
       # Application URLs
       - PAGEFLOW_HOST=${PAGEFLOW_HOST:-localhost:${PAGEFLOW_HOST_PORT:-3000}}
@@ -97,6 +97,8 @@ services:
       # Zencoder/Transcoder Configuration (ADDED)
       - TRANSCODER_SERVICE_KEY=${TRANSCODER_SERVICE_KEY:-pageflow-transcoder}
       - TRANSCODER_BASE_URL=${TRANSCODER_BASE_URL:-http://pageflow_transcoder:8080}
+      - TRANSCODER_WEBHOOK_URL=${TRANSCODER_WEBHOOK_URL:-http://pageflow_app:3000/api/transcoding/webhook}  # Fix: correct hostname
+    
     volumes:
       - pageflow_app_storage:/app/storage
       - pageflow_app_log:/app/log
@@ -182,7 +184,7 @@ services:
     # ports:
     #   - "${TRANSCODER_HOST_PORT:-8080}:8080"
     environment:
-      - MINIO_ENDPOINT=http://192.168.0.161:9002
+      - MINIO_ENDPOINT=http://192.168.0.161:9000
       - MINIO_ACCESS_KEY=${AWS_ACCESS_KEY_ID:-minioadmin}
       - MINIO_SECRET_KEY=${AWS_SECRET_ACCESS_KEY:-minioadmin123}
       - MINIO_SOURCE_BUCKET=${S3_BUCKET:-pageflow-main}
