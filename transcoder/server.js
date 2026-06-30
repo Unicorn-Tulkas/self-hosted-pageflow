@@ -361,8 +361,24 @@ function extractBitrateValue(bitrate, defaultValue) {
 
 function buildFFmpegCommand(inputPath, output) {
     let command = ffmpeg(inputPath);
+    const format = (output.format || 'mp4').toLowerCase();
     
-    // Configure GPU acceleration for AMD (VA-API)
+    // 1. Reine Audio-Formate abfangen (MP3 / M4A)
+    if (format === 'mp3' || format === 'm4a') {
+        command = command.noVideo(); // Verhindert das Hinzufügen von Videospuren
+        
+        if (format === 'mp3') {
+            return command
+                .audioCodec('libmp3lame') // Korrekter Codec für MP3
+                .audioBitrate(extractBitrateValue(output.audio_bitrate, '192k'));
+        } else if (format === 'm4a') {
+            return command
+                .audioCodec('aac')        // Native AAC für M4A-Container
+                .audioBitrate(extractBitrateValue(output.audio_bitrate, '128k'));
+        }
+    }
+    
+    // 2. Video-Konfiguration (wird nur ausgeführt, wenn es KEIN MP3/M4A ist)
     if (process.env.GPU_ACCELERATION === 'true') {
         command = command
             .inputOptions([
@@ -380,22 +396,22 @@ function buildFFmpegCommand(inputPath, output) {
             ]);
     } else {
         command = command
-    .videoCodec('libx264')
-    .outputOptions([
-        '-preset', 'veryfast', // 'veryfast' ist ideal für gute Balance zwischen Speed/Qualität
-        '-crf', '23',          // Standard für gute Qualität
-        '-threads', '0',       // '0' lässt FFmpeg automatisch alle verfügbaren Kerne nutzen
-        '-b:v', normalizeBitrate(output.video_bitrate, '2000k'),
-        '-pix_fmt', 'yuv420p'  // Höchste Kompatibilität für Web-Player
-    ]);
+            .videoCodec('libx264')
+            .outputOptions([
+                '-preset', 'veryfast', // 'veryfast' ist ideal für gute Balance zwischen Speed/Qualität
+                '-crf', '23',          // Standard für gute Qualität
+                '-threads', '0',       // '0' lässt FFmpeg automatisch alle verfügbaren Kerne nutzen
+                '-b:v', normalizeBitrate(output.video_bitrate, '2000k'),
+                '-pix_fmt', 'yuv420p'  // Höchste Kompatibilität für Web-Player
+            ]);
     }
 
-    // Audio configuration
+    // Audio-Konfiguration für Videodateien
     command = command
         .audioCodec(output.audio_codec || 'aac')
         .audioBitrate(extractBitrateValue(output.audio_bitrate, '128k'));
     
-    // Resolution/size configuration
+    // Auflösung/Größe nur für Videos anwenden
     if (output.size) {
         command = command.size(output.size);
     }
@@ -435,12 +451,22 @@ function transcodeVideo(inputPath, output, tempDir, jobId, progressStart, progre
                     
                     console.log(`📤 Uploading ${outputFileName} to bucket: ${outputBucket}, key: ${outputKey}`);
                     
+                    // Dynamischen Content-Type ermitteln
+                    let contentType = 'video/mp4';
+                    const currentFormat = (output.format || 'mp4').toLowerCase();
+
+                    if (currentFormat === 'webm') contentType = 'video/webm';
+                    else if (currentFormat === 'mp3') contentType = 'audio/mpeg';
+                    else if (currentFormat === 'm4a') contentType = 'audio/mp4';
+
+                    console.log(`📤 Uploading ${outputFileName} to bucket: ${outputBucket}, key: ${outputKey}`);
+
                     await minioClient.fPutObject(
                         outputBucket,
                         outputKey,
                         outputPath,
                         {
-                            'Content-Type': output.format === 'webm' ? 'video/webm' : 'video/mp4'
+                            'Content-Type': contentType
                         }
                     );
                     
