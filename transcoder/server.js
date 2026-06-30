@@ -363,8 +363,8 @@ function buildFFmpegCommand(inputPath, output) {
     let command = ffmpeg(inputPath);
     const format = (output.format || 'mp4').toLowerCase();
     
-    // 1. Reine Audio-Formate abfangen (MP3 / M4A)
-    if (format === 'mp3' || format === 'm4a') {
+    // 1. Reine Audio-Formate abfangen (MP3 / M4A / OGG)
+    if (format === 'mp3' || format === 'm4a' || format === 'ogg') {
         command = command.noVideo(); // Verhindert das Hinzufügen von Videospuren
         
         if (format === 'mp3') {
@@ -375,10 +375,14 @@ function buildFFmpegCommand(inputPath, output) {
             return command
                 .audioCodec('aac')        // Native AAC für M4A-Container
                 .audioBitrate(extractBitrateValue(output.audio_bitrate, '128k'));
+        } else if (format === 'ogg') {
+            return command
+                .audioCodec('libvorbis')  // Der richtige Standard-Codec für OGG-Audio
+                .audioBitrate(extractBitrateValue(output.audio_bitrate, '128k'));
         }
     }
     
-    // 2. Video-Konfiguration (wird nur ausgeführt, wenn es KEIN MP3/M4A ist)
+    // 2. Video-Konfiguration (wird nur ausgeführt, wenn es KEIN Audio-Format ist)
     if (process.env.GPU_ACCELERATION === 'true') {
         command = command
             .inputOptions([
@@ -386,10 +390,10 @@ function buildFFmpegCommand(inputPath, output) {
                 '-hwaccel_device', '/dev/dri/renderD128',
                 '-hwaccel_output_format', 'vaapi'
             ])
-            .videoFilter('format=nv12,hwupload') // Notwendig für VA-API
+            .videoFilter('format=nv12,hwupload') 
             .videoCodec('h264_vaapi')
             .outputOptions([
-                '-qp', '23', // Äquivalent zu CQ bei VA-API
+                '-qp', '23', 
                 '-b:v', normalizeBitrate(output.video_bitrate, '2000k'),
                 '-maxrate', normalizeBitrate(output.video_bitrate, '2000k'),
                 '-bufsize', '4000k'
@@ -398,11 +402,11 @@ function buildFFmpegCommand(inputPath, output) {
         command = command
             .videoCodec('libx264')
             .outputOptions([
-                '-preset', 'veryfast', // 'veryfast' ist ideal für gute Balance zwischen Speed/Qualität
-                '-crf', '23',          // Standard für gute Qualität
-                '-threads', '0',       // '0' lässt FFmpeg automatisch alle verfügbaren Kerne nutzen
+                '-preset', 'veryfast', 
+                '-crf', '23',          
+                '-threads', '0',       
                 '-b:v', normalizeBitrate(output.video_bitrate, '2000k'),
-                '-pix_fmt', 'yuv420p'  // Höchste Kompatibilität für Web-Player
+                '-pix_fmt', 'yuv420p'  
             ]);
     }
 
@@ -411,7 +415,6 @@ function buildFFmpegCommand(inputPath, output) {
         .audioCodec(output.audio_codec || 'aac')
         .audioBitrate(extractBitrateValue(output.audio_bitrate, '128k'));
     
-    // Auflösung/Größe nur für Videos anwenden
     if (output.size) {
         command = command.size(output.size);
     }
@@ -458,6 +461,7 @@ function transcodeVideo(inputPath, output, tempDir, jobId, progressStart, progre
                     if (currentFormat === 'webm') contentType = 'video/webm';
                     else if (currentFormat === 'mp3') contentType = 'audio/mpeg';
                     else if (currentFormat === 'm4a') contentType = 'audio/mp4';
+                    else if (currentFormat === 'ogg') contentType = 'audio/ogg'; // <-- NEU HINZUGEFÜGT
 
                     console.log(`📤 Uploading ${outputFileName} to bucket: ${outputBucket}, key: ${outputKey}`);
 
