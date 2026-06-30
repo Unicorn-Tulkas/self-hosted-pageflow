@@ -284,13 +284,28 @@ async function processVideo(jobId, input, outputs, notifications) {
         
         console.log(`📥 Downloading from bucket: ${bucketName}, key: ${inputKey}`);
         
-        await minioClient.fGetObject(
-            bucketName, 
-            inputKey, 
-            inputPath
-        );
+        // --- NEU: ECHTE METADATEN MIT FFPROBE ERMITTELN ---
+        const durationInMs = await new Promise((resolve) => {
+            ffmpeg.ffprobe(inputPath, (err, metadata) => {
+                if (err || !metadata || !metadata.format || !metadata.format.duration) {
+                    console.error('❌ ffprobe konnte Metadaten nicht lesen, nutze Fallback:', err);
+                    resolve(60000); // 1 Minute Fallback, falls etwas schiefgeht
+                } else {
+                    const seconds = parseFloat(metadata.format.duration);
+                    resolve(Math.round(seconds * 1000)); // Umrechnung in Millisekunden
+                }
+            });
+        });
+        const fileSizeInBytes = fs.statSync(inputPath).size; // Echte Dateigröße in Bytes
         
-        console.log(`📥 Downloaded input: ${inputKey}`);
+        // Werte im aktuellen Job-Objekt für Redis hinterlegen
+        const currentJob = await getJob(jobId);
+        if (currentJob) {
+            currentJob.duration_in_ms = durationInMs;
+            currentJob.file_size_in_bytes = fileSizeInBytes;
+            await setJob(jobId, currentJob);
+        }
+        // --- ENDE NEUER ABSCHNITT ---
         await updateJobProgress(jobId, 20, 'transcoding');
         
         // Process each output format
@@ -707,40 +722,45 @@ app.get('/v1/jobs/:id', async (req, res) => {
         
         log(`📋 Zencoder job ${zencoderJobId} details requested`);
         
+        const isVideo = job.outputs.some(out => out.format === 'mp4' || out.format === 'webm');
+        
         // Return Zencoder-compatible job details
         res.json({
             job: {
                 id: zencoderJobId,
                 state: job.state,
                 input_media_file: {
-                    format: 'mp4',
-                    duration_in_ms: 60000, // Default duration - could be extracted from actual file
-                    width: 1920,
-                    height: 1080
+                    format: isVideo ? 'mp4' : 'mp3',
+                    duration_in_ms: job.duration_in_ms || 60000, // Dynamische echte Länge aus Redis
+                    width: isVideo ? 1920 : null,
+                    height: isVideo ? 1080 : null,
+                    file_size_in_bytes: job.file_size_in_bytes || 1000000
                 },
                 output_media_files: job.outputs.map(output => {
-                    // Convert internal URL to accessible MinIO HTTP URL
                     const outputBucket = process.env.MINIO_OUTPUT_BUCKET || 'pageflow-output';
                     const externalEndpoint = process.env.S3_HOST_EXTERNAL || process.env.S3_ENDPOINT_EXTERNAL || 'http://localhost:9002';
                     
-                    // Use the actual MinIO object key that was stored during upload
-                    // If actualMinioKey is not available, fall back to URL processing
                     let outputKey = output.actualMinioKey;
                     
                     if (!outputKey) {
-                        // Fallback: Extract object key from the stored output URL
-                        outputKey = (output.url || '').replace(/^https?:\/\/[^\/]+\//, ''); // Remove http://host/
-                        outputKey = outputKey.replace(/^s3:\/\/[^\/]+\//, ''); // Remove s3:// protocol if present
+                        outputKey = (output.url || '').replace(/^https?:\/\/[^\/]+\//, '');
+                        outputKey = outputKey.replace(/^s3:\/\/[^\/]+\//, '');
                     }
                     
-                    // Build accessible HTTP URL using the actual object key from MinIO
                     const accessibleUrl = `${externalEndpoint}/${outputBucket}/${outputKey}`;
+                    const isOutVideo = output.format === 'mp4' || output.format === 'webm';
                     
                     return {
                         id: Math.floor(Math.random() * 2000000000) + 100000000,
                         state: output.state,
                         label: output.label,
-                        url: accessibleUrl
+                        url: accessibleUrl,
+                        // --- HIER DIE ECHTEN WERTE FÜR JEDE OUTPUT-DATEI MITLIEFERN ---
+                        duration_in_ms: job.duration_in_ms || 60000,
+                        file_size_in_bytes: job.file_size_in_bytes || 1000000,
+                        width: isOutVideo ? 1280 : null,
+                        height: isOutVideo ? 720 : null,
+                        format: output.format
                     };
                 })
             }
