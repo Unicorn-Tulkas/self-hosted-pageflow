@@ -284,7 +284,6 @@ async function processVideo(jobId, input, outputs, notifications) {
         
         console.log(`📥 Downloading from bucket: ${bucketName}, key: ${inputKey}`);
         
-        // 1. ZUERST: Die Datei vollständig aus MinIO herunterladen
         await minioClient.fGetObject(
             bucketName, 
             inputKey, 
@@ -292,31 +291,46 @@ async function processVideo(jobId, input, outputs, notifications) {
         );
         
         console.log(`📥 Downloaded input: ${inputKey}`);
-        
-        // 2. ERST JETZT: Da die Datei existiert, können wir Metadaten auslesen
-        const durationInMs = await new Promise((resolve) => {
-            ffmpeg.ffprobe(inputPath, (err, metadata) => {
-                if (err || !metadata || !metadata.format || !metadata.format.duration) {
-                    console.error('❌ ffprobe konnte Metadaten nicht lesen, nutze Fallback:', err);
-                    resolve(60000); // 1 Minute Fallback, falls ffprobe fehlschlägt
+
+        // --- NEU: METADATEN DYNAMISCH PER FFPROBE ERMITTELN ---
+        const metadata = await new Promise((resolve) => {
+            ffmpeg.ffprobe(inputPath, (err, meta) => {
+                if (err || !meta || !meta.format) {
+                    console.error('❌ ffprobe konnte Metadaten nicht lesen, nutze Fallbacks:', err);
+                    resolve({
+                        duration_in_ms: 60000,
+                        file_size_in_bytes: fs.existsSync(inputPath) ? fs.statSync(inputPath).size : 1000000,
+                        width: null,
+                        height: null,
+                        format: 'mp3'
+                    });
                 } else {
-                    const seconds = parseFloat(metadata.format.duration);
-                    resolve(Math.round(seconds * 1000)); // Umrechnung in Millisekunden
+                    const duration_in_ms = meta.format.duration ? Math.round(parseFloat(meta.format.duration) * 1000) : 60000;
+                    const file_size_in_bytes = meta.format.size ? parseInt(meta.format.size) : 1000000;
+                    
+                    // Prüfen, ob ein Videostream existiert
+                    const videoStream = meta.streams ? meta.streams.find(s => s.codec_type === 'video') : null;
+                    const width = videoStream ? videoStream.width : null;
+                    const height = videoStream ? videoStream.height : null;
+                    const format = videoStream ? 'mp4' : 'mp3'; // Pageflow-konforme Erkennung
+                    
+                    resolve({ duration_in_ms, file_size_in_bytes, width, height, format });
                 }
             });
         });
-        
-        const fileSizeInBytes = fs.statSync(inputPath).size; // Echte Dateigröße in Bytes
-        
-        // Werte im aktuellen Job-Objekt für Redis hinterlegen
+
+        // Werte im Redis-Job für den späteren API-Abruf speichern
         const currentJob = await getJob(jobId);
         if (currentJob) {
-            currentJob.duration_in_ms = durationInMs;
-            currentJob.file_size_in_bytes = fileSizeInBytes;
+            currentJob.duration_in_ms = metadata.duration_in_ms;
+            currentJob.file_size_in_bytes = metadata.file_size_in_bytes;
+            currentJob.width = metadata.width;
+            currentJob.height = metadata.height;
+            currentJob.audio_video_format = metadata.format;
             await setJob(jobId, currentJob);
         }
+        // --- ENDE METADATEN-BLOCK ---
 
-        // 3. DANACH: Den Transcoding-Status anpassen und konvertieren
         await updateJobProgress(jobId, 20, 'transcoding');
         
         // Process each output format
@@ -716,6 +730,7 @@ app.get('/v1/jobs/:id/progress', async (req, res) => {
 });
 
 // Zencoder API: Get Job Details
+// Zencoder API: Get Job Details
 app.get('/v1/jobs/:id', async (req, res) => {
     try {
         const zencoderJobId = parseInt(req.params.id);
@@ -733,18 +748,16 @@ app.get('/v1/jobs/:id', async (req, res) => {
         
         log(`📋 Zencoder job ${zencoderJobId} details requested`);
         
-        const isVideo = job.outputs.some(out => out.format === 'mp4' || out.format === 'webm');
-        
         // Return Zencoder-compatible job details
         res.json({
             job: {
                 id: zencoderJobId,
                 state: job.state,
                 input_media_file: {
-                    format: isVideo ? 'mp4' : 'mp3',
-                    duration_in_ms: job.duration_in_ms || 60000, // Dynamische echte Länge aus Redis
-                    width: isVideo ? 1920 : null,
-                    height: isVideo ? 1080 : null,
+                    format: job.audio_video_format || 'mp4',
+                    duration_in_ms: job.duration_in_ms || 60000,
+                    width: job.width || null,  // null signalisiert Pageflow "Reines Audio"
+                    height: job.height || null,
                     file_size_in_bytes: job.file_size_in_bytes || 1000000
                 },
                 output_media_files: job.outputs.map(output => {
@@ -759,19 +772,17 @@ app.get('/v1/jobs/:id', async (req, res) => {
                     }
                     
                     const accessibleUrl = `${externalEndpoint}/${outputBucket}/${outputKey}`;
-                    const isOutVideo = output.format === 'mp4' || output.format === 'webm';
                     
                     return {
                         id: Math.floor(Math.random() * 2000000000) + 100000000,
                         state: output.state,
                         label: output.label,
                         url: accessibleUrl,
-                        // --- HIER DIE ECHTEN WERTE FÜR JEDE OUTPUT-DATEI MITLIEFERN ---
+                        format: output.format,
                         duration_in_ms: job.duration_in_ms || 60000,
-                        file_size_in_bytes: job.file_size_in_bytes || 1000000,
-                        width: isOutVideo ? 1280 : null,
-                        height: isOutVideo ? 720 : null,
-                        format: output.format
+                        file_size_in_bytes: job.file_size_in_bytes ? Math.round(job.file_size_in_bytes * 0.9) : 1000000,
+                        width: job.width || null,
+                        height: job.height || null
                     };
                 })
             }
