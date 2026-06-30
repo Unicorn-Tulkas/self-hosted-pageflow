@@ -10,6 +10,7 @@ services:
     container_name: pageflow_app
     ports:
       - "${PAGEFLOW_HOST_PORT}:3000"
+    user: "${UID:-1000}:${GID:-1000}"
     environment:
       # Rails Configuration
       - RAILS_ENV=production
@@ -75,6 +76,7 @@ services:
       context: ./pageflow
       dockerfile: Dockerfile
     command: bundle exec rake resque:work QUEUE='*'
+    user: "${UID:-1000}:${GID:-1000}"
     environment:
       - RAILS_ENV=production
       - SECRET_KEY_BASE=${SECRET_KEY_BASE}
@@ -94,14 +96,15 @@ services:
       - S3_ENDPOINT_EXTERNAL=${S3_ENDPOINT_EXTERNAL}
       - DEFAULT_LOCALE=${DEFAULT_LOCALE:-en}
       
-      # Zencoder/Transcoder Configuration (ADDED)
+      # Zencoder/Transcoder Configuration
       - TRANSCODER_SERVICE_KEY=${TRANSCODER_SERVICE_KEY:-pageflow-transcoder}
       - TRANSCODER_BASE_URL=${TRANSCODER_BASE_URL:-http://pageflow_transcoder:8080}
-      - TRANSCODER_WEBHOOK_URL=${TRANSCODER_WEBHOOK_URL:-http://pageflow_app:3000/api/transcoding/webhook}  # Fix: correct hostname
+      - TRANSCODER_WEBHOOK_URL=${TRANSCODER_WEBHOOK_URL:-http://pageflow_app:3000/api/transcoding/webhook}
     
     volumes:
       - pageflow_app_storage:/app/storage
       - pageflow_app_log:/app/log
+      - pageflow_app_tmp:/app/tmp
     depends_on:
       - pageflow_mysql
       - pageflow_redis
@@ -119,6 +122,7 @@ services:
       dockerfile: Dockerfile
     container_name: pageflow_scheduler
     command: bundle exec rake resque:scheduler
+    user: "${UID:-1000}:${GID:-1000}"
     environment:
       # Rails Configuration
       - RAILS_ENV=production
@@ -153,6 +157,7 @@ services:
     ports:
       - "${MINIO_API_HOST_PORT}:9000"    # S3 API for browser uploads
       - "${MINIO_CONSOLE_HOST_PORT}:9001"                   # Admin console
+    user: "${UID:-1000}:${GID:-1000}"
     environment:
       - MINIO_ROOT_USER=${AWS_ACCESS_KEY_ID:-minioadmin}
       - MINIO_ROOT_PASSWORD=${AWS_SECRET_ACCESS_KEY:-minioadmin123}
@@ -179,12 +184,13 @@ services:
       context: ./transcoder
       dockerfile: Dockerfile
     container_name: pageflow_transcoder
+    user: "${UID:-1000}:${GID:-1000}"
     # Internal service - no external port mapping needed
     # Uncomment next line if external transcoder access needed for debugging
     # ports:
     #   - "${TRANSCODER_HOST_PORT:-8080}:8080"
     environment:
-      - MINIO_ENDPOINT=http://192.168.0.161:9000
+      - MINIO_ENDPOINT=http://pageflow_minio:9000
       - MINIO_ACCESS_KEY=${AWS_ACCESS_KEY_ID:-minioadmin}
       - MINIO_SECRET_KEY=${AWS_SECRET_ACCESS_KEY:-minioadmin123}
       - MINIO_SOURCE_BUCKET=${S3_BUCKET:-pageflow-main}
@@ -209,6 +215,7 @@ services:
   pageflow_mysql:
     image: mysql:8.0
     container_name: pageflow_mysql
+    user: "${UID:-1000}:${GID:-1000}"
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=pageflow_production
@@ -238,6 +245,7 @@ services:
   pageflow_redis:
     image: redis:7-alpine
     container_name: pageflow_redis
+    user: "${UID:-1000}:${GID:-1000}"
     # Internal service - no external port mapping needed
     # Uncomment next line if external Redis access needed for debugging
     # ports:
