@@ -284,18 +284,28 @@ async function processVideo(jobId, input, outputs, notifications) {
         
         console.log(`📥 Downloading from bucket: ${bucketName}, key: ${inputKey}`);
         
-        // --- NEU: ECHTE METADATEN MIT FFPROBE ERMITTELN ---
+        // 1. ZUERST: Die Datei vollständig aus MinIO herunterladen
+        await minioClient.fGetObject(
+            bucketName, 
+            inputKey, 
+            inputPath
+        );
+        
+        console.log(`📥 Downloaded input: ${inputKey}`);
+        
+        // 2. ERST JETZT: Da die Datei existiert, können wir Metadaten auslesen
         const durationInMs = await new Promise((resolve) => {
             ffmpeg.ffprobe(inputPath, (err, metadata) => {
                 if (err || !metadata || !metadata.format || !metadata.format.duration) {
                     console.error('❌ ffprobe konnte Metadaten nicht lesen, nutze Fallback:', err);
-                    resolve(60000); // 1 Minute Fallback, falls etwas schiefgeht
+                    resolve(60000); // 1 Minute Fallback, falls ffprobe fehlschlägt
                 } else {
                     const seconds = parseFloat(metadata.format.duration);
                     resolve(Math.round(seconds * 1000)); // Umrechnung in Millisekunden
                 }
             });
         });
+        
         const fileSizeInBytes = fs.statSync(inputPath).size; // Echte Dateigröße in Bytes
         
         // Werte im aktuellen Job-Objekt für Redis hinterlegen
@@ -305,7 +315,8 @@ async function processVideo(jobId, input, outputs, notifications) {
             currentJob.file_size_in_bytes = fileSizeInBytes;
             await setJob(jobId, currentJob);
         }
-        // --- ENDE NEUER ABSCHNITT ---
+
+        // 3. DANACH: Den Transcoding-Status anpassen und konvertieren
         await updateJobProgress(jobId, 20, 'transcoding');
         
         // Process each output format
