@@ -637,7 +637,7 @@ app.post('/v1/jobs', async (req, res) => {
             state: 'processing',
             input: { state: 'processing', url: input },
             outputs: convertedOutputs.map((output, index) => ({
-                id: uuidv4(),
+                id: Math.floor(Math.random() * 2000000000) + 100000000,
                 state: 'processing',
                 url: output.url,
                 format: output.format || 'mp4',
@@ -676,7 +676,7 @@ app.post('/v1/jobs', async (req, res) => {
         res.json({
             id: zencoderJobId,
             outputs: job.outputs.map(output => ({
-                id: Math.floor(Math.random() * 2000000000) + 100000000,
+                id: output.id,
                 url: output.url,
                 label: output.label
             }))
@@ -730,7 +730,6 @@ app.get('/v1/jobs/:id/progress', async (req, res) => {
 });
 
 // Zencoder API: Get Job Details
-// Zencoder API: Get Job Details
 app.get('/v1/jobs/:id', async (req, res) => {
     try {
         const zencoderJobId = parseInt(req.params.id);
@@ -774,7 +773,8 @@ app.get('/v1/jobs/:id', async (req, res) => {
                     const accessibleUrl = `${externalEndpoint}/${outputBucket}/${outputKey}`;
                     
                     return {
-                        id: Math.floor(Math.random() * 2000000000) + 100000000,
+                        // 💎 GEÄNDERT: Nutze die persistente ID aus Redis statt einer neuen Zufallszahl!
+                        id: output.id, 
                         state: output.state,
                         label: output.label,
                         url: accessibleUrl,
