@@ -550,14 +550,40 @@ async function sendNotifications(jobId, notifications) {
     
     notifications.forEach(notification => {
         if (notification.url) {
+            // Nutzen der korrekten ID für Zencoder-Schnittstellen
+            const finalJobId = job.zencoderMode && job.zencoderJobId ? job.zencoderJobId : job.id;
+            
+            // Formatierung der Outputs, um Pageflows Erwartungen exakt zu treffen
+            const formattedOutputs = job.outputs.map(output => {
+                if (job.zencoderMode) {
+                    const outputBucket = process.env.MINIO_OUTPUT_BUCKET || 'pageflow-output';
+                    const externalEndpoint = process.env.S3_HOST_EXTERNAL || process.env.S3_ENDPOINT_EXTERNAL || 'http://localhost:9002';
+                    
+                    let outputKey = output.actualMinioKey;
+                    if (!outputKey) {
+                        outputKey = (output.url || '').replace(/^https?:\/\/[^\/]+\//, '');
+                        outputKey = outputKey.replace(/^s3:\/\/[^\/]+\//, '');
+                    }
+                    const accessibleUrl = `${externalEndpoint}/${outputBucket}/${outputKey}`;
+                    
+                    return {
+                        id: output.id,
+                        state: output.state,
+                        label: output.label,
+                        url: accessibleUrl
+                    };
+                }
+                return output;
+            });
+
             const notificationData = JSON.stringify({
                 job: {
-                    id: job.id,
+                    id: finalJobId,
                     state: job.state,
                     progress: job.progress
                 },
                 input: job.input,
-                outputs: job.outputs
+                outputs: formattedOutputs
             });
             
             const parsedUrl = url.parse(notification.url);
@@ -575,7 +601,7 @@ async function sendNotifications(jobId, notifications) {
             };
             
             const req = client.request(options, (res) => {
-                console.log(`📡 Notification sent: ${res.statusCode}`);
+                console.log(`📡 Notification sent to Pageflow: ${res.statusCode}`);
             });
             
             req.on('error', (error) => {
@@ -632,21 +658,26 @@ app.post('/v1/jobs', async (req, res) => {
         // Convert Zencoder format to our transcoder format
         const convertedOutputs = convertZencoderOutputs(outputs || [], input);
         
-        // Create job using our existing processVideo function
         const jobId = uuidv4();
+        // Generate smaller job ID that fits in 4-byte signed integer and persist it
+        const zencoderJobId = Math.floor(Math.random() * 2000000000) + 100000000;
         
-        // Initialize job status (reuse existing job structure)
+        // Initialize job status with persistent integer IDs for outputs
         const jobData = {
             id: jobId,
+            zencoderJobId: zencoderJobId,
             state: 'processing',
             input: { state: 'processing', url: input },
-            outputs: convertedOutputs.map((output, index) => ({
-                id: Math.floor(Math.random() * 2000000000) + 100000000,
-                state: 'processing',
-                url: output.url,
-                format: output.format || 'mp4',
-                label: output.label || `output_${index}`
-            })),
+            outputs: convertedOutputs.map((output, index) => {
+                const zencoderOutputId = Math.floor(Math.random() * 2000000000) + 100000000;
+                return {
+                    id: zencoderOutputId, // Persistent Integer-ID für Pageflow
+                    state: 'processing',
+                    url: output.url,
+                    format: output.format || 'mp4',
+                    label: output.label || `output_${index}`
+                };
+            }),
             notifications: notifications || [],
             progress: 0,
             startTime: new Date(),
@@ -667,11 +698,6 @@ app.post('/v1/jobs', async (req, res) => {
             }
         });
         
-        // Return Zencoder-compatible response
-        const job = await getJob(jobId);
-        // Generate smaller job ID that fits in 4-byte signed integer (max 2147483647)
-        const zencoderJobId = Math.floor(Math.random() * 2000000000) + 100000000;
-        
         // Store the mapping for later lookups
         await setZencoderMapping(zencoderJobId, jobId);
         
@@ -679,7 +705,7 @@ app.post('/v1/jobs', async (req, res) => {
         
         res.json({
             id: zencoderJobId,
-            outputs: job.outputs.map(output => ({
+            outputs: jobData.outputs.map(output => ({
                 id: output.id,
                 url: output.url,
                 label: output.label
@@ -757,18 +783,16 @@ app.get('/v1/jobs/:id', async (req, res) => {
                 id: zencoderJobId,
                 state: job.state,
                 input_media_file: {
-                    format: job.audio_video_format || 'mp4',
-                    duration_in_ms: job.duration_in_ms || 60000,
-                    width: job.width || null,  // null signalisiert Pageflow "Reines Audio"
-                    height: job.height || null,
-                    file_size_in_bytes: job.file_size_in_bytes || 1000000
+                    format: 'mp4',
+                    duration_in_ms: 60000,
+                    width: 1920,
+                    height: 1080
                 },
                 output_media_files: job.outputs.map(output => {
                     const outputBucket = process.env.MINIO_OUTPUT_BUCKET || 'pageflow-output';
                     const externalEndpoint = process.env.S3_HOST_EXTERNAL || process.env.S3_ENDPOINT_EXTERNAL || 'http://localhost:9002';
                     
                     let outputKey = output.actualMinioKey;
-                    
                     if (!outputKey) {
                         outputKey = (output.url || '').replace(/^https?:\/\/[^\/]+\//, '');
                         outputKey = outputKey.replace(/^s3:\/\/[^\/]+\//, '');
@@ -777,16 +801,10 @@ app.get('/v1/jobs/:id', async (req, res) => {
                     const accessibleUrl = `${externalEndpoint}/${outputBucket}/${outputKey}`;
                     
                     return {
-                        // 💎 GEÄNDERT: Nutze die persistente ID aus Redis statt einer neuen Zufallszahl!
-                        id: output.id, 
+                        id: output.id, // Hier stand vorher Math.random(), jetzt fixiert!
                         state: output.state,
                         label: output.label,
-                        url: accessibleUrl,
-                        format: output.format,
-                        duration_in_ms: job.duration_in_ms || 60000,
-                        file_size_in_bytes: job.file_size_in_bytes ? Math.round(job.file_size_in_bytes * 0.9) : 1000000,
-                        width: job.width || null,
-                        height: job.height || null
+                        url: accessibleUrl
                     };
                 })
             }
