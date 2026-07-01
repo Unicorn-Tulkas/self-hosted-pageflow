@@ -30,8 +30,9 @@ COPY --chown=pageflow:pageflow . .
 COPY --chown=pageflow:pageflow Gemfile* ./
 
 # Install gems as root to system location
+# Use production environment to skip development gems
 RUN bundle config set --global path '/usr/local/bundle' && \
-    bundle install --jobs 4 --retry 3 && \
+    bundle install --jobs 4 --retry 3 --without development test && \
     chown -R pageflow:pageflow /usr/local/bundle
 
 # Create directories and set permissions
