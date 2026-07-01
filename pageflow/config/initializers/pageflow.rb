@@ -106,6 +106,7 @@ Pageflow.configure do |config|
     s3_options: {
       endpoint: server_endpoint,
       force_path_style: ENV.fetch('S3_FORCE_PATH_STYLE', 'true') == 'true'
+      signature_version: 'v4'
     }
   )
 
