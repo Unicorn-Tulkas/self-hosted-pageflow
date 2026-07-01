@@ -105,7 +105,7 @@ Pageflow.configure do |config|
     s3_protocol: ENV.fetch('S3_PROTOCOL', 'http'),
     s3_options: {
       endpoint: server_endpoint,
-      force_path_style: ENV.fetch('S3_FORCE_PATH_STYLE', 'true') == 'true'
+      force_path_style: ENV.fetch('S3_FORCE_PATH_STYLE', 'true') == 'true',
       signature_version: 'v4'
     }
   )
@@ -141,7 +141,7 @@ Pageflow.configure do |config|
       access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID', 'minioadmin'),
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY', 'minioadmin123'),
       region: ENV.fetch('AWS_REGION', 'us-east-1'),
-      force_path_style: ENV.fetch('S3_FORCE_PATH_STYLE', 'true') == 'true'
+      force_path_style: ENV.fetch('S3_FORCE_PATH_STYLE', 'true') == 'true',
       signature_version: 'v4'
     )
     
