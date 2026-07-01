@@ -12,9 +12,12 @@ gem 'mysql2', '~> 0.5'
 gem 'puma', '~> 5.0'
 
 # Background job processing
-gem 'resque', '~> 1.25'
-gem 'resque-scheduler', '~> 4.10'
-gem 'redis', '~> 4.8.0'
+gem 'resque', '~> 2.3'
+gem 'resque-scheduler', '~> 4.11'
+gem 'redis', '~> 5.0'
+
+# Redis for caching and locks
+gem 'redis-store', '~> 1.10'
 
 # Legacy compatibility (if needed by old initializers)
 gem 'ar_after_transaction', '~> 0.4'
