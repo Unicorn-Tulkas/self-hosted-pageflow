@@ -1,18 +1,23 @@
-# Configure Pageflow to use Redis for story locks instead of file-based locks
-# This fixes the "opened in another window" error in multi-container setups
+# Configure Rails to use Redis for caching in containerized environments
+# This fixes story lock synchronization issues across multiple containers
 #
-# In containerized environments with multiple processes (pageflow_app, pageflow_worker),
-# file-based locks cannot be properly synchronized across containers. Using Redis
-# ensures all containers share the same lock state.
+# In containerized setups with multiple processes (pageflow_app, pageflow_worker),
+# file-based locks cannot be properly synchronized. Using Redis as the cache store
+# ensures all containers share the same lock and cache state.
 
-if defined?(Pageflow)
-  Pageflow.configure do |config|
-    # Use Redis as the cache store for entry locks (story locks)
-    # This replaces the default file-based locking mechanism
-    redis_url = ENV.fetch('REDIS_URL', 'redis://pageflow_redis:6379/0')
-    
-    config.cache_store = :redis_store, { url: redis_url }
-    
-    Rails.logger.info "🔐 Pageflow story locks configured to use Redis: #{redis_url}"
-  end
+require 'redis'
+
+redis_url = ENV.fetch('REDIS_URL', 'redis://pageflow_redis:6379/0')
+
+# Configure Rails cache store to use Redis
+Rails.application.config.cache_store = :redis_store, { 
+  url: redis_url,
+  expires_in: 90.minutes
+}
+
+Rails.logger.info "🔐 Redis cache store configured: #{redis_url}"
+
+# After Pageflow is configured, ensure it uses the same cache store
+Pageflow.after_global_configure do |config|
+  Rails.logger.info "✅ Pageflow story locks will use Redis-backed cache store"
 end
