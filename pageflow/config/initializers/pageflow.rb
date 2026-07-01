@@ -142,6 +142,7 @@ Pageflow.configure do |config|
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY', 'minioadmin123'),
       region: ENV.fetch('AWS_REGION', 'us-east-1'),
       force_path_style: ENV.fetch('S3_FORCE_PATH_STYLE', 'true') == 'true'
+      signature_version: 'v4'
     )
     
     # Create S3 resource to get bucket object
