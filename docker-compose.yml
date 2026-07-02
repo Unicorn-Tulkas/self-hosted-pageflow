@@ -195,11 +195,12 @@ services:
       - MINIO_SECRET_KEY=${AWS_SECRET_ACCESS_KEY:-minioadmin123}
       - MINIO_SOURCE_BUCKET=${S3_BUCKET:-pageflow-main}
       - MINIO_OUTPUT_BUCKET=${S3_OUTPUT_BUCKET:-pageflow-output}
-      - FFMPEG_THREADS=0
+      - FFMPEG_THREADS=4
       - MAX_CONCURRENT_JOBS=${MAX_CONCURRENT_JOBS:-4}
       - WEBHOOK_TIMEOUT=30
       - GPU_ACCELERATION=false
       - OUTPUT_FORMATS=webm_high,webm_medium,mp4_high,mp4_medium,mp4_low
+      - TRANSCODER_WEBHOOK_URL=http://pageflow:3000/api/transcoding/webhook
     volumes:
       - pageflow_transcoder_temp:/tmp/transcoding
     depends_on:
