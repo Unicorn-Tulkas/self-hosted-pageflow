@@ -80,6 +80,15 @@ cd self-hosted-pageflow
 - **Admin Panel**: http://localhost:3000/admin  
 - **MinIO Console**: http://localhost:9001 (minioadmin/minioadmin123)
 
+# Set up the MinIO client alias
+docker compose exec pageflow_minio mc alias set local http://localhost:9000 minioadmin minioadmin123
+
+# Make the main bucket publicly readable
+docker compose exec pageflow_minio mc anonymous set download local/pageflow-main
+
+# Make the output bucket publicly readable
+docker compose exec pageflow_minio mc anonymous set download local/pageflow-output
+
 **That's it!** You now have a fully functional Pageflow CMS with zero AWS dependencies!
 
 ## **Configuration**
