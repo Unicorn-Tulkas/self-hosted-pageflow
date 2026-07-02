@@ -103,6 +103,7 @@ Pageflow.configure do |config|
     s3_region: ENV.fetch('AWS_REGION', 'us-east-1'),
     s3_host_alias: "#{client_host}/#{ENV.fetch('S3_BUCKET', 'pageflow-main')}",
     s3_protocol: ENV.fetch('S3_PROTOCOL', 'http'),
+    s3_permissions: 'public-read',
     s3_options: {
       endpoint: server_endpoint,
       force_path_style: ENV.fetch('S3_FORCE_PATH_STYLE', 'true') == 'true',
