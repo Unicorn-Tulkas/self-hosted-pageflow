@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     libvips libvips-dev \
     libxml2-dev libxslt1-dev \
     netcat-openbsd \
+    audiowaveform \
   && rm -rf /var/lib/apt/lists/*
 
 # Install Node.js 18
