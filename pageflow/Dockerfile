@@ -1,4 +1,4 @@
-FROM ruby:3.2.9-slim
+FROM ruby:3.2.9-slim-bookworm
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -9,8 +9,14 @@ RUN apt-get update && apt-get install -y \
     libvips libvips-dev \
     libxml2-dev libxslt1-dev \
     netcat-openbsd \
-    audiowaveform \
+    libgd-dev libsndfile1 \
   && rm -rf /var/lib/apt/lists/*
+
+# Install audiowaveform
+RUN curl -L -o /tmp/audiowaveform.deb https://github.com/bbc/audiowaveform/releases/download/1.10.2/audiowaveform_1.10.2-1-12_amd64.deb && \
+    apt-get update && apt-get install -y /tmp/audiowaveform.deb && \
+    rm /tmp/audiowaveform.deb && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install Node.js 18
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
